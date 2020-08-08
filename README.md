@@ -1,18 +1,17 @@
 # RMIT SEPT 2020 Major Project
 
-# Group 00
+# Group WED-16.30-6
 
 ## Members
-* SURNAME, GivenName (sXXXX)
-* SURNAME, GivenName (sXXXX)
-* SURNAME, GivenName (sXXXX)
-* SURNAME, GivenName (sXXXX)
-* SURNAME, GivenName (sXXXX)
+* VERDOUW, Midori (s3575912)
+* PHAM, Van (s3788106)
+* TJIONG, Julian (s3786866)
+* CHEONG, Hon Khuin Jonathan (s3642842)
 
 ## Records
 
-* Github repository : https://github.com/RMIT-SEPT/MajorProject/Groupx
-* ClickUp Workspace : https://app.clickup.com/xxxx/yyyy
+* Github repository : https://github.com/RMIT-SEPT/majorproject-5-wed-16-30-6
+* ClickUp Workspace : https://trello.com/b/vUQwlaU7/sept-project
 
 
 ## Code documentation
