@@ -20,7 +20,7 @@ public class BookingController {
 
     @GetMapping(path = "/schedule/{businessId}")
     public ResponseEntity<?> getBusinessScheduleByBusinessId(@PathVariable("businessId") Long businessId) {
-        Iterable<WorkerSchedule> workerSchedules = bookingService.getAllWorkerScheduleByBusinessId(businessId);
+        Iterable<WorkerSchedule> workerSchedules = bookingService.getAllWorkerSchedulesByBusinessId(businessId);
         return ResponseEntity.ok(workerSchedules);
     }
 }

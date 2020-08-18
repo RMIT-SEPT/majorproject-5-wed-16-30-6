@@ -72,7 +72,7 @@ class BookingControllerTest {
     @Test
     void getBusinessScheduleByBusinessId() throws Exception {
         // Mocking service
-        when(bookingService.getAllWorkerScheduleByBusinessId(any(Long.class))).thenReturn(workerSchedules);
+        when(bookingService.getAllWorkerSchedulesByBusinessId(any(Long.class))).thenReturn(workerSchedules);
         mockMvc.perform(get("/api/booking/schedule/1").contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$[0].businessId", is(1)))
