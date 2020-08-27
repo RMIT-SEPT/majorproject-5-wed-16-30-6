@@ -5,9 +5,20 @@ import TimeCellList from './TimeCellList';
 import DaysHeader from './DaysHeader';
 
 class Schedule extends Component {
+    
+    componentDidMount() {
+        const { loadData } = this.props;
+        loadData();
+    }
+
     render() {
         return (
             <div id="schedule">
+                {
+                    this.props.schedule.map(day =>
+                    <Day name={day.name} items={day.items} />
+                )
+            }
                 <h3 id="month-year">August 2020</h3>
                 <div id="schedule-grid">
                     <DaysHeader />

@@ -2,14 +2,13 @@ import React from 'react';
 import './App.css';
 import Dashboard from './components/Dashboard';
 import {BrowserRouter, Route} from 'react-router-dom';
-import Schedule from './components/BusinessSchedule/Schedule';
-//import Day from './components/BusinessSchedule/Day';
-//import TimeCellList from './components/BusinessSchedule/TimeCellList';
+import GetSchedules from './containers/GetSchedulesContainer';
 
 const BusinessSchedule = () => {
   return (
     <div>
-    <Schedule/>
+    <GetSchedules/>
+    
     </div>
   );
 }
