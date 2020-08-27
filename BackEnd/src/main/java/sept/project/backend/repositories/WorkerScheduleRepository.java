@@ -8,6 +8,6 @@ import sept.project.backend.model.WorkerSchedule;
 
 @Repository
 public interface WorkerScheduleRepository extends CrudRepository<WorkerSchedule, Long> {
-   @Query("SELECT s FROM WorkerSchedule s WHERE s.businessId = ?1")
+   @Query("SELECT s FROM WorkerSchedule s WHERE s.businessId = ?1 ORDER BY s.startDateTime")
    public Iterable<WorkerSchedule> findByBusinessId(@Param("businessId") Long businessId);
 }
