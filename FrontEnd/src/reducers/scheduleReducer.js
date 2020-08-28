@@ -4,7 +4,7 @@ import {
   
   const initalState = {
     isFetching: false,
-    items: []
+    timeslots: []
   }
   
   /**
@@ -17,7 +17,7 @@ import {
           ...state,
           {
             isFetching: true,
-            items: []
+            timeslots: []
           }
         ]
       case GET_SCHEDULES_SUCCESS:
@@ -25,7 +25,7 @@ import {
           ...state,
           {
             isFetching: false,
-            items: action.schedules,
+            timeslots: action.schedules,
             lastUpdated: action.receivedAt
           }
         ]

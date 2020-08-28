@@ -75,27 +75,42 @@
     color: #476b6b;
 }
 
-.schedule-cell {
-    padding: 0.5em 1em;
-    color: #232323;
-    border-left: solid 10px #d1e0e0;
-    border-bottom: solid 1px #d1e0e0;
+.schedule-cell, .schedule-cell-unavailable {
+    /* padding: 1em 1em; */
+    border-left: solid 5px #669999;
+    border-bottom: solid 1px #669999;
     width: 150px;
     height: 80px;
 }
+
+.schedule-cell {
+    padding: 1em 1em;
+    color: #232323;
+}
+
+.schedule-cell-unavailable {
+    background: #dcdcdc;
+    text-align: center;
+}
+
+.schedule-cell-unavailable div {
+    line-height: 80px;
+    color: #808080;    
+  }
 
 #header-blank {
     display: inline-block;
     width: 120px;
 }
 
-.header-day {
+.days-header-cell {
     display: inline-block;
     width: 150px;
     height: 80px;
     text-align: center;
     color: #669999;
     font-weight: bold;
+    border-bottom: 1px solid #669999;
 }
 
 .header-day div {

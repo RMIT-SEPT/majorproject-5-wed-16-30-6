@@ -1,12 +1,12 @@
-import {connect} from 'react-redux'
+import { connect } from 'react-redux'
 import Schedule from '../components/BusinessSchedule/Schedule'
-import {getSchedules} from '../actions'
+import { getSchedules } from '../actions'
 
 /**
  * return 'schedules' that is to be given to Schedule
  * @param {*} state 
  */
-const mapStateToProps = (state) => {  
+const mapStateToProps = (state) => {
   const length = state.schedules.length
   const currentState = state.schedules[length - 1]  // the newest state
 
@@ -19,17 +19,28 @@ const mapStateToProps = (state) => {
     current.setDate(current.getDate() + 1);
   }
 
-  const datesWithItems = dates.map(date => {
+  /* each date may have multiple timeslots */
+  const datesWithSlots = dates.map(date => {
+    /* collect time slots that belong to this date */
+    var timeslots = [];
+    if (currentState.timeslots) {
+      /* array of time slots for the date */
+      timeslots = currentState.timeslots.filter(slot => {
+        const startDate = new Date(slot.startDateTime);
+        return (startDate.toLocaleDateString() === date.toLocaleDateString())
+      });
+    }
+
     return {
+      date: date.getDate(),
+      month: date.getMonth(),
+      year: date.getFullYear(),
       name: date.getDate() + "th of " + date.getMonth(),
-      items: currentState.items.filter(item => {
-        var startDate = new Date(item.startDateTime);
-        return (startDate.getDate() > date.getDate())
-      })    
+      timeslots: timeslots
     }
   });
 
-  return { schedule: datesWithItems }  // return items
+  return { schedule: datesWithSlots }
 }
 
 const mapDispatchToProps = dispatch => {
