@@ -35,7 +35,6 @@ const mapStateToProps = (state) => {
       date: date.getDate(),
       month: date.getMonth(),
       year: date.getFullYear(),
-      name: date.getDate() + "th of " + date.getMonth(),
       timeslots: timeslots
     }
   });
@@ -43,9 +42,15 @@ const mapStateToProps = (state) => {
   return { schedule: datesWithSlots }
 }
 
-const mapDispatchToProps = dispatch => {
+/**
+ * provide function to dispatch getSchedules action as "loadData"
+ * which becomes the property of the component Schedule
+ * @param {*} dispatch 
+ * @param {*} businessId : get schedules of which business
+ */
+const mapDispatchToProps = (dispatch, businessId) => {
   return {
-    loadData: () => dispatch(getSchedules()),
+    loadData: () => dispatch(getSchedules(businessId))
   }
 }
 

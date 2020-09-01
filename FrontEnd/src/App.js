@@ -1,16 +1,18 @@
-import React from 'react';
+import React, { Component } from 'react'
 import './App.css';
 import Dashboard from './components/Dashboard';
 import {BrowserRouter, Route} from 'react-router-dom';
 import GetSchedules from './containers/GetSchedulesContainer';
 
-const BusinessSchedule = () => {
-  return (
-    <div>
-    <GetSchedules/>
-    
-    </div>
-  );
+class BusinessSchedule extends Component {
+  render() {
+    const {params} = this.props.match;
+    const id = parseInt(params.id);
+  
+    return (
+      <GetSchedules businessId={id}/>
+    );
+  }
 }
 
 function App() {
@@ -19,7 +21,7 @@ function App() {
      <Dashboard/>
      <BrowserRouter>
       <div>
-        <Route path="/schedule" component={BusinessSchedule} />
+        <Route path="/schedule/:id" component={BusinessSchedule} />
       </div>
      </BrowserRouter>
     </div>

@@ -24,12 +24,14 @@ const getSchedulesFailure = (error) => ({
 
 /**
  * Call API to get all schedules for the business
+ * @param {*} param : business ID
  */
-export const getSchedules = () => {
+export const getSchedules = (param) => {
     return (dispatch) => {
         dispatch(getSchedulesRequest())
+        const url = 'http://localhost:8080/api/booking/schedule/' + param.businessId;
       
-        return axios.get('http://localhost:8080/api/booking/schedule/1')
+        return axios.get(url)
         .then(res => {
             console.log(res.data);
             dispatch(getSchedulesSuccess(res.data));
