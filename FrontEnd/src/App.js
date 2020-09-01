@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import './App.css';
-import Dashboard from './components/Dashboard';
+import "bootstrap/dist/css/bootstrap.min.css"
 import {BrowserRouter, Route} from 'react-router-dom';
 import GetSchedules from './containers/GetSchedulesContainer';
 
