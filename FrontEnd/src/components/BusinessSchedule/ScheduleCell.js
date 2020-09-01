@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 
 class ScheduleCell extends Component {
   /**
@@ -12,27 +13,33 @@ class ScheduleCell extends Component {
   }
 
   render() {
-    // return available ScheduleCells
+    // return available cell
     if (this.props.isAvailable) {
       return (
         <div className='schedule-cell'>
           <div>
-            {this.getHourLabel(this.props.startDateTime)}
+            {this.getHourLabel(this.props.startTime)}
             <span> - </span>
-            {this.getHourLabel(this.props.endDateTime)}
+            {this.getHourLabel(this.props.endTime)}
           </div>
         </div>
       )
     }
     else {
-      // return unavailable ScheduleCells
+      // return unavailable cell
       return (
         <div className='schedule-cell-unavailable'>
-          <div>{this.getHourLabel(this.props.startDateTime)}</div>
+          <div>{this.getHourLabel(this.props.startTime)}</div>
         </div>
       )
     }
   }
+}
+
+ScheduleCell.propTypes = {
+  startTime: PropTypes.number.isRequired,
+  endTime: PropTypes.number,
+  isAvailable: PropTypes.bool.isRequired
 }
 
 export default ScheduleCell;

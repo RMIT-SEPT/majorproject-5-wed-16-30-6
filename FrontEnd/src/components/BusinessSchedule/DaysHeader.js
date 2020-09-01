@@ -3,7 +3,8 @@ import DateCell from './DateCell'
 
 class DaysHeader extends Component {
   render() {
-    var current = new Date("2020-08-16");
+    // test date should be seven days before/after data in db
+    var current = new Date("2020-08-16");  
     const days = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
     /* array of DateCells for the next seven days */
     var dateCells = [];

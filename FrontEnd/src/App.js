@@ -18,7 +18,6 @@ class BusinessSchedule extends Component {
 function App() {
   return (
     <div>
-     <Dashboard/>
      <BrowserRouter>
       <div>
         <Route path="/schedule/:id" component={BusinessSchedule} />

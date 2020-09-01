@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import ScheduleCell from './ScheduleCell'
+import PropTypes from 'prop-types'
 
 class Day extends Component {
 
@@ -33,8 +34,8 @@ class Day extends Component {
         cells.push(
           <ScheduleCell
             key={slotTime}
-            startDateTime={slotTime}
-            endDateTime={slotTime + 1}
+            startTime={slotTime}
+            endTime={slotTime + 1}
             isAvailable={true}
           />
         )
@@ -56,9 +57,9 @@ class Day extends Component {
     const lastSlotTime = 21;
 
     // assign unavailable cells
-    for (var i = firstSlotTime; i <= lastSlotTime; i++) {
-      if (!cellsDict[i]) {
-        cellsDict[i] = <ScheduleCell key={i} startDateTime={i} isAvailable={false} />
+    for (var slotTime = firstSlotTime; slotTime <= lastSlotTime; slotTime++) {
+      if (!cellsDict[slotTime]) {
+        cellsDict[slotTime] = <ScheduleCell key={slotTime} startTime={slotTime} isAvailable={false} />
       }
     }
   }
@@ -91,6 +92,18 @@ class Day extends Component {
       </div>
     )
   }
+}
+
+Day.propTypes = {
+  timeslots: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      businessId: PropTypes.number.isRequired,
+      workerId: PropTypes.number.isRequired,
+      startDateTime: PropTypes.string.isRequired,
+      endDateTime: PropTypes.string.isRequired
+    }).isRequired
+  ).isRequired
 }
 
 export default Day;

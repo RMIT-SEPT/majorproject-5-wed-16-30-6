@@ -3,6 +3,7 @@ import './BusinessSchedule.css';
 import Day from './Day';
 import TimeCellList from './TimeCellList';
 import DaysHeader from './DaysHeader';
+import PropTypes from 'prop-types'
 
 class Schedule extends Component {
 
@@ -46,4 +47,17 @@ class Schedule extends Component {
     )
   }
 }
+
+Schedule.propTypes = {
+  schedule: PropTypes.arrayOf(
+    PropTypes.shape({
+      date: PropTypes.number.isRequired,
+      month: PropTypes.number.isRequired,
+      year: PropTypes.number.isRequired,
+      timeslots: PropTypes.array.isRequired,
+    }).isRequired
+  ).isRequired,
+  loadData: PropTypes.func.isRequired
+}
+
 export default Schedule;
