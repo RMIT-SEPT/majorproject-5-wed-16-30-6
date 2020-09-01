@@ -1,6 +1,7 @@
 /* worker schedule test data */
 /* id, businessId, endDateTime, startDateTime, workerId */
 INSERT INTO Worker_Schedule VALUES (1, 1, '2020-08-18 11:00:00', '2020-08-18 09:00:00', 1);
+INSERT INTO Worker_Schedule VALUES (13, 1, '2020-08-18 11:00:00', '2020-08-18 09:00:00', 3);
 INSERT INTO Worker_Schedule VALUES (2, 1, '2020-08-19 11:00:00', '2020-08-19 09:00:00', 1);
 INSERT INTO Worker_Schedule VALUES (3, 1, '2020-08-20 10:30:00', '2020-08-20 09:00:00', 1);
 INSERT INTO Worker_Schedule VALUES (4, 1, '2020-08-18 17:00:00', '2020-08-18 13:00:00', 2);

@@ -9,7 +9,7 @@ class DaysHeader extends Component {
     var dateCells = [];
     for (var i = 0; i < 7; i++) {
       var date = current.getDate();
-      dateCells.push(<DateCell date={date} day={days[current.getDay()]} />);
+      dateCells.push(<DateCell key={i} date={date} day={days[current.getDay()]} />);
       current.setDate((date) + 1);
     }
 
