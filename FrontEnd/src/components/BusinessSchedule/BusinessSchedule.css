@@ -128,3 +128,7 @@
 #month-year span {
     margin-right: 10px;
 }
+
+#unavailable-msg {
+    color: red;
+}

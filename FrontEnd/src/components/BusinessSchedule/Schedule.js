@@ -13,15 +13,28 @@ class Schedule extends Component {
     loadData();
   }
 
+  constructor() {
+    super();
+    this.availability = false;
+  }
+
   /**
    * get Day components for each day in the 'schedule' (i.e., the next seven days) from the API
+   * and change the availability
    */
-  getDays() {
+  getDaysAndAvailability() {
     let days = []
     let i = 1;
     this.props.schedule.forEach(day => {
       let id = "day" + i;
-      days.push(<Day key={id} timeslots={day.timeslots} id={id} />);
+      let timeslots = day.timeslots;
+      days.push(<Day key={id} timeslots={timeslots} id={id} />);
+
+      // change the availability if any of the seven days have timeslots
+      if (!this.availability && timeslots.length > 0) {
+        this.availability = true;
+      }
+      
       i++;
     })
     return days;
@@ -31,6 +44,7 @@ class Schedule extends Component {
     const firstDateSchedule = this.props.schedule[0];
     const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 
     'November', 'December'];
+    const days = this.getDaysAndAvailability();
     
     return (
       <div id="schedule">
@@ -38,10 +52,15 @@ class Schedule extends Component {
           <span>{months[parseInt(firstDateSchedule.month)]}</span>
           <span>{firstDateSchedule.year}</span>
         </h3>
+
+        {!this.availability &&
+          <h5 id="unavailable-msg">No times available.</h5>
+        }
+        
         <div id="schedule-grid">
           <TimeCellList />
           <DaysHeader />          
-          {this.getDays()}
+          {days}
         </div>
       </div>
     )
