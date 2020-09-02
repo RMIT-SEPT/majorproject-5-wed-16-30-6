@@ -3,6 +3,7 @@ import Day from "./Day";
 import { shallow, mount } from "enzyme";
 import Enzyme from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
+import ScheduleCell from "./ScheduleCell";
 
 Enzyme.configure({ adapter: new Adapter() });
 
@@ -31,6 +32,11 @@ describe("<Day /> component Unit Test", () => {
   it("should render 1 <Day /> component", () => {
     const component = shallow(<Day {...props} />);
     expect(component).toHaveLength(1);
+  });
+
+  it("should have 13 subcomponents <ScheduleCells /> in <Day /> component", () => {
+    const component = shallow(<Day {...props} />);
+    expect(component.find(ScheduleCell).length).toBe(13);
   });
 
 })

@@ -4,12 +4,14 @@ import Day from "./Day";
 import { shallow, mount } from "enzyme";
 import Enzyme from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
+import { getByText } from "@testing-library/react";
+import { toBeInTheDocument } from '@testing-library/jest-dom';
 
 Enzyme.configure({ adapter: new Adapter() });
 
 describe("<Schedule /> component Unit Test", () => {
   const mockFn = jest.fn();
-  const propsInSchedule = [
+  const scheduleProps = [
     {
       date: 18,
       month: 8,
@@ -54,17 +56,75 @@ describe("<Schedule /> component Unit Test", () => {
     },
   ];
 
-  var props = {};
-  props.loadData = mockFn;
-  props.schedule = propsInSchedule;
+  const schedulePropsWithEmptyTimeSlots = [
+    {
+      date: 18,
+      month: 8,
+      year: 2020,
+      timeslots: []
+    },
+    {
+      date: 19,
+      month: 8,
+      year: 2020,
+      timeslots: []
+    },
+    {
+      date: 20,
+      month: 8,
+      year: 2020,
+      timeslots: []
+    },
+    {
+      date: 21,
+      month: 8,
+      year: 2020,
+      timeslots: []
+    },
+    {
+      date: 22,
+      month: 8,
+      year: 2020,
+      timeslots: []
+    },
+    {
+      date: 23,
+      month: 8,
+      year: 2020,
+      timeslots: []
+    },
+    {
+      date: 24,
+      month: 8,
+      year: 2020,
+      timeslots: []
+    }
+  ];
+
+  var props1 = {};
+  var props2 = {};
+  props1.loadData = mockFn;
+  props2.loadData = mockFn;
+  props1.schedule = scheduleProps;
+  props2.schedule = schedulePropsWithEmptyTimeSlots;
 
   it("should render 1 <Schedule /> component", () => {
-    const component = shallow(<Schedule {...props} />);
+    const component = shallow(<Schedule {...props1} />);
     expect(component).toHaveLength(1);
   });
 
   it("should render 2 <Day /> sub-component", () => {
-    const component = shallow(<Schedule {...props} />);
+    const component = shallow(<Schedule {...props1} />);
     expect(component.find(Day).length).toBe(2);
+  });
+
+  it("schedule with empty timeslots should have state available being false", () => {
+    const component = shallow(<Schedule {...props2} />);
+    expect(component.instance().availability).toEqual(false);
+  });
+
+  it("schedule with timeslots should have state available being true", () => {
+    const component = shallow(<Schedule {...props1} />);
+    expect(component.instance().availability).toEqual(true);
   });
 })
