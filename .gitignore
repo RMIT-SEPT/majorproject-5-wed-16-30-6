@@ -4,4 +4,4 @@ creds2.sh
 terraform.tfstate
 terraform.tfstate.backup
 tmp/
-BackEnd/.idea
+BackEnd/.idea/workspace.xml
