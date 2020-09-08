@@ -15,12 +15,15 @@ public class Person {
     private Long id;
     @NotBlank(message = "Person name is required")
     private String name;
-    @NotBlank(message ="Project Identifier is required")
+    @NotBlank(message ="Person Identifier is required")
     @Size(min=4,max =5, message = "please enter 4 to 5 characters")
     @Column(updatable = false, unique = true)
     private String personIdentifier;
     @NotBlank(message = "desc is required")
     private String desc;
+    @Size(min=10,max =10, message = "please enter 10 characters")
+    @NotBlank(message = "Phone number is required")
+    private String mobileNum;
     @JsonFormat(pattern = "yyyy-mm-dd")
     private Date start_date;
     @JsonFormat(pattern = "yyyy-mm-dd")
@@ -47,6 +50,14 @@ public class Person {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getMobileNum() {
+        return mobileNum;
+    }
+
+    public void setMobileNum(String mobileNum) {
+        this.mobileNum = mobileNum;
     }
 
     public String getPersonIdentifier() {
