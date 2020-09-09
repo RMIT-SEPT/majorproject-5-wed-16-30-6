@@ -20,10 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="15bfae14-8f95-42d4-9327-bf3cb7b6cdd6" name="Default Changelist" comment="Services and stuffs">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sept/project/backend/model/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sept/project/backend/model/Person.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +56,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../majorproject-5-wed-16-30-6/BackEnd" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../New folder (5)/majorproject-5-wed-16-30-6/BackEnd" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
@@ -185,6 +182,8 @@
       <workItem from="1599284203255" duration="3997000" />
       <workItem from="1599559909575" duration="737000" />
       <workItem from="1599560669440" duration="4024000" />
+      <workItem from="1599621366226" duration="91000" />
+      <workItem from="1599622457585" duration="1450000" />
     </task>
     <servers />
   </component>
@@ -216,10 +215,10 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="499" y="164" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.834@0.0.1536.834" timestamp="1599285698081" />
-    <state x="549" y="172" key="FileChooserDialogImpl" timestamp="1599560227890">
+    <state x="549" y="172" key="FileChooserDialogImpl" timestamp="1599624855447">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="549" y="172" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1599560227890" />
+    <state x="549" y="172" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1599624855447" />
     <state width="1493" height="214" key="GridCell.Tab.0.bottom" timestamp="1599566087640">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
@@ -272,9 +271,9 @@
       <screen x="0" y="23" width="1440" height="790" />
     </state>
     <state x="498" y="156" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.23.1440.790@0.23.1440.790" timestamp="1597535196330" />
-    <state x="209" y="78" key="new project wizard" timestamp="1599029292925">
+    <state x="209" y="78" key="new project wizard" timestamp="1599624641078">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="209" y="78" key="new project wizard/0.0.1536.834@0.0.1536.834" timestamp="1599029292925" />
+    <state x="209" y="78" key="new project wizard/0.0.1536.834@0.0.1536.834" timestamp="1599624641078" />
   </component>
 </project>
