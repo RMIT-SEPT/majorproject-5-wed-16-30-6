@@ -10,7 +10,7 @@ public class BookingService {
     @Autowired
     private WorkerScheduleRepository workerScheduleRepository;
 
-    public Iterable<WorkerSchedule> getAllWorkerScheduleByBusinessId(Long id) {
+    public Iterable<WorkerSchedule> getAllWorkerSchedulesByBusinessId(Long id) {
         return workerScheduleRepository.findByBusinessId(id);
     }
 }
