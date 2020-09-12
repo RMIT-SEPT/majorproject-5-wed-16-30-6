@@ -8,16 +8,34 @@
 
 #add-worker-form {
     padding-top: 30px;
+    margin: 0 auto;
 }
 
-#add-worker-form div, button {
+.inputWrapper { 
+    margin: 0 auto;
+    height: 120px;
+}
+
+#add-worker-form button {
     margin-top: 20px;
+    text-align: center;
+}
+
+#add-worker-form label, .input-msg {
+    text-align: left;
+    display: block;
+    margin-left: 100px;
 }
 
 #add-worker-form label {
-    width: 130px;
+    font-weight: bold;
 }
 
-#add-worker-form input {
+.input-msg, #error-msg {
+    color: red;
+}
+
+#add-worker-form input, textarea {
     width: 300px;
 }
+

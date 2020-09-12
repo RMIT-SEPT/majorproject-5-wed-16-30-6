@@ -35,14 +35,21 @@ const postWorkerFailure = (error) => ({
  * @param {*} name 
  * @param {*} mobile 
  */
-export const addWorker = (name, mobile) => {
+export const addWorker = (formState) => {
   return (dispatch) => {
     dispatch(postWorkerRequest());
     const data = {
-      name: name,
-      mobileNumber: mobile
+      "name": formState.name,
+      "personIdentifier": formState.personId,
+      "desc": formState.desc,
+      "mobileNum": formState.mobile,
+      "start_date": formState.start_date,
+      "end_date": formState.end_date
     }
-    const url = 'http://localhost:8080/api/admin/addWorker';
+
+    console.log(data);
+    
+    const url = 'http://localhost:8080/api/person';
     return axios.post(url, data)
       .then(res => {
         dispatch(postWorkerSuccess(res.data));
@@ -50,6 +57,8 @@ export const addWorker = (name, mobile) => {
       .catch(err => {
         dispatch(postWorkerSuccess(err))
         //dispatch(postWorkerFailure(err))
+
+        console.log(err);
       })
   }
 }
