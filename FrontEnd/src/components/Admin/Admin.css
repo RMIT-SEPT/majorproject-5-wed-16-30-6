@@ -4,6 +4,7 @@
     padding: 20px;
     border: 1px solid black;
     text-align: center;
+    margin-bottom: 60px;
 }
 
 #add-worker-form {
@@ -31,7 +32,13 @@
     font-weight: bold;
 }
 
-.input-msg, #error-msg {
+.input-msg {
+    color: #336699;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+#error-msg {
     color: red;
 }
 
