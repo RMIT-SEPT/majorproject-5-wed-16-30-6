@@ -7,22 +7,14 @@ const postWorkerRequest = () => {
   }
 }
 
-// TODO: replace this
 export const POST_WORKER_SUCCESS = 'POST_WORKER_SUCCESS'
-const postWorkerSuccess = () => {
+const postWorkerSuccess = (json) => {
   return {
     type: POST_WORKER_SUCCESS,
-    worker: "test worker",
+    worker: json,
     receivedAt: Date.now()
   }
 }
-// const postWorkerSuccess = (json) => {
-//   return {
-//     type: POST_WORKER_SUCCESS,
-//     worker: json,
-//     receivedAt: Date.now()
-//   }
-// }
 
 export const POST_WORKER_FAILURE = 'POST_WORKER_FAILURE'
 const postWorkerFailure = (error) => ({
@@ -43,11 +35,9 @@ export const addWorker = (formState) => {
       "personIdentifier": formState.personId,
       "desc": formState.desc,
       "mobileNum": formState.mobile,
-      "start_date": formState.start_date,
-      "end_date": formState.end_date
+      "start_date": formState.startDate,
+      "end_date": formState.endDate
     }
-
-    console.log(data);
     
     const url = 'http://localhost:8080/api/person';
     return axios.post(url, data)
@@ -55,10 +45,7 @@ export const addWorker = (formState) => {
         dispatch(postWorkerSuccess(res.data));
       })
       .catch(err => {
-        dispatch(postWorkerSuccess(err))
-        //dispatch(postWorkerFailure(err))
-
-        console.log(err);
+        dispatch(postWorkerFailure(err))
       })
   }
 }
