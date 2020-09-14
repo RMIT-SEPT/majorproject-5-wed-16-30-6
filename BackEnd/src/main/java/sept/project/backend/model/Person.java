@@ -2,13 +2,25 @@ package sept.project.backend.model;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 import com.fasterxml.jackson.annotation.*;
 import java.util.Date;
 
-//Jason Push test
+
+import javafx.scene.NodeBuilder;
+import lombok.*;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+
 
 @Entity
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class Person {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,6 +34,7 @@ public class Person {
     @NotBlank(message = "desc is required")
     private String desc;
     @Size(min=10,max =10, message = "please enter 10 characters")
+    @Pattern(regexp = "[0-9]")
     @NotBlank(message = "Phone number is required")
     private String mobileNum;
     @JsonFormat(pattern = "yyyy-mm-dd")
@@ -33,8 +46,14 @@ public class Person {
     @JsonFormat(pattern ="yyyy-mm-dd")
     private Date updated_At;
 
+    //a for admin, w for worker, c for customer
+    @Pattern(regexp = "[a-z&&[awc]]")
+    @NotBlank(message = "Role is required")
+    private String role;
+
     public Person() {
     }
+
 
     public Long getId() {
         return id;
@@ -118,5 +137,11 @@ public class Person {
         this.updated_At = new Date();
     }
 
+    public String getRole() {
+        return role;
+    }
 
+    public void setRole(String role) {
+        this.role = role;
+    }
 }
