@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { addWorker } from '../../actions/adminActions';
 import './Admin.css';
 import "bootstrap/dist/css/bootstrap.min.css"
+import EditWorker from './EditWorker';
 
 class AddWorker extends Component {
   constructor() {
@@ -123,17 +124,13 @@ class AddWorker extends Component {
     });
   }
 
-  // called after render()
-  // if the state shifted to submission success, redirect to edit worker page
-  componentDidUpdate() {
-    if (this.props.addWorkerSuccess) {
-      this.props.history.push("/admin/editworker")  
-    }
-  }
-
   render() {
     // const { params } = this.props.match;
     // const id = parseInt(params.id);
+
+    if (this.props.addWorkerSuccess && this.submit) {
+      return <EditWorker/>
+    }
 
     const {name, personId, desc, mobile, startDate, endDate} = this.state;
     const connectionError = "Error occurred. Please try again.";
