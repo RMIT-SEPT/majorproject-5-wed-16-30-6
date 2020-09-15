@@ -4,7 +4,6 @@ import { addWorker } from '../../actions/adminActions';
 import './Admin.css';
 import "bootstrap/dist/css/bootstrap.min.css"
 
-
 class AddWorker extends Component {
   constructor() {
     super();
@@ -133,6 +132,9 @@ class AddWorker extends Component {
   }
 
   render() {
+    // const { params } = this.props.match;
+    // const id = parseInt(params.id);
+
     const {name, personId, desc, mobile, startDate, endDate} = this.state;
     const connectionError = "Error occurred. Please try again.";
 
@@ -229,7 +231,7 @@ class AddWorker extends Component {
  * @param {*} state 
  */
 const mapStateToProps = state => {
-  const currentState = state[state.length - 1]
+  const currentState = state.workerReducer[state.workerReducer.length - 1]
   return {
     addWorkerSuccess: currentState.addWorkerSuccess
   }
