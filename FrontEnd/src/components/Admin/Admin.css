@@ -46,3 +46,39 @@
     width: 300px;
 }
 
+/* AdminDashboard */
+
+.dashboard {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    width: 100%;
+}
+
+.dashboard-left-column {
+    width: 20%;
+    height: 1000px;
+}
+
+.dashboard-right-column {
+    width: 80%;
+    padding-top: 30px;
+    padding-left: 20px;
+    background:#f0f0f5;
+}
+
+.admin-opt, .admin-opt-title {
+    padding: 10px 20px;
+    height: 60px;
+}
+
+.admin-opt-title {
+    font-weight: bold;
+}
+
+.admin-opt span {
+    line-height: 40px;
+}
+}
