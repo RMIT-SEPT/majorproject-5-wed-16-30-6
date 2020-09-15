@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import './App.css';
 import "bootstrap/dist/css/bootstrap.min.css"
 import {BrowserRouter, Route} from 'react-router-dom';
@@ -14,7 +14,9 @@ import AdminDashboard from './components/Admin/AdminDashboard';
 function App() {
   return (
     <div>
+    
      <BrowserRouter>
+     <Header />
       <div>
         <Route path="/home" component={Home} />
         <Route path="/about" component={About} />
@@ -28,7 +30,7 @@ function App() {
       </div>
      </BrowserRouter>
     </div>
-  )
+  );
 }
 
 export default App;
