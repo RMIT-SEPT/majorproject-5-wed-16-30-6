@@ -47,7 +47,6 @@ public class PersonControllerTest {
         //sdf.setTimeZone(TimeZone.getTimeZone("UTC+10"));
         Date createDate1 = sdf.parse("2020-08-17T09:00:00Z");
         Date createDate2 = sdf.parse("2020-08-18T010:00:00Z");
-        Long testBusinessId = 1L;
 
         // two worker schedules of two different workers of the same business (business id 1)
         Person p1 = new Person();
@@ -75,5 +74,24 @@ public class PersonControllerTest {
         personList.add(p2);
     }
 
+    /**
+     * Test to get all persons
+     */
+//    @Test
+//    void getAllPersonsBy() throws Exception {
+//        // Mocking service
+//        when(personservice.findAllPersons().thenReturn(personList);(getAllWorkerSchedulesByBusinessId(any(Long.class))).thenReturn(workerSchedules);
+//        mockMvc.perform(get("/api/person/1").contentType(MediaType.APPLICATION_JSON))
+//                .andExpect(status().isOk())
+//                .andExpect(jsonPath("$[0].businessId", is(1)))
+//                .andExpect(jsonPath("$[0].workerId", is(1)))
+//                .andExpect(jsonPath("$[0].startDateTime", is("2020-08-17T09:00:00Z")))
+//                .andExpect(jsonPath("$[0].endDateTime", is("2020-08-17T17:00:00Z")))
+//                .andExpect(jsonPath("$[1].businessId", is(1)))
+//                .andExpect(jsonPath("$[1].workerId", is(2)))
+//                .andExpect(jsonPath("$[1].startDateTime", is("2020-08-18T10:00:00Z")))
+//                .andExpect(jsonPath("$[1].endDateTime", is("2020-08-18T15:00:00Z")));
+//    }
+//
 
 }
