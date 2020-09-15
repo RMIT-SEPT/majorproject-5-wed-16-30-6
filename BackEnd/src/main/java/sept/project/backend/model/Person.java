@@ -18,7 +18,6 @@ import javax.persistence.GenerationType;
 @Entity
 @Getter
 @Setter
-@NoArgsConstructor
 @AllArgsConstructor
 @Builder
 public class Person {
@@ -34,7 +33,7 @@ public class Person {
     @NotBlank(message = "desc is required")
     private String desc;
     @Size(min=10,max =10, message = "please enter 10 characters")
-    @Pattern(regexp = "[0-9]")
+    @Pattern(regexp = "[0-9]+")
     @NotBlank(message = "Phone number is required")
     private String mobileNum;
     @JsonFormat(pattern = "yyyy-mm-dd")
