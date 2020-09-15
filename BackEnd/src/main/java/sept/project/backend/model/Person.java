@@ -7,8 +7,6 @@ import javax.validation.constraints.Size;
 import com.fasterxml.jackson.annotation.*;
 import java.util.Date;
 
-
-import javafx.scene.NodeBuilder;
 import lombok.*;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import javax.persistence.GeneratedValue;
@@ -50,10 +48,6 @@ public class Person {
     @Pattern(regexp = "[a-z&&[awc]]")
     @NotBlank(message = "Role is required")
     private String role;
-
-    public Person() {
-    }
-
 
     public Long getId() {
         return id;

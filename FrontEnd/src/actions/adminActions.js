@@ -36,7 +36,8 @@ export const addWorker = (formState) => {
       "desc": formState.desc,
       "mobileNum": formState.mobile,
       "start_date": formState.startDate,
-      "end_date": formState.endDate
+      "end_date": formState.endDate,
+      "role": "w"
     }
     
     const url = 'http://localhost:8080/api/person';
