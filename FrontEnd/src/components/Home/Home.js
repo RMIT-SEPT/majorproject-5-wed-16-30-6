@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import BusinessOption from './BusinessOption'
+import "./Home.css";
 
 class Home extends Component {
   render() {
