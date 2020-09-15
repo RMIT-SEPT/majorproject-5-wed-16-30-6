@@ -16,6 +16,7 @@ import javax.persistence.GenerationType;
 @Entity
 @Getter
 @Setter
+@NoArgsConstructor
 @AllArgsConstructor
 @Builder
 public class Person {
