@@ -19,6 +19,7 @@ const postWorkerSuccess = (json) => {
 export const POST_WORKER_FAILURE = 'POST_WORKER_FAILURE'
 const postWorkerFailure = (error) => ({
   type: POST_WORKER_FAILURE,
+  errorMsg: error.response.data,
   error
 })
 

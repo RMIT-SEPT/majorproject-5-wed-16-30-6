@@ -57,7 +57,7 @@ class AddWorker extends Component {
 
   // set valid true if mobile number is 10 characteres
   setValidMobile() {
-    this.valid.mobile = (this.state.mobile.length === 10)
+    this.valid.mobile = (this.state.mobile.length === 10 && !isNaN(this.state.mobile))
   }
 
   // insert error message in form
@@ -129,11 +129,19 @@ class AddWorker extends Component {
     // const id = parseInt(params.id);
 
     if (this.props.addWorkerSuccess && this.submit) {
-      return <EditWorker/>
+      return <EditWorker createdUser={this.props.worker.name}/>
     }
 
     const {name, personId, desc, mobile, startDate, endDate} = this.state;
-    const connectionError = "Error occurred. Please try again.";
+    var errorBackend = "";
+    if (this.props.errorMsg) {
+      if (this.props.errorMsg.personIdentifier) {
+        errorBackend = this.props.errorMsg.personIdentifier;
+      }
+    }
+    else {
+      errorBackend = "Error occurred. Please try again."
+    }
 
     return (
       <div id="add-worker">
@@ -141,7 +149,7 @@ class AddWorker extends Component {
         <form onSubmit={this.handleSubmit} id="add-worker-form">
 
           <div id="error-msg">
-            <div>{(this.submit && !this.props.addWorkerSuccess) ? connectionError : ""}</div>
+            <div>{(this.submit && !this.props.addWorkerSuccess) ? errorBackend : ""}</div>
             <div id="name-error"></div>
             <div id="personId-error"></div>
             <div id="mobile-error"></div>
@@ -230,7 +238,9 @@ class AddWorker extends Component {
 const mapStateToProps = state => {
   const currentState = state.workerReducer[state.workerReducer.length - 1]
   return {
-    addWorkerSuccess: currentState.addWorkerSuccess
+    addWorkerSuccess: currentState.addWorkerSuccess,
+    worker: currentState.worker,
+    errorMsg: currentState.errorMsg
   }
 }
 
