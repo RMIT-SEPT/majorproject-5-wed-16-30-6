@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="AutoImportSettings">
-    <option name="autoReloadType" value="SELECTIVE" />
-  </component>
   <component name="BranchesTreeState">
     <expand>
       <path>
@@ -37,7 +34,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="15bfae14-8f95-42d4-9327-bf3cb7b6cdd6" name="Default Changelist" comment="Services and stuffs">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sept/project/backend/model/WorkerSchedule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sept/project/backend/model/WorkerSchedule.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sept/project/backend/repositories/WorkerScheduleRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sept/project/backend/repositories/WorkerScheduleRepository.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,7 +103,7 @@
   <component name="RunManager" selected="Spring Boot.BackendApplication">
     <configuration name="BackendApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="sept.project.backend.BackendApplication" />
-      <module name="backend" />
+      <module name="BackEnd" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="sept.project.backend.*" />
@@ -114,19 +114,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="BookingControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="backend" />
+      <module name="BackEnd" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="sept.project.backend.web.*" />
@@ -141,7 +130,7 @@
       </method>
     </configuration>
     <configuration name="BookingControllerTest.getBusinessSchedule" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="backend" />
+      <module name="BackEnd" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="sept.project.backend.web.*" />
@@ -157,7 +146,7 @@
       </method>
     </configuration>
     <configuration name="BookingControllerTest.getBusinessScheduleByBusinessId" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="backend" />
+      <module name="BackEnd" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="sept.project.backend.web.*" />
@@ -173,7 +162,7 @@
       </method>
     </configuration>
     <configuration name="BookingControllerTest.setup" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="backend" />
+      <module name="BackEnd" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="sept.project.backend.web.*" />
@@ -189,7 +178,7 @@
       </method>
     </configuration>
     <configuration name="BackendApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-      <module name="backend" />
+      <module name="BackEnd" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="sept.project.backend.BackendApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -205,7 +194,7 @@
       </list>
     </recent_temporary>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -228,11 +217,12 @@
       <workItem from="1599559909575" duration="737000" />
       <workItem from="1599560669440" duration="4024000" />
       <workItem from="1599625563940" duration="2894000" />
+      <workItem from="1600255069015" duration="8992000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
+    <option name="version" value="2" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -267,10 +257,10 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="760" y="274" key="#Project_Structure/-1440.0.1440.2520/0.0.2560.1400@0.0.2560.1400" timestamp="1599625698345" />
-    <state x="574" y="101" key="#com.intellij.ide.util.MemberChooser" timestamp="1599565932136">
+    <state x="574" y="101" key="#com.intellij.ide.util.MemberChooser" timestamp="1600264203461">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="574" y="101" key="#com.intellij.ide.util.MemberChooser/0.0.1536.834@0.0.1536.834" timestamp="1599565932136" />
+    <state x="574" y="101" key="#com.intellij.ide.util.MemberChooser/0.0.1536.834@0.0.1536.834" timestamp="1600264203461" />
     <state x="499" y="164" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1599285698081">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
@@ -280,57 +270,58 @@
     </state>
     <state x="915" y="289" key="FileChooserDialogImpl/-1440.0.1440.2520/0.0.2560.1400@0.0.2560.1400" timestamp="1599626537789" />
     <state x="549" y="172" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1599560227890" />
-    <state width="2517" height="401" key="GridCell.Tab.0.bottom" timestamp="1599633375737">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state width="1493" height="65" key="GridCell.Tab.0.bottom" timestamp="1600265660210">
+      <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state width="2517" height="401" key="GridCell.Tab.0.bottom/-1440.0.1440.2520/0.0.2560.1400@0.0.2560.1400" timestamp="1599633375737" />
-    <state width="1493" height="214" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1599566087640" />
+    <state width="1493" height="65" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1600265660210" />
     <state width="1292" height="146" key="GridCell.Tab.0.bottom/0.23.1440.790@0.23.1440.790" timestamp="1597547869935" />
-    <state width="2517" height="401" key="GridCell.Tab.0.center" timestamp="1599633375736">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state width="1493" height="65" key="GridCell.Tab.0.center" timestamp="1600265660210">
+      <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state width="2517" height="401" key="GridCell.Tab.0.center/-1440.0.1440.2520/0.0.2560.1400@0.0.2560.1400" timestamp="1599633375736" />
-    <state width="1493" height="214" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1599566087640" />
+    <state width="1493" height="65" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1600265660210" />
     <state width="1292" height="146" key="GridCell.Tab.0.center/0.23.1440.790@0.23.1440.790" timestamp="1597547869934" />
-    <state width="2517" height="401" key="GridCell.Tab.0.left" timestamp="1599633375736">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state width="1493" height="65" key="GridCell.Tab.0.left" timestamp="1600265660209">
+      <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state width="2517" height="401" key="GridCell.Tab.0.left/-1440.0.1440.2520/0.0.2560.1400@0.0.2560.1400" timestamp="1599633375736" />
-    <state width="1493" height="214" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1599566087640" />
+    <state width="1493" height="65" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1600265660209" />
     <state width="1292" height="146" key="GridCell.Tab.0.left/0.23.1440.790@0.23.1440.790" timestamp="1597547869934" />
-    <state width="2517" height="401" key="GridCell.Tab.0.right" timestamp="1599633375736">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state width="1493" height="65" key="GridCell.Tab.0.right" timestamp="1600265660210">
+      <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state width="2517" height="401" key="GridCell.Tab.0.right/-1440.0.1440.2520/0.0.2560.1400@0.0.2560.1400" timestamp="1599633375736" />
-    <state width="1493" height="214" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1599566087640" />
+    <state width="1493" height="65" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1600265660210" />
     <state width="1292" height="146" key="GridCell.Tab.0.right/0.23.1440.790@0.23.1440.790" timestamp="1597547869935" />
-    <state width="2517" height="401" key="GridCell.Tab.1.bottom" timestamp="1599633375737">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state width="1493" height="65" key="GridCell.Tab.1.bottom" timestamp="1600265660210">
+      <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state width="2517" height="401" key="GridCell.Tab.1.bottom/-1440.0.1440.2520/0.0.2560.1400@0.0.2560.1400" timestamp="1599633375737" />
-    <state width="1493" height="214" key="GridCell.Tab.1.bottom/0.0.1536.834@0.0.1536.834" timestamp="1599566087640" />
+    <state width="1493" height="65" key="GridCell.Tab.1.bottom/0.0.1536.834@0.0.1536.834" timestamp="1600265660210" />
     <state width="1319" height="200" key="GridCell.Tab.1.bottom/0.23.1440.790@0.23.1440.790" timestamp="1597540252094" />
-    <state width="2517" height="401" key="GridCell.Tab.1.center" timestamp="1599633375737">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state width="1493" height="65" key="GridCell.Tab.1.center" timestamp="1600265660210">
+      <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state width="2517" height="401" key="GridCell.Tab.1.center/-1440.0.1440.2520/0.0.2560.1400@0.0.2560.1400" timestamp="1599633375737" />
-    <state width="1493" height="214" key="GridCell.Tab.1.center/0.0.1536.834@0.0.1536.834" timestamp="1599566087640" />
+    <state width="1493" height="65" key="GridCell.Tab.1.center/0.0.1536.834@0.0.1536.834" timestamp="1600265660210" />
     <state width="1319" height="200" key="GridCell.Tab.1.center/0.23.1440.790@0.23.1440.790" timestamp="1597540252093" />
-    <state width="2517" height="401" key="GridCell.Tab.1.left" timestamp="1599633375737">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state width="1493" height="65" key="GridCell.Tab.1.left" timestamp="1600265660210">
+      <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state width="2517" height="401" key="GridCell.Tab.1.left/-1440.0.1440.2520/0.0.2560.1400@0.0.2560.1400" timestamp="1599633375737" />
-    <state width="1493" height="214" key="GridCell.Tab.1.left/0.0.1536.834@0.0.1536.834" timestamp="1599566087640" />
+    <state width="1493" height="65" key="GridCell.Tab.1.left/0.0.1536.834@0.0.1536.834" timestamp="1600265660210" />
     <state width="1319" height="200" key="GridCell.Tab.1.left/0.23.1440.790@0.23.1440.790" timestamp="1597540252093" />
-    <state width="2517" height="401" key="GridCell.Tab.1.right" timestamp="1599633375737">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state width="1493" height="65" key="GridCell.Tab.1.right" timestamp="1600265660210">
+      <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state width="2517" height="401" key="GridCell.Tab.1.right/-1440.0.1440.2520/0.0.2560.1400@0.0.2560.1400" timestamp="1599633375737" />
-    <state width="1493" height="214" key="GridCell.Tab.1.right/0.0.1536.834@0.0.1536.834" timestamp="1599566087640" />
+    <state width="1493" height="65" key="GridCell.Tab.1.right/0.0.1536.834@0.0.1536.834" timestamp="1600265660210" />
     <state width="1319" height="200" key="GridCell.Tab.1.right/0.23.1440.790@0.23.1440.790" timestamp="1597540252094" />
-    <state x="116" y="136" key="Maven.ArtifactSearchDialog" timestamp="1597542065984">
-      <screen x="0" y="23" width="1440" height="790" />
+    <state x="124" y="119" key="Maven.ArtifactSearchDialog" timestamp="1600256611897">
+      <screen x="0" y="0" width="1536" height="834" />
     </state>
+    <state x="124" y="119" key="Maven.ArtifactSearchDialog/0.0.1536.834@0.0.1536.834" timestamp="1600256611897" />
     <state x="116" y="136" key="Maven.ArtifactSearchDialog/0.23.1440.790@0.23.1440.790" timestamp="1597542065984" />
     <state x="526" y="106" key="SettingsEditor" timestamp="1599626595155">
       <screen x="0" y="0" width="2560" height="1400" />
@@ -350,5 +341,9 @@
     </state>
     <state x="348" y="131" key="new project wizard/-1440.0.1440.2520/0.0.2560.1400@0.0.2560.1400" timestamp="1599633219036" />
     <state x="209" y="78" key="new project wizard/0.0.1536.834@0.0.1536.834" timestamp="1599029292925" />
+    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1600264295053">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1600264295053" />
   </component>
 </project>
