@@ -223,7 +223,7 @@ class AddWorker extends Component {
             />
           </div>
 
-          <button type="submit" value="Add Worker">Add Worker</button>
+          <button type="submit" value="Save">Save</button>
         </form>
       </div>
     );
