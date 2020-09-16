@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { addWorker } from '../../actions/adminActions';
 import './Admin.css';
 import "bootstrap/dist/css/bootstrap.min.css"
-
+import EditWorker from './EditWorker';
 
 class AddWorker extends Component {
   constructor() {
@@ -57,7 +57,7 @@ class AddWorker extends Component {
 
   // set valid true if mobile number is 10 characteres
   setValidMobile() {
-    this.valid.mobile = (this.state.mobile.length === 10)
+    this.valid.mobile = (this.state.mobile.length === 10 && !isNaN(this.state.mobile))
   }
 
   // insert error message in form
@@ -124,17 +124,24 @@ class AddWorker extends Component {
     });
   }
 
-  // called after render()
-  // if the state shifted to submission success, redirect to edit worker page
-  componentDidUpdate() {
-    if (this.props.addWorkerSuccess) {
-      this.props.history.push("/admin/editworker")  
-    }
-  }
-
   render() {
+    // const { params } = this.props.match;
+    // const id = parseInt(params.id);
+
+    if (this.props.addWorkerSuccess && this.submit) {
+      return <EditWorker createdUser={this.props.worker.name}/>
+    }
+
     const {name, personId, desc, mobile, startDate, endDate} = this.state;
-    const connectionError = "Error occurred. Please try again.";
+    var errorBackend = "";
+    if (this.props.errorMsg) {
+      if (this.props.errorMsg.personIdentifier) {
+        errorBackend = this.props.errorMsg.personIdentifier;
+      }
+    }
+    else {
+      errorBackend = "Error occurred. Please try again."
+    }
 
     return (
       <div id="add-worker">
@@ -142,7 +149,7 @@ class AddWorker extends Component {
         <form onSubmit={this.handleSubmit} id="add-worker-form">
 
           <div id="error-msg">
-            <div>{(this.submit && !this.props.addWorkerSuccess) ? connectionError : ""}</div>
+            <div>{(this.submit && !this.props.addWorkerSuccess) ? errorBackend : ""}</div>
             <div id="name-error"></div>
             <div id="personId-error"></div>
             <div id="mobile-error"></div>
@@ -216,7 +223,7 @@ class AddWorker extends Component {
             />
           </div>
 
-          <button type="submit" value="Add Worker">Add Worker</button>
+          <button type="submit" value="Save">Save</button>
         </form>
       </div>
     );
@@ -229,9 +236,11 @@ class AddWorker extends Component {
  * @param {*} state 
  */
 const mapStateToProps = state => {
-  const currentState = state[state.length - 1]
+  const currentState = state.workerReducer[state.workerReducer.length - 1]
   return {
-    addWorkerSuccess: currentState.addWorkerSuccess
+    addWorkerSuccess: currentState.addWorkerSuccess,
+    worker: currentState.worker,
+    errorMsg: currentState.errorMsg
   }
 }
 

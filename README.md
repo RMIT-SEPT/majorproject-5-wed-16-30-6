@@ -7,6 +7,7 @@
 * PHAM, Van (s3788106)
 * TJIONG, Julian (s3786866)
 * CHEONG, Hon Khuin Jonathan (s3642842)
+* SONG, Jason (s3744335)
 
 ## Records
 

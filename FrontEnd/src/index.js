@@ -7,10 +7,10 @@ import thunk from 'redux-thunk';
 import logger from 'redux-logger';
 import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
-import workerReducer from './reducers/workerReducer';
+import rootReducer from './reducers/rootReducer';
 
 const store = createStore(
-  workerReducer,
+  rootReducer,
   applyMiddleware(thunk, logger)
 )
 

@@ -24,10 +24,11 @@ public class WorkerSchedule {
     private Long id;
     @NotBlank(message = "Business ID is required")
     private Long businessId;
+
+    @JsonFormat(pattern ="yyyy-MM-dd'T'HH:mm:ssXXX")
+    private Date startDateTime;
+    @JsonFormat(pattern ="yyyy-MM-dd'T'HH:mm:ssXXX")
+    private Date endDateTime;
     @NotBlank
     private Long workerId;
-    @JsonFormat(pattern ="yyyy-MM-dd@HH:mm:ss")
-    private Date startDateTime;
-    @JsonFormat(pattern ="yyyy-MM-dd@HH:mm:ss")
-    private Date endDateTime;
 }
