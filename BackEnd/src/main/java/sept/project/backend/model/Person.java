@@ -11,12 +11,15 @@ import lombok.*;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
+import javax.persistence.Entity;
+import lombok.*;
 
 
 @Entity
 @Getter
 @Setter
 @AllArgsConstructor
+@NoArgsConstructor
 @Builder
 public class Person {
     @Id

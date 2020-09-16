@@ -9,7 +9,7 @@ import sept.project.backend.model.Person;
 @Repository
 public interface PersonRepository extends CrudRepository<Person, Long> {
     @Query("SELECT s FROM Person s WHERE s.personIdentifier = ?1")
-    Person findByPersonIdentifier(@Param("personIdentifier") String personIdentifier);
+    Person findByPersonIdentifier(String personIdentifier);
 
     @Override
     Iterable<Person> findAll();
