@@ -12,5 +12,4 @@ public interface WorkerScheduleRepository extends CrudRepository<WorkerSchedule,
    @Query("SELECT s FROM WorkerSchedule s WHERE s.businessId = ?1 ORDER BY s.startDateTime")
    public Iterable<WorkerSchedule> findByBusinessId(@Param("businessId") Long businessId);
 
-   WorkerSchedule findByBusinessID(Long businessId);
 }
