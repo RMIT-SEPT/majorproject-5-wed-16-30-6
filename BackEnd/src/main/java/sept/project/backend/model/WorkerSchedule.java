@@ -1,9 +1,6 @@
 package sept.project.backend.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
@@ -32,6 +29,7 @@ public class WorkerSchedule {
     private Date endDateTime;
     @NotNull(message= "worker ID cannot be blank")
     private Long workerId;
+
 
     public Long getId() {
         return id;

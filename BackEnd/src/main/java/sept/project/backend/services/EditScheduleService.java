@@ -8,6 +8,8 @@ import sept.project.backend.model.WorkerSchedule;
 import sept.project.backend.repositories.PersonRepository;
 import sept.project.backend.repositories.WorkerScheduleRepository;
 
+import java.util.Optional;
+
 @Service
 public class EditScheduleService {
 
@@ -24,5 +26,15 @@ public class EditScheduleService {
             throw new PersonException("BusinessID '"+workerSchedule.getBusinessId()+"' already exists");
         }
 
+    }
+
+    public void deleteScheduleByIdentifier(Long Id)  {
+        WorkerSchedule schedule = scheduleRepository.findByIdentifier(Id);
+
+        if(schedule == null){
+            throw  new  PersonException("Cannot find Schedule with ID '"+Id+"'. This schedule does not exist");
+        }
+
+        scheduleRepository.delete(schedule);
     }
 }
