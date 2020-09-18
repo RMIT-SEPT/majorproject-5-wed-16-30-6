@@ -37,7 +37,12 @@ public class EditScheduleController {
         return new ResponseEntity<WorkerSchedule>(schedule1, HttpStatus.CREATED);
     }
 
+    @DeleteMapping("/{Id}")
+    public ResponseEntity<?> deleteSchedule(@PathVariable Long Id)  {
+        scheduleService.deleteScheduleByIdentifier(Id);
 
+        return new ResponseEntity<String>("Schedule with ID: '"+Id+"' was deleted", HttpStatus.OK);
+    }
 
 
 }
