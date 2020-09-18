@@ -2,6 +2,9 @@ import React, { Component } from 'react'
 import BusinessOption from './BusinessOption'
 import "./Home.css";
 
+/**
+ * Displayed as the main part of Home page with links to each business
+ */
 class Home extends Component {
   render() {
     return (
