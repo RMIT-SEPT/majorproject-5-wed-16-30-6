@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="AutoImportSettings">
-    <option name="autoReloadType" value="SELECTIVE" />
-  </component>
   <component name="BranchesTreeState">
     <expand>
       <path>
@@ -18,26 +15,13 @@
         <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
       </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:feature" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
     </expand>
-    <select>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:feature" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="BRANCH:origin/feature/US#1_customer" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-    </select>
+    <select />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="15bfae14-8f95-42d4-9327-bf3cb7b6cdd6" name="Default Changelist" comment="Services and stuffs">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sept/project/backend/web/PersonRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sept/project/backend/web/PersonRepositoryTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,19 +39,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$/.." value="79fb162dc77158e573af51ed7aaaa6b96ae497f6" />
-      </map>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
-  </component>
-  <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="mavenHome" value="C:\Users\Jason\.m2\wrapper\dists\apache-maven-3.6.3-bin\1iopthnavndlasol9gbrbg6bf2\apache-maven-3.6.3" />
-      </MavenGeneralSettings>
-    </option>
   </component>
   <component name="ProjectId" id="1g8QuJNdqb9Qso2hYA6YXBTu201" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -86,7 +58,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../majorproject-5-wed-16-30-6/BackEnd" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../SEPT/Project/majorproject-5-wed-16-30-6/BackEnd" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -100,7 +72,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.BackendApplication">
+  <component name="RunManager" selected="JUnit.PersonRepositoryTest">
     <configuration name="BackendApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="sept.project.backend.BackendApplication" />
       <module name="backend" />
@@ -114,44 +86,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="BookingControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BackendApplicationTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="backend" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="sept.project.backend.web.*" />
+          <option name="PATTERN" value="sept.project.backend.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="sept.project.backend.web" />
-      <option name="MAIN_CLASS_NAME" value="sept.project.backend.web.BookingControllerTest" />
+      <option name="PACKAGE_NAME" value="sept.project.backend" />
+      <option name="MAIN_CLASS_NAME" value="sept.project.backend.BackendApplicationTests" />
       <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="BookingControllerTest.getBusinessSchedule" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="backend" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="sept.project.backend.web.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="sept.project.backend.web" />
-      <option name="MAIN_CLASS_NAME" value="sept.project.backend.web.BookingControllerTest" />
-      <option name="METHOD_NAME" value="getBusinessSchedule" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -188,6 +133,25 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="PersonRepositoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <useClassPathOnly />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="sept.project.backend.web.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="ALTERNATIVE_JRE_PATH" value="1.8" />
+      <option name="PACKAGE_NAME" value="sept.project.backend.web" />
+      <option name="MAIN_CLASS_NAME" value="sept.project.backend.web.PersonRepositoryTest" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="PARAMETERS" value="" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="BackendApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="backend" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="sept.project.backend.BackendApplication" />
@@ -197,15 +161,14 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.PersonRepositoryTest" />
         <item itemvalue="Application.BackendApplication" />
+        <item itemvalue="JUnit.BackendApplicationTests" />
         <item itemvalue="JUnit.BookingControllerTest.getBusinessScheduleByBusinessId" />
         <item itemvalue="JUnit.BookingControllerTest.setup" />
-        <item itemvalue="JUnit.BookingControllerTest" />
-        <item itemvalue="JUnit.BookingControllerTest.getBusinessSchedule" />
       </list>
     </recent_temporary>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -227,31 +190,27 @@
       <workItem from="1599284203255" duration="3997000" />
       <workItem from="1599559909575" duration="737000" />
       <workItem from="1599560669440" duration="4024000" />
-      <workItem from="1599625563940" duration="2894000" />
+      <workItem from="1599621366226" duration="91000" />
+      <workItem from="1599622457585" duration="1450000" />
+      <workItem from="1600057999212" duration="3742000" />
+      <workItem from="1600069781653" duration="2150000" />
+      <workItem from="1600143730145" duration="4013000" />
+      <workItem from="1600148557989" duration="16910000" />
+      <workItem from="1600230536869" duration="2543000" />
+      <workItem from="1600243876090" duration="1763000" />
+      <workItem from="1600584715420" duration="111000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
+    <option name="version" value="2" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="FILTERS">
-                <map>
-                  <entry key="branch">
-                    <value>
-                      <list>
-                        <option value="origin/feature/US#1_customer" />
-                      </list>
-                    </value>
-                  </entry>
-                </map>
-              </option>
-            </State>
+            <State />
           </value>
         </entry>
       </map>
@@ -263,10 +222,14 @@
     <option name="LAST_COMMIT_MESSAGE" value="Services and stuffs" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="760" y="274" key="#Project_Structure" timestamp="1599625698345">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state x="464" y="37" key="#BackendApplication" timestamp="1600244370022">
+      <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="760" y="274" key="#Project_Structure/-1440.0.1440.2520/0.0.2560.1400@0.0.2560.1400" timestamp="1599625698345" />
+    <state x="464" y="37" key="#BackendApplication/0.0.1536.834@0.0.1536.834" timestamp="1600244370022" />
+    <state x="370" y="37" key="#PersonRepositoryTest" timestamp="1600584784615">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="370" y="37" key="#PersonRepositoryTest/0.0.1536.834@0.0.1536.834" timestamp="1600584784615" />
     <state x="574" y="101" key="#com.intellij.ide.util.MemberChooser" timestamp="1599565932136">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
@@ -275,80 +238,66 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="499" y="164" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.834@0.0.1536.834" timestamp="1599285698081" />
-    <state x="915" y="289" key="FileChooserDialogImpl" timestamp="1599626537789">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state x="549" y="172" key="FileChooserDialogImpl" timestamp="1600076656411">
+      <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="915" y="289" key="FileChooserDialogImpl/-1440.0.1440.2520/0.0.2560.1400@0.0.2560.1400" timestamp="1599626537789" />
-    <state x="549" y="172" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1599560227890" />
-    <state width="2517" height="401" key="GridCell.Tab.0.bottom" timestamp="1599633375737">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state x="549" y="172" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1600076656411" />
+    <state width="1493" height="272" key="GridCell.Tab.0.bottom" timestamp="1600584825661">
+      <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="2517" height="401" key="GridCell.Tab.0.bottom/-1440.0.1440.2520/0.0.2560.1400@0.0.2560.1400" timestamp="1599633375737" />
-    <state width="1493" height="214" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1599566087640" />
+    <state width="1493" height="272" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1600584825661" />
     <state width="1292" height="146" key="GridCell.Tab.0.bottom/0.23.1440.790@0.23.1440.790" timestamp="1597547869935" />
-    <state width="2517" height="401" key="GridCell.Tab.0.center" timestamp="1599633375736">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state width="1493" height="272" key="GridCell.Tab.0.center" timestamp="1600584825661">
+      <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="2517" height="401" key="GridCell.Tab.0.center/-1440.0.1440.2520/0.0.2560.1400@0.0.2560.1400" timestamp="1599633375736" />
-    <state width="1493" height="214" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1599566087640" />
+    <state width="1493" height="272" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1600584825661" />
     <state width="1292" height="146" key="GridCell.Tab.0.center/0.23.1440.790@0.23.1440.790" timestamp="1597547869934" />
-    <state width="2517" height="401" key="GridCell.Tab.0.left" timestamp="1599633375736">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state width="1493" height="272" key="GridCell.Tab.0.left" timestamp="1600584825661">
+      <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="2517" height="401" key="GridCell.Tab.0.left/-1440.0.1440.2520/0.0.2560.1400@0.0.2560.1400" timestamp="1599633375736" />
-    <state width="1493" height="214" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1599566087640" />
+    <state width="1493" height="272" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1600584825661" />
     <state width="1292" height="146" key="GridCell.Tab.0.left/0.23.1440.790@0.23.1440.790" timestamp="1597547869934" />
-    <state width="2517" height="401" key="GridCell.Tab.0.right" timestamp="1599633375736">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state width="1493" height="272" key="GridCell.Tab.0.right" timestamp="1600584825661">
+      <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="2517" height="401" key="GridCell.Tab.0.right/-1440.0.1440.2520/0.0.2560.1400@0.0.2560.1400" timestamp="1599633375736" />
-    <state width="1493" height="214" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1599566087640" />
+    <state width="1493" height="272" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1600584825661" />
     <state width="1292" height="146" key="GridCell.Tab.0.right/0.23.1440.790@0.23.1440.790" timestamp="1597547869935" />
-    <state width="2517" height="401" key="GridCell.Tab.1.bottom" timestamp="1599633375737">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state width="1493" height="236" key="GridCell.Tab.1.bottom" timestamp="1600243640855">
+      <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="2517" height="401" key="GridCell.Tab.1.bottom/-1440.0.1440.2520/0.0.2560.1400@0.0.2560.1400" timestamp="1599633375737" />
-    <state width="1493" height="214" key="GridCell.Tab.1.bottom/0.0.1536.834@0.0.1536.834" timestamp="1599566087640" />
+    <state width="1493" height="236" key="GridCell.Tab.1.bottom/0.0.1536.834@0.0.1536.834" timestamp="1600243640855" />
     <state width="1319" height="200" key="GridCell.Tab.1.bottom/0.23.1440.790@0.23.1440.790" timestamp="1597540252094" />
-    <state width="2517" height="401" key="GridCell.Tab.1.center" timestamp="1599633375737">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state width="1493" height="236" key="GridCell.Tab.1.center" timestamp="1600243640855">
+      <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="2517" height="401" key="GridCell.Tab.1.center/-1440.0.1440.2520/0.0.2560.1400@0.0.2560.1400" timestamp="1599633375737" />
-    <state width="1493" height="214" key="GridCell.Tab.1.center/0.0.1536.834@0.0.1536.834" timestamp="1599566087640" />
+    <state width="1493" height="236" key="GridCell.Tab.1.center/0.0.1536.834@0.0.1536.834" timestamp="1600243640855" />
     <state width="1319" height="200" key="GridCell.Tab.1.center/0.23.1440.790@0.23.1440.790" timestamp="1597540252093" />
-    <state width="2517" height="401" key="GridCell.Tab.1.left" timestamp="1599633375737">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state width="1493" height="236" key="GridCell.Tab.1.left" timestamp="1600243640854">
+      <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="2517" height="401" key="GridCell.Tab.1.left/-1440.0.1440.2520/0.0.2560.1400@0.0.2560.1400" timestamp="1599633375737" />
-    <state width="1493" height="214" key="GridCell.Tab.1.left/0.0.1536.834@0.0.1536.834" timestamp="1599566087640" />
+    <state width="1493" height="236" key="GridCell.Tab.1.left/0.0.1536.834@0.0.1536.834" timestamp="1600243640854" />
     <state width="1319" height="200" key="GridCell.Tab.1.left/0.23.1440.790@0.23.1440.790" timestamp="1597540252093" />
-    <state width="2517" height="401" key="GridCell.Tab.1.right" timestamp="1599633375737">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state width="1493" height="236" key="GridCell.Tab.1.right" timestamp="1600243640855">
+      <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="2517" height="401" key="GridCell.Tab.1.right/-1440.0.1440.2520/0.0.2560.1400@0.0.2560.1400" timestamp="1599633375737" />
-    <state width="1493" height="214" key="GridCell.Tab.1.right/0.0.1536.834@0.0.1536.834" timestamp="1599566087640" />
+    <state width="1493" height="236" key="GridCell.Tab.1.right/0.0.1536.834@0.0.1536.834" timestamp="1600243640855" />
     <state width="1319" height="200" key="GridCell.Tab.1.right/0.23.1440.790@0.23.1440.790" timestamp="1597540252094" />
     <state x="116" y="136" key="Maven.ArtifactSearchDialog" timestamp="1597542065984">
       <screen x="0" y="23" width="1440" height="790" />
     </state>
     <state x="116" y="136" key="Maven.ArtifactSearchDialog/0.23.1440.790@0.23.1440.790" timestamp="1597542065984" />
-    <state x="526" y="106" key="SettingsEditor" timestamp="1599626595155">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state x="316" y="0" key="SettingsEditor" timestamp="1600089328576">
+      <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="526" y="106" key="SettingsEditor/-1440.0.1440.2520/0.0.2560.1400@0.0.2560.1400" timestamp="1599626595155" />
+    <state x="316" y="0" key="SettingsEditor/0.0.1536.834@0.0.1536.834" timestamp="1600089328576" />
     <state x="296" y="83" key="SettingsEditor/0.23.1440.790@0.23.1440.790" timestamp="1597545469055" />
     <state x="498" y="156" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1597535196330">
       <screen x="0" y="23" width="1440" height="790" />
     </state>
     <state x="498" y="156" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.23.1440.790@0.23.1440.790" timestamp="1597535196330" />
-    <state x="828" y="412" key="git4idea.branch.GitSmartOperationDialog" timestamp="1599633708232">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state x="209" y="78" key="new project wizard" timestamp="1599624641078">
+      <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="828" y="412" key="git4idea.branch.GitSmartOperationDialog/-1440.0.1440.2520/0.0.2560.1400@0.0.2560.1400" timestamp="1599633708232" />
-    <state x="348" y="131" key="new project wizard" timestamp="1599633219036">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state x="348" y="131" key="new project wizard/-1440.0.1440.2520/0.0.2560.1400@0.0.2560.1400" timestamp="1599633219036" />
-    <state x="209" y="78" key="new project wizard/0.0.1536.834@0.0.1536.834" timestamp="1599029292925" />
+    <state x="209" y="78" key="new project wizard/0.0.1536.834@0.0.1536.834" timestamp="1599624641078" />
   </component>
 </project>

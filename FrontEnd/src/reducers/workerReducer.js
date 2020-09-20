@@ -33,6 +33,7 @@ const workerReducer = (state = [initalState], action) => {
         ...state,
         {
           isFetching: false,
+          errorMsg: action.errorMsg,
           error: action.error,
           addWorkerSuccess: false
         }

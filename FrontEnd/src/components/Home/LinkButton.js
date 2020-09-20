@@ -12,7 +12,7 @@ export class LinkButton extends Component {
       onClick={() => this.props.history.push(this.props.link)}
       className={this.props.className}
       >
-        {this.props.label}
+        <span>{this.props.label}</span>
       </div>
     )
   }

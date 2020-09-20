@@ -9,6 +9,9 @@ import SignUp from './components/Home/SignUp';
 import About from './components/Home/About';
 import ContactUs from './components/Home/ContactUs';
 import Header from './components/Home/Header';
+import AdminDashboard from './components/Admin/AdminDashboard';
+import AddWorker from './components/Admin/AddWorker';
+import EditWorker from './components/Admin/EditWorker';
 
 function App() {
   return (
@@ -22,7 +25,10 @@ function App() {
         <Route path="/contactus" component={ContactUs} />
         <Route path="/login" component={Login} />
         <Route path="/signup" component={SignUp} />
+        <Route path="/admin/:id" component={AdminDashboard} />
         <Route path="/business/schedule/:id" component={BusinessSchedule} />
+        <Route path="/admin/:id/addworker" component={AddWorker} />
+        <Route path="/admin/:id/editworker" component={EditWorker} />
       </div>
      </BrowserRouter>
     </div>
