@@ -21,6 +21,7 @@
   <component name="ChangeListManager">
     <list default="true" id="15bfae14-8f95-42d4-9327-bf3cb7b6cdd6" name="Default Changelist" comment="Services and stuffs">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sept/project/backend/web/PersonRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sept/project/backend/web/PersonRepositoryTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,7 +72,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.BackendApplication">
+  <component name="RunManager" selected="JUnit.PersonRepositoryTest">
     <configuration name="BackendApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="sept.project.backend.BackendApplication" />
       <module name="backend" />
@@ -133,16 +134,20 @@
       </method>
     </configuration>
     <configuration name="PersonRepositoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="backend" />
+      <useClassPathOnly />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="sept.project.backend.web.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="ALTERNATIVE_JRE_PATH" value="1.8" />
       <option name="PACKAGE_NAME" value="sept.project.backend.web" />
       <option name="MAIN_CLASS_NAME" value="sept.project.backend.web.PersonRepositoryTest" />
+      <option name="METHOD_NAME" value="" />
       <option name="TEST_OBJECT" value="class" />
+      <option name="PARAMETERS" value="" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -156,8 +161,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.BackendApplication" />
         <item itemvalue="JUnit.PersonRepositoryTest" />
+        <item itemvalue="Application.BackendApplication" />
         <item itemvalue="JUnit.BackendApplicationTests" />
         <item itemvalue="JUnit.BookingControllerTest.getBusinessScheduleByBusinessId" />
         <item itemvalue="JUnit.BookingControllerTest.setup" />
@@ -193,6 +198,7 @@
       <workItem from="1600148557989" duration="16910000" />
       <workItem from="1600230536869" duration="2543000" />
       <workItem from="1600243876090" duration="1763000" />
+      <workItem from="1600584715420" duration="111000" />
     </task>
     <servers />
   </component>
@@ -220,6 +226,10 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="464" y="37" key="#BackendApplication/0.0.1536.834@0.0.1536.834" timestamp="1600244370022" />
+    <state x="370" y="37" key="#PersonRepositoryTest" timestamp="1600584784615">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="370" y="37" key="#PersonRepositoryTest/0.0.1536.834@0.0.1536.834" timestamp="1600584784615" />
     <state x="574" y="101" key="#com.intellij.ide.util.MemberChooser" timestamp="1599565932136">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
@@ -232,25 +242,25 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="549" y="172" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1600076656411" />
-    <state width="1493" height="236" key="GridCell.Tab.0.bottom" timestamp="1600243640854">
+    <state width="1493" height="272" key="GridCell.Tab.0.bottom" timestamp="1600584825661">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="236" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1600243640854" />
+    <state width="1493" height="272" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1600584825661" />
     <state width="1292" height="146" key="GridCell.Tab.0.bottom/0.23.1440.790@0.23.1440.790" timestamp="1597547869935" />
-    <state width="1493" height="236" key="GridCell.Tab.0.center" timestamp="1600243640854">
+    <state width="1493" height="272" key="GridCell.Tab.0.center" timestamp="1600584825661">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="236" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1600243640854" />
+    <state width="1493" height="272" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1600584825661" />
     <state width="1292" height="146" key="GridCell.Tab.0.center/0.23.1440.790@0.23.1440.790" timestamp="1597547869934" />
-    <state width="1493" height="236" key="GridCell.Tab.0.left" timestamp="1600243640854">
+    <state width="1493" height="272" key="GridCell.Tab.0.left" timestamp="1600584825661">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="236" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1600243640854" />
+    <state width="1493" height="272" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1600584825661" />
     <state width="1292" height="146" key="GridCell.Tab.0.left/0.23.1440.790@0.23.1440.790" timestamp="1597547869934" />
-    <state width="1493" height="236" key="GridCell.Tab.0.right" timestamp="1600243640854">
+    <state width="1493" height="272" key="GridCell.Tab.0.right" timestamp="1600584825661">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="236" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1600243640854" />
+    <state width="1493" height="272" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1600584825661" />
     <state width="1292" height="146" key="GridCell.Tab.0.right/0.23.1440.790@0.23.1440.790" timestamp="1597547869935" />
     <state width="1493" height="236" key="GridCell.Tab.1.bottom" timestamp="1600243640855">
       <screen x="0" y="0" width="1536" height="834" />

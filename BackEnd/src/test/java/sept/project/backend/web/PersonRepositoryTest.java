@@ -69,30 +69,6 @@ public class PersonRepositoryTest {
     }
 
     /*
-    Test to check created date
-     */
-    @Test
-    @Rollback(false)
-    public void TestCreateDate() throws Exception {
-        Person person3 = new Person();
-        person3.setRole("a");
-        person3.setMobileNum("0402844283");
-        person3.setDesc("New Admin");
-        person3.setPersonIdentifier("CCCC");
-        person3.setName("Jo");
-
-        personRepository.save(person3);
-
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-        Date startDate1 = sdf.parse("2020-09-16");
-
-        Person newGuy3 = personRepository.findByPersonIdentifier("CCCC");
-
-        assertEquals(startDate1, newGuy3.getCreated_At(),
-                "Wrong date!!");
-    }
-
-    /*
     Test to check the findAll method in repository
      */
     @Test
