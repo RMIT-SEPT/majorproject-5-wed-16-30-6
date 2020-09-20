@@ -1,7 +1,11 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import { withRouter } from 'react-router';
+import PropTypes from 'prop-types';
 
-class LinkButton extends Component {
+/**
+ * create a clickable lik to the given url (link) with given label and className
+ */
+export class LinkButton extends Component {
   render() {
     return (
       <div 
@@ -12,6 +16,11 @@ class LinkButton extends Component {
       </div>
     )
   }
+}
+
+LinkButton.propType = {
+  className: PropTypes.string.isRequired,
+  label: PropTypes.string.isRequired
 }
 
 export default withRouter(LinkButton);

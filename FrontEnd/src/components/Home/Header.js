@@ -3,7 +3,10 @@ import "bootstrap/dist/css/bootstrap.min.css"
 import "./Header.css"
 import LinkButton from './LinkButton';
 
-class Header extends Component {
+/**
+ * Header with navigation links
+ */
+export class Header extends Component {
   render() {
     return (
       <div className="header">

@@ -1,7 +1,11 @@
-import React, { Component } from 'react'
-import { withRouter } from 'react-router';
+import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
-class BusinessOption extends Component {
+/**
+ * Displayed as links to each businesses schedule on Home page
+ */
+export class BusinessOption extends Component {
   render() {
     let id = this.props.businessId;
     let link = "/business/schedule/" + id;
@@ -11,11 +15,15 @@ class BusinessOption extends Component {
       className="business-option"
       onClick={() => this.props.history.push(link)}
       >
-        <div>Business Name</div>
-        <div>Business Description</div>
+        <div className="business-name">Business Name</div>
+        <div className="business-desc">Business Description</div>
       </div>
     )
   }
+}
+
+BusinessOption.propType = {
+  businessId: PropTypes.number.isRequired
 }
 
 export default withRouter(BusinessOption);
