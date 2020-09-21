@@ -8,5 +8,3 @@
 * All meetings
 ## Test Reports
 * All test reports
-
-# Quick Start
