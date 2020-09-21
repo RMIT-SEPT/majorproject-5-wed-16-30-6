@@ -2,6 +2,9 @@
 ## ChatLogs
 * Chatlogs prior to meetings being held on teams - were previously held over Disccord
 
+## Definition of Done
+* All our DoDs are attached to the user stories on Trello. Please refer to them for our DoD per user story
+
 ## Milestone1_US_AccTests
 * All user stories and Acceptance Tests
 ## Sprint Artifacts
