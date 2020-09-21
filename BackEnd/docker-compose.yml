@@ -1,0 +1,30 @@
+version: "3"
+services:
+  frontend:
+    image: frontend_frontend-prod
+    ports:
+      - "1337:80"
+    networks:
+      - backend-mysql
+    depends_on:
+      - backend
+
+  backend:
+    image: backend
+    ports:
+      - "8080:8080"
+    networks:
+      - backend-mysql
+    depends_on:
+      - mysqldb
+
+  mysqldb:
+    image: mysql:8
+    networks:
+      - backend-mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=bootdb
+
+networks:
+  backend-mysql:
