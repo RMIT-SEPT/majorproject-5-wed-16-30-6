@@ -13,7 +13,7 @@ class Home extends Component {
 
     for (var i = 1; i <= businessesCount; i++) {
       businessOptions.push(
-        <div><BusinessOption businessId={i}/></div>
+        <div key={i}><BusinessOption businessId={i}/></div>
       )
     }
 

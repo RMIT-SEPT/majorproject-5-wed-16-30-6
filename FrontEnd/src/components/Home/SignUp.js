@@ -1,16 +1,21 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-import Home from './Home';
+import { Redirect } from 'react-router-dom';
 
 class SignUp extends Component {
   constructor() {
     super();
     this.state = {
-      name: "",
-      username: "",
-      password: "",
-      address: "",
-      mobile: ""
+      formData: {
+        name: "",
+        username: "",
+        password: "",
+        address: "",
+        mobile: "",
+      },
+     
+      responseSuccess: "",
+      responseError: ""
     }
 
     this.valid = {
@@ -21,24 +26,22 @@ class SignUp extends Component {
       mobile: false,
     }
 
-    this.responseSuccess = "";
-    this.responseError = "";
     this.submit = false;
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleChange(event) {
-    this.setState({
-      [event.target.className]: event.target.value
-    });
+    var newState = this.state;
+    newState.formData[event.target.className] = event.target.value;
+    this.setState(newState);
   }
 
   // set invalid if the input is empty
   setEmptyFieldInvalid() {
-    Object.keys(this.state).forEach(key => {
+    Object.keys(this.state.formData).forEach(key => {
       // remove space before & after the input string
-      if (this.state[key].trim()) {
+      if (this.state.formData[key].trim()) {
         this.valid[key] = true;
       }
       else {
@@ -49,12 +52,13 @@ class SignUp extends Component {
 
   // set valid true if person id is 4 or 5 characters
   setValidUsername() {
-    this.valid.username = (this.state.username.length >= 4 && this.state.username.length <= 5);
+    console.log(this.state.formData)
+    this.valid.username = (this.state.formData["username"].length >= 4 && this.state.formData["username"].length <= 5);
   }
 
   // set valid true if mobile number is 10 characteres
   setValidMobile() {
-    this.valid.mobile = (this.state.mobile.length === 10 && !isNaN(this.state.mobile))
+    this.valid.mobile = (this.state.formData["mobile"].length === 10 && !isNaN(this.state.formData["mobile"]))
   }
 
   // insert error message in form
@@ -103,9 +107,10 @@ class SignUp extends Component {
    */
   sendData() {
     
+    // TODO: change this when api is updated
     const data = {
       "name": "test",
-      "personIdentifier": "h3rgc",
+      "personIdentifier": "ssd0",
       "desc": "desc",
       "mobileNum": "0000000000",
       "start_date": "2020-09-08",
@@ -150,46 +155,50 @@ class SignUp extends Component {
     this.sendData()
       .then(result => {
         console.log(result);
-        this.responseSuccess = result;
+        var newState = this.state;
+        newState.responseSuccess = result;
+        this.setState(newState);
 
-        // redirect to home
-        this.props.history.push("/home");
-
-      }).catch(error => {
+      })
+      .catch(error => {
         console.log(error);
-        this.responseError = error;
+        var newState = this.state;
+        newState.responseError = error;
+        this.setState(newState);
       })
 
     this.submit = true;
-    this.setState({
+
+    var newState = this.state;
+    newState.formData = {
       name: "",
       username: "",
       password: "",
       address: "",
       mobile: ""
-    });
+    };
+    this.setState(newState);
   }
 
   render() {
-    // const { params } = this.props.match;
-    // const id = parseInt(params.id);
-
+   
+    // redirect to home if successfully submitted
+    if (this.submit && this.state.responseSuccess) {
+      return (<Redirect to='/home' />)
+    }
     
+    const {name, username, password, address, mobile} = this.state.formData;
 
-    const {name, username, password, address, mobile} = this.state;
-
-    
-    
     var errorBackend = "";
-    // if (this.props.errorMsg) {
-    //   if (this.props.errorMsg.personIdentifier) {
-    //     errorBackend = this.props.errorMsg.personIdentifier;
-    //   }
-    // }
+    if (this.state.responseError) {
+      if (this.state.responseError.username) {
+        errorBackend = this.state.responseError.username;
+      }
+    }
 
-    // else {
-    //   errorBackend = "Error occurred. Please try again."
-    // }
+    else {
+      errorBackend = "Error occurred. Please try again."
+    }
 
     return (
       <div id="add-worker">
@@ -197,7 +206,7 @@ class SignUp extends Component {
         <form onSubmit={this.handleSubmit} id="add-worker-form">
 
           <div id="error-msg">
-            <div>{(this.submit && !this.props.addWorkerSuccess) ? errorBackend : ""}</div>
+            <div>{(this.submit && this.state.responseError) ? errorBackend : ""}</div>
             <div id="name-error"></div>
             <div id="username-error"></div>
             <div id="password-error"></div>
