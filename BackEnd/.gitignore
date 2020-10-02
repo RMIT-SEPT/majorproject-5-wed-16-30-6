@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 HELP.md
 target/
 !.mvn/wrapper/maven-wrapper.jar
@@ -31,3 +32,12 @@ build/
 
 ### VS Code ###
 .vscode/
+=======
+creds.sh
+creds2.sh
+.terraform*
+terraform.tfstate
+terraform.tfstate.backup
+tmp/
+/.idea/
+>>>>>>> f9754c2468769246cad7ddc990db825ca26e3b20
