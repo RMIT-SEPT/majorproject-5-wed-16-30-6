@@ -52,7 +52,6 @@ class SignUp extends Component {
 
   // set valid true if person id is 4 or 5 characters
   setValidUsername() {
-    console.log(this.state.formData)
     this.valid.username = (this.state.formData["username"].length >= 4 && this.state.formData["username"].length <= 5);
   }
 
@@ -106,26 +105,14 @@ class SignUp extends Component {
    * send input data to the backend API
    */
   sendData() {
-    
-    // TODO: change this when api is updated
     const data = {
-      "name": "test",
-      "personIdentifier": "ssd0",
-      "desc": "desc",
-      "mobileNum": "0000000000",
-      "start_date": "2020-09-08",
-      "end_date": "2020-09-09",
-      "role": "w"
+      "name": this.state.formData.name,
+      "username": this.state.formData.username,
+      "password": this.state.formData.password,
+      "address": this.state.formData.address,
+      "mobileNum": this.state.formData.mobile,
+      "role": "c"
     }
-
-    // const data = {
-    //   "name": this.state.name,
-    //   "username": this.state.username,
-    //   "password": this.state.password,
-    //   "address": this.state.address,
-    //   "mobileNum": this.state.mobile,
-    //   "role": "c"
-    // }
 
     return new Promise((resolve, reject) => {
       const url = 'http://localhost:8080/api/person';
@@ -154,16 +141,18 @@ class SignUp extends Component {
     // send state data to backend
     this.sendData()
       .then(result => {
-        console.log(result);
+        // console.log(result);
         var newState = this.state;
         newState.responseSuccess = result;
         this.setState(newState);
 
       })
       .catch(error => {
-        console.log(error);
+        // console.log(error);
         var newState = this.state;
-        newState.responseError = error;
+        newState.responseError = error.response.data;
+
+        // console.log(error.response.data);
         this.setState(newState);
       })
 
@@ -190,15 +179,14 @@ class SignUp extends Component {
     const {name, username, password, address, mobile} = this.state.formData;
 
     var errorBackend = "";
-    if (this.state.responseError) {
-      if (this.state.responseError.username) {
-        errorBackend = this.state.responseError.username;
-      }
+    if (this.state.responseError && this.state.responseError.personIdentifier) {
+        errorBackend = this.state.responseError.personIdentifier;
     }
-
     else {
       errorBackend = "Error occurred. Please try again."
     }
+
+    // console.log(this.state.responseError);
 
     return (
       <div id="add-worker">
