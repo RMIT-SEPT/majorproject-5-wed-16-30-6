@@ -134,6 +134,11 @@ class bookingForm extends Component {
                     <span style={{color:"red"}}>{this.state.errors["phoneNumber"]}</span>
                     <br />
                     <input type="submit" value="Book Appointment" />
+                    <input 
+                        type="button" 
+                        value="Cancel" 
+                        onClick={() => this.props.history.push("business/schedule/" + this.props.location.state.businessId)}
+                    />
             </form>
             </div>
         )
