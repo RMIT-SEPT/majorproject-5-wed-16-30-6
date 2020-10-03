@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
-import axios from 'axios'
-import { withRouter } from 'react-router-dom';
+import { connect } from "react-redux";
+import { Redirect } from 'react-router-dom';
 import Layout from './Layout';
+import { addCustomer } from '../../actions/customerActions';
 
 class SignUp extends Component {
   constructor() {
@@ -103,32 +104,6 @@ class SignUp extends Component {
   }
 
   /**
-   * send input data to the backend API
-   */
-  sendData() {
-    const data = {
-      "name": this.state.formData.name,
-      "username": this.state.formData.username,
-      "password": this.state.formData.password,
-      "address": this.state.formData.address,
-      "mobileNum": this.state.formData.mobile,
-      "role": "c"
-    }
-
-    return new Promise((resolve, reject) => {
-      const url = 'http://localhost:8080/api/person';
-
-      axios.post(url, data)
-      .then(res => {
-        return resolve(res.data);
-      })
-      .catch(err => {
-        return reject(err);
-      })
-    })
-  }
-
-  /**
    * called after submit button is clicked
    * @param {*} event 
    */
@@ -140,22 +115,7 @@ class SignUp extends Component {
     if (!this.validateForm()) { return }
 
     // send state data to backend
-    this.sendData()
-      .then(result => {
-        // console.log(result);
-        var newState = this.state;
-        newState.responseSuccess = result;
-        this.setState(newState);
-
-      })
-      .catch(error => {
-        // console.log(error);
-        var newState = this.state;
-        newState.responseError = error.response.data;
-
-        // console.log(error.response.data);
-        this.setState(newState);
-      })
+    this.props.dispatch(addCustomer(this.state.formData));
 
     this.submit = true;
 
@@ -171,23 +131,25 @@ class SignUp extends Component {
   }
 
   render() {
-   
+
     // redirect to home if successfully submitted
-    if (this.submit && this.state.responseSuccess) {
-      this.props.history.push({
-        pathname: "/home",
-        state: {
-          id: this.state.responseSuccess.id,
-          username: this.state.responseSuccess.username,
-        }
-      });
+    if (this.submit && this.props.login) {
+      // const username = this.state.responseSuccess.username;
+      // const userId = this.state.responseSuccess.userId;
+
+      // update user login info
+      // this.props.dispatch(logIn(username, userId));
+
+      return <Redirect to="/home" />;
     }
     
     const {name, username, password, address, mobile} = this.state.formData;
 
     var errorBackend = "";
-    if (this.state.responseError && this.state.responseError.personIdentifier) {
-        errorBackend = this.state.responseError.personIdentifier;
+    if (this.props.errorMsg) {
+      if (this.props.errorMsg.personIdentifier) {
+        errorBackend = this.props.errorMsg.username;
+      }
     }
     else {
       errorBackend = "Error occurred. Please try again."
@@ -272,4 +234,14 @@ class SignUp extends Component {
     );
   }
 };
-export default withRouter(SignUp);
+
+const mapStateToProps = state => {
+  const currentState = state.customerReducer[state.customerReducer.length - 1]
+  return {
+    login: currentState.login,
+    customer: currentState.customer,
+    errorMsg: currentState.errorMsg
+  }
+}
+
+export default connect(mapStateToProps, null)(SignUp)
