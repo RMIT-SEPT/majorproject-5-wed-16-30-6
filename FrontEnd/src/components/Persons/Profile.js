@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import Layout from './Layout'
+import { Layout } from '../Home/Layout';
 
-class ContactUs extends Component {
+class Profile extends Component {
   render() {
     var id = "";
     var username = "";
@@ -14,10 +14,12 @@ class ContactUs extends Component {
     return (
       <Layout id={id} username={username}>
         <div>
-          Contact Us
+          Profile Page
         </div>
       </Layout>
+      
     )
   }
 }
-export default ContactUs;
+
+export default Profile;

@@ -1,12 +1,13 @@
 import React, { Component } from 'react'
 import BusinessOption from './BusinessOption'
 import "./Home.css";
+import Layout from './Layout';
 
 /**
  * Displayed as the main part of Home page with links to each business
  */
 class Home extends Component {
-
+  
   getBusinessOptions() {
     const businessesCount = 12;
     var businessOptions = []
@@ -21,10 +22,23 @@ class Home extends Component {
   }
 
   render() {
+    var {username, id} = "";
+    
+    if (this.props.location.state) {
+      username = this.props.location.state.username;
+      id = this.props.location.state.id;
+    }
+    
     return (
-      <div className="home">
-        {this.getBusinessOptions()}
-      </div>
+      <Layout id={id} username={username}>
+        <div className="greet-user-box">
+          <div>Hello {username}!</div>
+        </div>
+
+        <div className="home">
+          {this.getBusinessOptions()}
+        </div>
+      </Layout>
     )
   }
 }

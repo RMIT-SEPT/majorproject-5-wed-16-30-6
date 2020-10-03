@@ -6,6 +6,17 @@
     flex-wrap: wrap;
 }
 
+.greet-user-box {
+    margin: 0 auto;
+    text-align: center;
+    height: 60px;
+    background: #ffe6cc;
+}
+
+.greet-user-box div {
+    line-height: 60px;
+}
+
 .business-option {
     background: #e0e0eb;
     margin: 20px;
