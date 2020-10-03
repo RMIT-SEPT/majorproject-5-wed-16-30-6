@@ -29,6 +29,7 @@ class Day extends Component {
           startTime={startTimeHour}
           endTime={endTimeHour}
           date={dateStr}
+          businessId={timeslot.businessId}
           isAvailable={true}
         />;
     })
@@ -52,7 +53,6 @@ class Day extends Component {
         <ScheduleCell 
           key={slotTime} 
           startTime={slotTime} 
-          date={""}
           isAvailable={false} 
         />
       }

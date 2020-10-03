@@ -85,7 +85,8 @@ class bookingForm extends Component {
 
     getAppointmentMsg() {
         return (
-            "You are making appointment at " 
+            "You are making appointment for business " 
+            + this.props.location.state.businessId + " at " 
             + this.props.location.state.startTime + " to "
             + this.props.location.state.endTime + " on " 
             + this.props.location.state.date + "."
