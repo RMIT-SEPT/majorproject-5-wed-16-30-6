@@ -20,35 +20,17 @@ class Day extends Component {
       const startTimeHour = parseInt(startDateTimeStr.slice(0, 2));
       const endTimeHour = parseInt(endDateTimeStr.slice(0, 2));
 
-      cellsDict[startTimeHour] = <ScheduleCell
-                                  key={startTimeHour}
-                                  startTime={startTimeHour}
-                                  endTime={endTimeHour}
-                                  isAvailable={true}
-                                />;
+      // date of the slot
+      const dateStr = new Date(timeslot.startDateTime).toLocaleDateString();
 
-      // e.g., if the timeslot is from 9:00 - 11:00, 
-      //two time slots are created (9 - 10, 10 - 11)
-
-      // for (let slotTime = startTimeHour; slotTime < endTimeHour; slotTime++) {
-      //   // array of ScheduleCells for the slot time
-      //   var cells = [];
-      //   if (cellsDict[slotTime]) {
-      //     cells = cellsDict[slotTime];
-      //   }
-
-      //   // add ScheduleCell to the slot time
-      //   cells.push(
-      //     <ScheduleCell
-      //       key={slotTime}
-      //       startTime={slotTime}
-      //       endTime={slotTime + 1}
-      //       isAvailable={true}
-      //     />
-      //   )
-
-      //   cellsDict[slotTime] = cells;
-      // }
+      cellsDict[startTimeHour] = 
+        <ScheduleCell
+          key={startTimeHour}
+          startTime={startTimeHour}
+          endTime={endTimeHour}
+          date={dateStr}
+          isAvailable={true}
+        />;
     })
   }
 
@@ -66,7 +48,13 @@ class Day extends Component {
     // assign unavailable cells
     for (var slotTime = firstSlotTime; slotTime <= lastSlotTime; slotTime++) {
       if (!cellsDict[slotTime]) {
-        cellsDict[slotTime] = <ScheduleCell key={slotTime} startTime={slotTime} isAvailable={false} />
+        cellsDict[slotTime] = 
+        <ScheduleCell 
+          key={slotTime} 
+          startTime={slotTime} 
+          date={""}
+          isAvailable={false} 
+        />
       }
     }
   }
@@ -87,14 +75,6 @@ class Day extends Component {
       cells.push(cellsDict[key])
     }
 
-    // for (let key in cellsDict){
-    //   if (cellsDict[key] instanceof Array) {
-    //     cells.push(cellsDict[key][0])
-    //   }
-    //   else {
-    //     cells.push(cellsDict[key])
-    //   }
-    // }
     return cells;
   }
 
