@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-import { Redirect } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
+import Layout from './Layout';
 
 class SignUp extends Component {
   constructor() {
@@ -173,7 +174,13 @@ class SignUp extends Component {
    
     // redirect to home if successfully submitted
     if (this.submit && this.state.responseSuccess) {
-      return (<Redirect to='/home' />)
+      this.props.history.push({
+        pathname: "/home",
+        state: {
+          id: this.state.responseSuccess.id,
+          username: this.state.responseSuccess.username,
+        }
+      });
     }
     
     const {name, username, password, address, mobile} = this.state.formData;
@@ -189,78 +196,80 @@ class SignUp extends Component {
     // console.log(this.state.responseError);
 
     return (
-      <div id="add-worker">
-        <h2>Sign Up</h2>
-        <form onSubmit={this.handleSubmit} id="add-worker-form">
+      <Layout>
+        <div id="add-worker">
+          <h2>Sign Up</h2>
+          <form onSubmit={this.handleSubmit} id="add-worker-form">
 
-          <div id="error-msg">
-            <div>{(this.submit && this.state.responseError) ? errorBackend : ""}</div>
-            <div id="name-error"></div>
-            <div id="username-error"></div>
-            <div id="password-error"></div>
-            <div id="address-error"></div>
-            <div id="mobile-error"></div>
-          </div>
-          
-          <div className="inputWrapper">
-            <label htmlFor="name">Name: </label>
-            <div className="input-msg">*Required</div>
-            <input
-              type="text"
-              value={name}
-              className="name"
-              onChange={this.handleChange}
-            />
-          </div>
+            <div id="error-msg">
+              <div>{(this.submit && this.state.responseError) ? errorBackend : ""}</div>
+              <div id="name-error"></div>
+              <div id="username-error"></div>
+              <div id="password-error"></div>
+              <div id="address-error"></div>
+              <div id="mobile-error"></div>
+            </div>
 
-          <div className="inputWrapper">
-            <label htmlFor="username">Username: </label>
-            <div className="input-msg">*Required - Please enter 4 to 5 characters</div>
-            <input
-              type="text"
-              value={username}
-              className="username"
-              onChange={this.handleChange}
-            />
-          </div>
+            <div className="inputWrapper">
+              <label htmlFor="name">Name: </label>
+              <div className="input-msg">*Required</div>
+              <input
+                type="text"
+                value={name}
+                className="name"
+                onChange={this.handleChange}
+              />
+            </div>
 
-          <div className="inputWrapper">
-            <label htmlFor="password">Password: </label>
-            <div className="input-msg">*Required</div>
-            <input
-              type="password"
-              value={password}
-              className="password"
-              onChange={this.handleChange}
-            />
-          </div>
+            <div className="inputWrapper">
+              <label htmlFor="username">Username: </label>
+              <div className="input-msg">*Required - Please enter 4 to 5 characters</div>
+              <input
+                type="text"
+                value={username}
+                className="username"
+                onChange={this.handleChange}
+              />
+            </div>
 
-          <div className="inputWrapper">
-            <label htmlFor="address">Address: </label>
-            <div className="input-msg">*Required</div>
-            <input
-              type="text"
-              value={address}
-              className="address"
-              onChange={this.handleChange}
-            />
-          </div>
+            <div className="inputWrapper">
+              <label htmlFor="password">Password: </label>
+              <div className="input-msg">*Required</div>
+              <input
+                type="password"
+                value={password}
+                className="password"
+                onChange={this.handleChange}
+              />
+            </div>
 
-          <div className="inputWrapper">
-            <label htmlFor="mobile">Mobile Number: </label>
-            <div className="input-msg">*Required - Please enter 10 characters</div>
-            <input
-              type="text"
-              value={mobile}
-              className="mobile"
-              onChange={this.handleChange}
-            />
-          </div>
+            <div className="inputWrapper">
+              <label htmlFor="address">Address: </label>
+              <div className="input-msg">*Required</div>
+              <input
+                type="text"
+                value={address}
+                className="address"
+                onChange={this.handleChange}
+              />
+            </div>
 
-          <button type="submit" value="Save">Save</button>
-        </form>
-      </div>
+            <div className="inputWrapper">
+              <label htmlFor="mobile">Mobile Number: </label>
+              <div className="input-msg">*Required - Please enter 10 characters</div>
+              <input
+                type="text"
+                value={mobile}
+                className="mobile"
+                onChange={this.handleChange}
+              />
+            </div>
+
+            <button type="submit" value="Save">Save</button>
+          </form>
+        </div>
+      </Layout>
     );
   }
 };
-export default SignUp;
+export default withRouter(SignUp);
