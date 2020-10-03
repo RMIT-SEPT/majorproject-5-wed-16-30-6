@@ -19,8 +19,8 @@ class Schedule extends Component {
   }
 
   /**
-   * get Day components for each day in the 'schedule' (i.e., the next seven days) from the API
-   * and change the availability
+   * - get Day components for each day in the 'schedule' (i.e., the next seven days) from the API
+   * - change the availability (i.e., whether business is available the next 7 days)
    */
   getDaysAndAvailability() {
     let days = []
