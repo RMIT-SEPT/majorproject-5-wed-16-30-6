@@ -83,11 +83,22 @@ class bookingForm extends Component {
         }
     }
 
+    getAppointmentMsg() {
+        return (
+            "You are making appointment at " 
+            + this.props.location.state.startTime + " to "
+            + this.props.location.state.endTime + " on " 
+            + this.props.location.state.date + "."
+        );
+    }
+
     render(){
         return(
             <div class="container">
             <form onSubmit={this.handleSubmit.bind(this)}>
                 <h1>Booking Form</h1>
+                <h5>{this.getAppointmentMsg()}</h5>
+
                     <label>Enter your Name:
                     <input
                         type="text"

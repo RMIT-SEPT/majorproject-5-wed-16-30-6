@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { withRouter } from 'react-router';
 
 class ScheduleCell extends Component {
+
   /**
    * get hour label for cells
    */
@@ -14,7 +15,16 @@ class ScheduleCell extends Component {
   }
 
   handleClick = () => {
-    this.props.history.push("/bookingForm");
+    // this.props.history.push("/bookingForm");
+
+    this.props.history.push({
+      pathname: "/bookingForm",
+      state: {
+        startTime: this.getHourLabel(this.props.startTime),
+        endTime: this.getHourLabel(this.props.endTime),
+        date: this.props.date,
+      }
+    });
   }
 
   render() {
