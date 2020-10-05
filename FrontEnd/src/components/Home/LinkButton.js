@@ -1,17 +1,36 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import { withRouter } from 'react-router';
+import PropTypes from 'prop-types';
 
-class LinkButton extends Component {
+/**
+ * create a clickable lik to the given url (link) with given label and className
+ */
+export class LinkButton extends Component {
   render() {
     return (
       <div 
-      onClick={() => this.props.history.push(this.props.link)}
-      className={this.props.className}
+        onClick={
+          // () => this.props.history.push(this.props.link)
+
+          () => this.props.history.push({
+            pathname: this.props.link,
+            state: {
+              id: this.props.id,
+              username: this.props.username,
+            }
+          })
+        }
+        className={this.props.className}
       >
-        {this.props.label}
+        <span>{this.props.label}</span>
       </div>
     )
   }
+}
+
+LinkButton.propType = {
+  className: PropTypes.string.isRequired,
+  label: PropTypes.string.isRequired
 }
 
 export default withRouter(LinkButton);

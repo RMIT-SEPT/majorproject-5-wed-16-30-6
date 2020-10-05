@@ -1,41 +1,39 @@
 import {
-  POST_WORKER_REQUEST, POST_WORKER_SUCCESS, POST_WORKER_FAILURE
-} from '../actions/adminActions'
+  POST_CUSTOMER_REQUEST, POST_CUSTOMER_SUCCESS, POST_CUSTOMER_FAILURE
+} from '../actions/customerActions'
 
 const initalState = {
-  isFetching: false
+  login: false
 }
 
-/**
- * return the result of submitting worker to register
-*/
-const workerReducer = (state = [initalState], action) => {    
+const customerReducer = (state = [initalState], action) => {
   switch (action.type) {
-    case POST_WORKER_REQUEST:
+    case POST_CUSTOMER_REQUEST:
       return [
         ...state,
         {
           isFetching: true,
+          login: false
         }
       ]
-    case POST_WORKER_SUCCESS:
+    case POST_CUSTOMER_SUCCESS:
       return [
         ...state,
         {
           isFetching: false,
-          worker: action.worker,
+          customer: action.customer,
           lastUpdated: action.receivedAt,
-          addWorkerSuccess: true
+          login: true
         }
       ]
-    case POST_WORKER_FAILURE:
+    case POST_CUSTOMER_FAILURE:
       return [
         ...state,
         {
           isFetching: false,
           errorMsg: action.errorMsg,
           error: action.error,
-          addWorkerSuccess: false
+          login: false
         }
       ]
     default:
@@ -43,4 +41,4 @@ const workerReducer = (state = [initalState], action) => {
   }
 }
 
-export default workerReducer
+export default customerReducer

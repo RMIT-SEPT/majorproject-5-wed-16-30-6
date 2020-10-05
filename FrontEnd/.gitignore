@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
@@ -24,8 +23,6 @@ yarn-debug.log*
 yarn-error.log*
 
 #original gitignore
-=======
->>>>>>> f9754c2468769246cad7ddc990db825ca26e3b20
 creds.sh
 creds2.sh
 .terraform*
