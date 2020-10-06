@@ -3,7 +3,9 @@ import './BusinessSchedule.css';
 import Day from './Day';
 import TimeCellList from './TimeCellList';
 import DaysHeader from './DaysHeader';
+import Layout from '../Home/Layout';
 import PropTypes from 'prop-types'
+
 
 class Schedule extends Component {
 
@@ -47,22 +49,24 @@ class Schedule extends Component {
     const days = this.getDaysAndAvailability();
     
     return (
-      <div id="schedule">
-        <h3 id="month-year">
-          <span>{months[parseInt(firstDateSchedule.month)]}</span>
-          <span>{firstDateSchedule.year}</span>
-        </h3>
+      <Layout>
+        <div id="schedule">
+          <h3 id="month-year">
+            <span>{months[parseInt(firstDateSchedule.month)]}</span>
+            <span>{firstDateSchedule.year}</span>
+          </h3>
 
-        {!this.availability &&
-          <h5 id="unavailable-msg">No times available.</h5>
-        }
-        
-        <div id="schedule-grid">
-          <TimeCellList />
-          <DaysHeader />          
-          {days}
+          {!this.availability &&
+            <h5 id="unavailable-msg">No times available.</h5>
+          }
+
+          <div id="schedule-grid">
+            <TimeCellList />
+            <DaysHeader />
+            {days}
+          </div>
         </div>
-      </div>
+      </Layout>
     )
   }
 }
