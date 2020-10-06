@@ -17,8 +17,6 @@ export class Layout extends Component {
       link = "/user/" + userId + "/profile";
     }
 
-    console.log(this.props.customer);
-
     return (
       <div>
         <div className="header">
