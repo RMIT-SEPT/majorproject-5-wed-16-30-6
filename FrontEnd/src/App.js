@@ -3,6 +3,7 @@ import './App.css';
 import "bootstrap/dist/css/bootstrap.min.css"
 import {BrowserRouter, Route} from 'react-router-dom';
 import BusinessSchedule from './components/BusinessSchedule/BusinessSchedule';
+import bookingForm from './components/BusinessSchedule/bookingForm.js';
 import Home from './components/Home/Home';
 import Login from './components/Home/Login';
 import SignUp from './components/Home/SignUp';
@@ -25,6 +26,7 @@ function App() {
         <Route path="/signup" component={SignUp} />
         <Route path="/admin/:id" component={AdminDashboard} />
         <Route path="/business/schedule/:id" component={BusinessSchedule} />
+        <Route path="/bookingForm" component={bookingForm} />
         <Route path="/admin/:id/addworker" component={AddWorker} />
         <Route path="/admin/:id/editworker" component={EditWorker} />
         <Route path="/user/:id/profile" component={Profile} />
