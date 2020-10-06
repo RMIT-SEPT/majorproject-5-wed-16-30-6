@@ -145,5 +145,5 @@ class bookingForm extends Component {
     }
 }
 
-export default (bookingForm);
+export default bookingForm;
 
