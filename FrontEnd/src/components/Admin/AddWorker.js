@@ -158,70 +158,80 @@ class AddWorker extends Component {
             <div id="startDate-error"></div>
             <div id="endDate-error"></div>
           </div>
-          
-          <div className="inputWrapper">
-            <label htmlFor="name">Name: </label>
-            <div className="input-msg">*Required</div>
-            <input
-              type="text"
-              value={name}
-              className="name"
-              onChange={this.handleChange}
-            />
-          </div>
 
-          <div className="inputWrapper">
-            <label htmlFor="personId">Person Identifier: </label>
-            <div className="input-msg">*Required - Please enter 4 to 5 characters</div>
-            <input
-              type="text"
-              value={personId}
-              className="personId"
-              onChange={this.handleChange}
-            />
-          </div>
+          <div className="form-wrapper">
+            <div className="form-left">
 
-          <div className="inputWrapper">
-            <label htmlFor="mobile">Mobile Number: </label>
-            <div className="input-msg">*Required - Please enter 10 characters</div>
-            <input
-              type="text"
-              value={mobile}
-              className="mobile"
-              onChange={this.handleChange}
-            />
-          </div>
+              <div className="inputWrapper">
+                <label htmlFor="name">Name: </label>
+                <div className="input-msg">*Required</div>
+                <input
+                  type="text"
+                  value={name}
+                  className="name"
+                  onChange={this.handleChange}
+                />
+              </div>
 
-          <div className="inputWrapper">
-            <label htmlFor="desc">Description: </label>
-            <div className="input-msg">*Required</div>
-            <textarea
-              type="text"
-              value={desc}
-              className="desc"
-              onChange={this.handleChange}
-            >
-            </textarea>
-          </div>
+              <div className="inputWrapper">
+                <label htmlFor="personId">Person Identifier: </label>
+                <div className="input-msg">*Required - Please enter 4 to 5 characters</div>
+                <input
+                  type="text"
+                  value={personId}
+                  className="personId"
+                  onChange={this.handleChange}
+                />
+              </div>
 
-          <div className="inputWrapper">
-            <label htmlFor="startDate">Start Date: </label>
-            <input 
-              name="date" 
-              type="date" 
-              value={startDate}
-              className="startDate"
-              onChange={this.handleChange}
-            />
-           
-            <label htmlFor="endDate">End Date: </label>
-            <input 
-              name="date" 
-              type="date" 
-              value={endDate}
-              className="endDate"
-              onChange={this.handleChange}
-            />
+              <div className="inputWrapper">
+                <label htmlFor="mobile">Mobile Number: </label>
+                <div className="input-msg">*Required - Please enter 10 characters</div>
+                <input
+                  type="text"
+                  value={mobile}
+                  className="mobile"
+                  onChange={this.handleChange}
+                />
+              </div>
+
+            </div>
+
+            <div className="form-right">
+
+              <div className="inputWrapper" id="desc-input">
+                <label htmlFor="desc">Description: </label>
+                <div className="input-msg">*Required</div>
+                <textarea
+                  type="text"
+                  value={desc}
+                  className="desc"
+                  onChange={this.handleChange}
+                >
+                </textarea>
+              </div>
+
+              <div className="inputWrapper">
+                <label htmlFor="startDate">Start Date: </label>
+                <input
+                  name="date"
+                  type="date"
+                  value={startDate}
+                  className="startDate"
+                  onChange={this.handleChange}
+                />
+              </div>
+              <div className="inputWrapper">
+                <label htmlFor="endDate">End Date: </label>
+                <input
+                  name="date"
+                  type="date"
+                  value={endDate}
+                  className="endDate"
+                  onChange={this.handleChange}
+                />
+              </div>
+            </div>
           </div>
 
           <button type="submit" value="Save">Save</button>

@@ -173,62 +173,71 @@ class SignUp extends Component {
               <div id="mobile-error"></div>
             </div>
 
-            <div className="inputWrapper">
-              <label htmlFor="name">Name: </label>
-              <div className="input-msg">*Required</div>
-              <input
-                type="text"
-                value={name}
-                className="name"
-                onChange={this.handleChange}
-              />
+            <div className="form-wrapper">
+              <div className="form-left">
+
+                <div className="inputWrapper">
+                  <label htmlFor="name">Name: </label>
+                  <div className="input-msg">*Required</div>
+                  <input
+                    type="text"
+                    value={name}
+                    className="name"
+                    onChange={this.handleChange}
+                  />
+                </div>
+
+                <div className="inputWrapper">
+                  <label htmlFor="username">Username: </label>
+                  <div className="input-msg">*Required - Please enter 4 to 5 characters</div>
+                  <input
+                    type="text"
+                    value={username}
+                    className="username"
+                    onChange={this.handleChange}
+                  />
+                </div>
+
+                <div className="inputWrapper">
+                  <label htmlFor="password">Password: </label>
+                  <div className="input-msg">*Required</div>
+                  <input
+                    type="password"
+                    value={password}
+                    className="password"
+                    onChange={this.handleChange}
+                  />
+                </div>
+
+              </div>
+
+              <div className="form-right">
+
+                <div className="inputWrapper">
+                  <label htmlFor="address">Address: </label>
+                  <div className="input-msg">*Required</div>
+                  <input
+                    type="text"
+                    value={address}
+                    className="address"
+                    onChange={this.handleChange}
+                  />
+                </div>
+
+                <div className="inputWrapper">
+                  <label htmlFor="mobile">Mobile Number: </label>
+                  <div className="input-msg">*Required - Please enter 10 characters</div>
+                  <input
+                    type="text"
+                    value={mobile}
+                    className="mobile"
+                    onChange={this.handleChange}
+                  />
+                </div>  
+              </div>
             </div>
 
-            <div className="inputWrapper">
-              <label htmlFor="username">Username: </label>
-              <div className="input-msg">*Required - Please enter 4 to 5 characters</div>
-              <input
-                type="text"
-                value={username}
-                className="username"
-                onChange={this.handleChange}
-              />
-            </div>
-
-            <div className="inputWrapper">
-              <label htmlFor="password">Password: </label>
-              <div className="input-msg">*Required</div>
-              <input
-                type="password"
-                value={password}
-                className="password"
-                onChange={this.handleChange}
-              />
-            </div>
-
-            <div className="inputWrapper">
-              <label htmlFor="address">Address: </label>
-              <div className="input-msg">*Required</div>
-              <input
-                type="text"
-                value={address}
-                className="address"
-                onChange={this.handleChange}
-              />
-            </div>
-
-            <div className="inputWrapper">
-              <label htmlFor="mobile">Mobile Number: </label>
-              <div className="input-msg">*Required - Please enter 10 characters</div>
-              <input
-                type="text"
-                value={mobile}
-                className="mobile"
-                onChange={this.handleChange}
-              />
-            </div>
-
-            <button type="submit" value="Save">Save</button>
+            <button type="submit" value="Sign Up">Sign Up</button>
           </form>
         </div>
       </Layout>
