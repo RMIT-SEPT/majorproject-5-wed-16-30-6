@@ -1,4 +1,4 @@
-#add-worker {
+#add-person {
     margin: 0 auto;
     width: 700px;
     padding: 20px;
@@ -7,7 +7,7 @@
     background: white;
 }
 
-#add-worker-form {
+#add-person-form {
     padding-top: 30px;
     margin: 0 auto;
 }
@@ -17,18 +17,18 @@
     height: 120px;
 }
 
-#add-worker-form button {
+#add-person-form button {
     margin-top: 20px;
     text-align: center;
 }
 
-#add-worker-form label, .input-msg {
+#add-person-form label, .input-msg {
     text-align: left;
     display: block;
     margin-left: 100px;
 }
 
-#add-worker-form label {
+#add-person-form label {
     font-weight: bold;
 }
 
@@ -42,7 +42,7 @@
     color: red;
 }
 
-#add-worker-form input, textarea {
+#add-person-form input, textarea {
     width: 300px;
 }
 

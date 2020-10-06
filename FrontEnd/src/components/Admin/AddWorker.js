@@ -144,9 +144,9 @@ class AddWorker extends Component {
     }
 
     return (
-      <div id="add-worker">
+      <div id="add-person">
         <h2>Register Worker</h2>
-        <form onSubmit={this.handleSubmit} id="add-worker-form">
+        <form onSubmit={this.handleSubmit} id="add-person-form">
 
           <div id="error-msg">
             <div>{(this.submit && !this.props.addWorkerSuccess) ? errorBackend : ""}</div>

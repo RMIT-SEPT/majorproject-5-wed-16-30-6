@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { Redirect } from 'react-router-dom';
 import Layout from './Layout';
 import { addCustomer } from '../../actions/customerActions';
+import '../Admin/Admin.css';
 
 class SignUp extends Component {
   constructor() {
@@ -159,9 +160,9 @@ class SignUp extends Component {
 
     return (
       <Layout>
-        <div id="add-worker">
+        <div id="add-person">
           <h2>Sign Up</h2>
-          <form onSubmit={this.handleSubmit} id="add-worker-form">
+          <form onSubmit={this.handleSubmit} id="add-person-form">
 
             <div id="error-msg">
               <div>{(this.submit && this.state.responseError) ? errorBackend : ""}</div>
