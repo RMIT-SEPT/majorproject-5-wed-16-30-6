@@ -15,9 +15,9 @@ class bookingForm extends Component {
   }
 
   render() {
-    // const login = this.props.login;
+    const login = this.props.login;
     // console.log(this.props.login);
-    var login = true;
+    // var login = true;
 
     if (this.props.booking) {
       // if the selected schedule (timeslot) is successfully booked
@@ -33,7 +33,7 @@ class bookingForm extends Component {
 
         {!login && <LoginSignupPrompt />}
 
-        {login && 
+        {login && this.props.customer &&
           <div>
             <div className="booking-info">
               <div>Customer Name: {this.props.customer.name}</div>

@@ -43,7 +43,7 @@ class ScheduleCell extends Component {
     else {
       // return unavailable cell
       return (
-          <div className='schedule-cell-unavailable' onClick={this.handleClick}>
+          <div className='schedule-cell-unavailable'>
           <div>{this.getHourLabel(this.props.startTime)}</div>
           </div>
       )
@@ -58,4 +58,3 @@ ScheduleCell.propTypes = {
 }
 
 export default withRouter(ScheduleCell);
-
