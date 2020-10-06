@@ -1,14 +1,14 @@
 import axios from 'axios'
 
 export const POST_CUSTOMER_REQUEST = 'POST_CUSTOMER_REQUEST'
-const postCustomerRequest = () => {
+export const postCustomerRequest = () => {
   return {
     type: POST_CUSTOMER_REQUEST
   }
 }
 
 export const POST_CUSTOMER_SUCCESS = 'POST_CUSTOMER_SUCCESS'
-const postCustomerSuccess = (json) => {
+export const postCustomerSuccess = (json) => {
   return {
     type: POST_CUSTOMER_SUCCESS,
     customer: json,
@@ -17,7 +17,7 @@ const postCustomerSuccess = (json) => {
 }
 
 export const POST_CUSTOMER_FAILURE = 'POST_CUSTOMER_FAILURE'
-const postCustomerFailure = (error) => ({
+export const postCustomerFailure = (error) => ({
   type: POST_CUSTOMER_FAILURE,
   errorMsg: error.response.data,
   error
@@ -65,20 +65,3 @@ export const addCustomer = (formData) => {
   }
 }
 
-export const LOG_IN = 'LOG_IN'
-export const logIn = (username, userId) => {
-  return {
-    type: LOG_IN,
-    username: username,
-    userId: userId
-  }
-}
-
-export const LOG_OUT = 'LOG_OUT'
-export const logOut = () => {
-  return {
-    type: LOG_OUT,
-    username: "",
-    userId: ""
-  }
-}
