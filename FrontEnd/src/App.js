@@ -2,8 +2,8 @@ import React from 'react'
 import './App.css';
 import "bootstrap/dist/css/bootstrap.min.css"
 import {BrowserRouter, Route} from 'react-router-dom';
-import BusinessSchedule from './components/BusinessSchedule/BusinessSchedule';
-import bookingForm from './components/BusinessSchedule/bookingForm.js';
+import BusinessSchedule from './components/Booking/BusinessSchedule';
+import bookingForm from './components/Booking/bookingForm.js';
 import Home from './components/Home/Home';
 import Login from './components/Home/Login';
 import SignUp from './components/Home/SignUp';
