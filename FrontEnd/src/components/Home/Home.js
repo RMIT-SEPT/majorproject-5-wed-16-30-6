@@ -26,16 +26,13 @@ class Home extends Component {
   }
 
   render() {
-    var { custId, name } = "";
+    var name = "";
     if (this.props.login) {
-      custId = this.props.customer.id;
       name = this.props.customer.name;
     }
-
-    console.log(this.props.customer);
     
     return (
-      <Layout id={custId} login={this.props.login}>
+      <Layout>
         <Greeting name={name}/>
         <div className="home">
           {this.getBusinessOptions()}
