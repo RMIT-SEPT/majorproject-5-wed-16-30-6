@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from "react-redux";
 import { addWorker } from '../../actions/adminActions';
 import './Admin.css';
+import '../Persons/AddPersonForm.css';
 import "bootstrap/dist/css/bootstrap.min.css"
 import EditWorker from './EditWorker';
 

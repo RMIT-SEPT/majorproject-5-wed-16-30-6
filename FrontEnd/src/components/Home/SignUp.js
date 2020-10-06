@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { Redirect } from 'react-router-dom';
 import Layout from './Layout';
 import { addCustomer } from '../../actions/customerActions';
-import '../Admin/Admin.css';
+import '../Persons/AddPersonForm.css';
 
 class SignUp extends Component {
   constructor() {
