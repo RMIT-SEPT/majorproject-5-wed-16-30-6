@@ -15,11 +15,10 @@ class ScheduleCell extends Component {
   }
 
   handleClick = () => {
-    // this.props.history.push("/bookingForm");
-
     this.props.history.push({
       pathname: "/bookingForm",
       state: {
+        scheduleId: this.props.scheduleId,
         startTime: this.getHourLabel(this.props.startTime),
         endTime: this.getHourLabel(this.props.endTime),
         date: this.props.date,

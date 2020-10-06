@@ -25,7 +25,8 @@ class Day extends Component {
 
       cellsDict[startTimeHour] = 
         <ScheduleCell
-          key={startTimeHour}
+          key={timeslot.id}
+          scheduleId={timeslot.id}
           startTime={startTimeHour}
           endTime={endTimeHour}
           date={dateStr}
@@ -51,7 +52,7 @@ class Day extends Component {
       if (!cellsDict[slotTime]) {
         cellsDict[slotTime] = 
         <ScheduleCell 
-          key={slotTime} 
+          key={"n" + slotTime} 
           startTime={slotTime} 
           isAvailable={false} 
         />
