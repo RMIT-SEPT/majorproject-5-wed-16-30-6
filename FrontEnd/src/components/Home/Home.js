@@ -10,7 +10,7 @@ import Greeting from '../Persons/Greeting';
  */
 class Home extends Component {
   
-  getBusinessOptions(username, userId) {
+  getBusinessOptions() {
     const businessesCount = 12;
     var businessOptions = []
 
@@ -26,17 +26,19 @@ class Home extends Component {
   }
 
   render() {
-    var { custId, username } = "";
+    var { custId, name } = "";
     if (this.props.login) {
       custId = this.props.customer.id;
-      username = this.props.customer.username;
+      name = this.props.customer.name;
     }
+
+    console.log(this.props.customer);
     
     return (
       <Layout id={custId} login={this.props.login}>
-        <Greeting username={username}/>
+        <Greeting name={name}/>
         <div className="home">
-          {this.getBusinessOptions(username)}
+          {this.getBusinessOptions()}
         </div>
       </Layout>
     )

@@ -2,12 +2,12 @@ import React, { Component } from 'react'
 
 class Greeting extends Component {
   render() {
-    const username = this.props.username;
+    const name = this.props.name;
 
-    if (username) {
+    if (name) {
       return (
         <div className="greet-user-box">
-          <div>{username ? "Hello " + username + " !" : ""}</div>
+          <div>{name ? "Hello " + name + " !" : ""}</div>
         </div>   
       )
     }
