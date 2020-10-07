@@ -6,7 +6,7 @@ class AdminDashboardColumn extends Component {
   render() {
     const id = this.props.id;
     const addWorkerPath = "/admin/" + id + "/addworker";
-    const editWorkerPath = "/admin/" + id + "/editworker";
+    const editWorkerPath = "/admin/" + id + "/edit/workerschedule";
     const shiftPath = "/admin/" + id + "/edit_shift";
     const summaryPath = "/admin/" + id + "/booking_summary";
     const newBookingsPath = "/admin/" + id + "/new_bookings";

@@ -4,7 +4,7 @@ import { addWorker } from '../../actions/adminActions';
 import '../Persons/Dashboard.css';
 import '../Persons/AddPersonForm.css';
 import "bootstrap/dist/css/bootstrap.min.css"
-import EditWorker from './EditWorker';
+import EditWorker from './EditWorkerSchedule';
 
 class AddWorker extends Component {
   constructor() {

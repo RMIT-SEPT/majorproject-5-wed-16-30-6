@@ -2,10 +2,9 @@ import React, { Component } from 'react'
 import "bootstrap/dist/css/bootstrap.min.css"
 import "./Dashboard.css"
 import AddWorker from '../Admin/AddWorker';
-import EditWorker from '../Admin/EditWorker';
+import EditWorkerSchedule from '../Admin/EditWorkerSchedule';
 import { Layout } from '../Home/Layout';
 import AdminDashboardColumn from './AdminDashboardColumn';
-
 
 class AdminDashboard extends Component {
 
@@ -26,7 +25,7 @@ class AdminDashboard extends Component {
           <AdminDashboardColumn id={id} />
 
           { selected === "add_worker" && <AddWorker id={id} /> }
-          { selected === "edit_worker" && <EditWorker id={id} /> }
+          { selected === "edit_worker" && <EditWorkerSchedule id={id} /> }
 
       </div>
       </Layout>

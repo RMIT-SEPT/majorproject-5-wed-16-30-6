@@ -10,7 +10,7 @@ import About from './components/Home/About';
 import ContactUs from './components/Home/ContactUs';
 import AdminDashboard from './components/Persons/AdminDashboard';
 import AddWorker from './components/Admin/AddWorker';
-import EditWorker from './components/Admin/EditWorker';
+import EditWorkerSchedule from './components/Admin/EditWorkerSchedule';
 import Profile from './components/Persons/Profile';
 import WorkerDashboard from './components/Persons/WorkerDashboard';
 
@@ -28,7 +28,7 @@ function App() {
         <Route path="/worker/:id" component={WorkerDashboard} />
         <Route path="/business/schedule/:id" component={BusinessSchedule} />
         <Route path="/admin/:id/addworker" component={AddWorker} />
-        <Route path="/admin/:id/editworker" component={EditWorker} />
+        <Route path="/admin/:id/edit/workerschedule" component={EditWorkerSchedule} />
         <Route path="/user/:id/profile" component={Profile} />
       </div>
      </BrowserRouter>
