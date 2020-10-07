@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 import "bootstrap/dist/css/bootstrap.min.css"
-import "./Admin.css"
-import AddWorker from './AddWorker';
-import EditWorker from './EditWorker';
+import "./Dashboard.css"
+import AddWorker from '../Admin/AddWorker';
+import EditWorker from '../Admin/EditWorker';
+
 
 class AdminDashboard extends Component {
   constructor() {
@@ -43,24 +44,23 @@ class AdminDashboard extends Component {
 
     return (
       <div className="dashboard">
-        <div className="dashboard-left-column">
-          <div className="admin-opt-title">Admin Options</div>
-          <div className="admin-opt" onClick={this.selectRegisterWorker} >
+        <div className="dashboard-column">
+          <div className="opt" onClick={this.selectRegisterWorker} >
             Register Worker
           </div>
-          <div className="admin-opt" onClick={this.selectEditWorker} >
+          <div className="opt" onClick={this.selectEditWorker} >
             Edit Worker
           </div>
-          <div className="admin-opt">
+          <div className="opt">
             Add/Edit Shift
           </div>
-          <div className="admin-opt">
+          <div className="opt">
             Booking Summary
           </div>
-          <div className="admin-opt">
+          <div className="opt">
             New Bookings
           </div>
-          <div className="admin-opt">
+          <div className="opt">
             View Availability
           </div>
         </div>

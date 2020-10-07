@@ -8,9 +8,10 @@
     width: 100%;
 }
 
-.dashboard-left-column {
+.dashboard-column {
     width: 20%;
     height: 1000px;
+    background: grey;
 }
 
 .dashboard-right-column {
@@ -20,16 +21,12 @@
     background:#f0f0f5;
 }
 
-.admin-opt, .admin-opt-title {
+.opt {
     padding: 10px 20px;
     height: 60px;
 }
 
-.admin-opt-title {
-    font-weight: bold;
-}
-
-.admin-opt span {
+.opt span {
     line-height: 40px;
 }
 
