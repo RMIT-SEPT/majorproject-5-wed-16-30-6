@@ -17,11 +17,14 @@ class WorkerProfile extends Component {
     const workerId = this.props.id;
     var schedules = [];
 
-    this.props.timeslots.forEach(timeslot => {
-      if (timeslot.workerId === workerId) {
-        schedules.push(timeslot);
-      }
-    });
+    // if any schedule is returned from the api
+    if (this.props.timeslots) {
+      this.props.timeslots.forEach(timeslot => {
+        if (timeslot.workerId === workerId) {
+          schedules.push(timeslot);
+        }
+      });
+    }
 
     return schedules;
   }
@@ -38,6 +41,10 @@ class WorkerProfile extends Component {
       var cell = <WorkerScheduleCell date={date} startDateTime={startDateTime} endDateTime={endDateTime} />
       cells.push(cell);
     })
+
+    if (cells.length === 0) {
+      cells.push(<div>No work shift configured.</div>);
+    }
 
     return cells;
   }
