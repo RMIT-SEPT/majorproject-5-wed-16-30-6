@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { Layout } from '../Home/Layout';
 import WorkerDashboardColumn from './WorkerDashboardColumn';
 import './Dashboard.css';
 import WorkerProfile from './WorkerProfile';
@@ -18,16 +17,16 @@ class WorkerDashboard extends Component {
     const id = parseInt(params.id);
 
     return (
-      <Layout>
-        <div className="dashboard">
-          <WorkerDashboardColumn id={id} />
+      
+      <div className="dashboard">
+        <WorkerDashboardColumn id={id} />
 
-          {selected === "profile" &&
-            <WorkerProfile id={id} />
-          }
-        
-        </div>
-      </Layout>
+        {selected === "profile" &&
+          <WorkerProfile id={id} />
+        }
+      
+      </div>
+      
     )
   }
 }
