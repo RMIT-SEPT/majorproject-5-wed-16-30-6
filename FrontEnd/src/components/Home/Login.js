@@ -13,11 +13,6 @@ class Login extends Component {
       }
     }
 
-    this.valid = {
-      username: false,
-      password: false,
-    }
-
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -28,17 +23,15 @@ class Login extends Component {
     this.setState(newState);
   }
 
-  // set invalid if the input is empty
-  setEmptyFieldInvalid() {
+  // detect empty field
+  detectEmptyField() {
     Object.keys(this.state.formData).forEach(key => {
       // remove space before & after the input string
       if (this.state.formData[key].trim()) {
-        this.valid[key] = true;
-      }
-      else {
-        this.valid[key] = false;
+        return true;
       }
     });
+    return false;
   }
 
   /**
@@ -48,8 +41,8 @@ class Login extends Component {
   handleSubmit(event) {
     event.preventDefault();
     
-    // break if any input is invalid
-    if (!this.validateForm()) { return }
+    // prevent sending empty value 
+    if (this.detectEmptyField()) { return }
 
     // send state data to backend
     // this.props.dispatch(loginUser(this.state.formData));
