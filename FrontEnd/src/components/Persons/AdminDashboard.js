@@ -65,7 +65,7 @@ class AdminDashboard extends Component {
           </div>
         </div>
 
-        <div className="dashboard-right-column">
+        <div className="dashboard-contents">
           {this.getSelectedComponent()}
         </div>
       </div>
