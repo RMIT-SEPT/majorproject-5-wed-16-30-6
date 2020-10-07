@@ -1,19 +1,24 @@
 import React, { Component } from 'react'
+import { connect } from "react-redux";
 import BusinessOption from './BusinessOption'
 import "./Home.css";
+import Layout from './Layout';
+import Greeting from '../Persons/Greeting';
 
 /**
  * Displayed as the main part of Home page with links to each business
  */
 class Home extends Component {
-
+  
   getBusinessOptions() {
     const businessesCount = 12;
     var businessOptions = []
 
     for (var i = 1; i <= businessesCount; i++) {
       businessOptions.push(
-        <div><BusinessOption businessId={i}/></div>
+        <div key={i}>
+          <BusinessOption businessId={i} />
+        </div>
       )
     }
 
@@ -21,12 +26,30 @@ class Home extends Component {
   }
 
   render() {
+    var name = "";
+    if (this.props.login) {
+      name = this.props.customer.name;
+    }
+    
     return (
-      <div className="home">
-        {this.getBusinessOptions()}
-      </div>
+      <Layout>
+        <Greeting name={name}/>
+        <div className="home">
+          {this.getBusinessOptions()}
+        </div>
+      </Layout>
     )
   }
 }
 
-export default Home;
+const mapStateToProps = state => {
+  const currentState = state.customerReducer[state.customerReducer.length - 1];
+  
+  return {
+    login: currentState.login,
+    customer: currentState.customer,
+  }
+}
+
+export default connect(mapStateToProps, null)(Home);
+
