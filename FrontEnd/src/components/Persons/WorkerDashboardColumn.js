@@ -5,7 +5,8 @@ class WorkerDashboardColumn extends Component {
 
   render() {
     const id = this.props.id;
-    const path = "/worker/" + id + "/profile"
+    const profilePath = "/worker/" + id + "/profile";
+    const accountPath = "/worker/" + id + "/account";
 
     return (
       <div className="dashboard-column">
@@ -13,7 +14,7 @@ class WorkerDashboardColumn extends Component {
           className="opt" 
           onClick={
             () => this.props.history.push({
-                pathname: path,
+                pathname: profilePath,
                 state: { 
                   selected: "profile"
                 }
@@ -26,7 +27,7 @@ class WorkerDashboardColumn extends Component {
           className="opt"
           onClick={
             () => this.props.history.push({
-                pathname: "/worker/1/account",
+                pathname: accountPath,
                 state: { 
                   selected: "account"
                 }
