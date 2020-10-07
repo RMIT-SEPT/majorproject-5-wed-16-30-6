@@ -2,28 +2,46 @@ package sept.project.backend.model;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 import com.fasterxml.jackson.annotation.*;
 import java.util.Date;
 
-//Jason Push test
+import lombok.*;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Entity;
+import lombok.*;
+
 
 @Entity
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class Person {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @NotBlank(message = "Person name is required")
     private String name;
-    @NotBlank(message ="Person Identifier is required")
+    @NotBlank(message ="Username is required")
     @Size(min=4,max =5, message = "please enter 4 to 5 characters")
     @Column(updatable = false, unique = true)
-    private String personIdentifier;
-    @NotBlank(message = "desc is required")
+    private String username;
+    @NotBlank(message ="Password is required")
+    @Column(updatable = false)
+    private String password;
     private String desc;
     @Size(min=10,max =10, message = "please enter 10 characters")
+    @Pattern(regexp = "[0-9]+")
     @NotBlank(message = "Phone number is required")
     private String mobileNum;
+    @NotBlank(message ="Address is required")
+    @Column(updatable = false)
+    private String address;
     @JsonFormat(pattern = "yyyy-mm-dd")
     private Date start_date;
     @JsonFormat(pattern = "yyyy-mm-dd")
@@ -33,7 +51,33 @@ public class Person {
     @JsonFormat(pattern ="yyyy-mm-dd")
     private Date updated_At;
 
-    public Person() {
+    //a for admin, w for worker, c for customer
+    @Pattern(regexp = "[a-z&&[awc]]")
+    @NotBlank(message = "Role is required")
+    private String role;
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     public Long getId() {
@@ -58,14 +102,6 @@ public class Person {
 
     public void setMobileNum(String mobileNum) {
         this.mobileNum = mobileNum;
-    }
-
-    public String getPersonIdentifier() {
-        return personIdentifier;
-    }
-
-    public void setPersonIdentifier(String personIdentifier) {
-        this.personIdentifier = personIdentifier;
     }
 
     public String getDesc() {
@@ -118,5 +154,11 @@ public class Person {
         this.updated_At = new Date();
     }
 
+    public String getRole() {
+        return role;
+    }
 
+    public void setRole(String role) {
+        this.role = role;
+    }
 }

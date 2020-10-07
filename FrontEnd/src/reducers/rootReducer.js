@@ -1,8 +1,14 @@
 import { combineReducers } from 'redux'
 import schedules from './scheduleReducer'
+import workerReducer from './workerReducer'
+import customerReducer from './customerReducer'
 
-const rootReducer = combineReducers({
-    schedules
-})
+const allReducers = {
+    schedules: schedules,
+    workerReducer: workerReducer,
+    customerReducer: customerReducer
+}
 
-export default rootReducer
+const rootReducer = combineReducers(allReducers)
+
+export default rootReducer;

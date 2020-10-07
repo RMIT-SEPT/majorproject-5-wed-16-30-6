@@ -4,7 +4,10 @@ class EditWorker extends Component {
   render() {
     return (
       <div>
-        Edit worker page
+        <div>Edit worker page</div>
+        <div>
+          {this.props.createdUser ? this.props.createdUser + " has been created successfully." : ""}
+        </div>
       </div>
     )
   }

@@ -1,11 +1,14 @@
 import React, { Component } from 'react'
+import Layout from './Layout'
 
 class ContactUs extends Component {
   render() {
     return (
-      <div>
-        Contact Us
-      </div>
+      <Layout>
+        <div>
+          Contact Us
+        </div>
+      </Layout>
     )
   }
 }
