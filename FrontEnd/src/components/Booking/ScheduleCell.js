@@ -22,7 +22,8 @@ class ScheduleCell extends Component {
         startTime: this.getHourLabel(this.props.startTime),
         endTime: this.getHourLabel(this.props.endTime),
         date: this.props.date,
-        businessId: this.props.businessId
+        businessId: this.props.businessId,
+        workerIds: this.props.workerId
       }
     });
   }
