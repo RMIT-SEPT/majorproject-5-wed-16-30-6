@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Layout from './Layout';
 import { connect } from "react-redux";
 import './LoginForm.css';
+import { loginUser } from '../../actions/loginActions';
 
 class Login extends Component {
   constructor() {
@@ -23,17 +24,6 @@ class Login extends Component {
     this.setState(newState);
   }
 
-  // detect empty field
-  detectEmptyField() {
-    Object.keys(this.state.formData).forEach(key => {
-      // remove space before & after the input string
-      if (this.state.formData[key].trim()) {
-        return true;
-      }
-    });
-    return false;
-  }
-
   /**
    * called after submit button is clicked
    * @param {*} event 
@@ -42,10 +32,12 @@ class Login extends Component {
     event.preventDefault();
     
     // prevent sending empty value 
-    if (this.detectEmptyField()) { return }
+    if (!this.state.formData.username || !this.state.formData.password) { 
+      return 
+    }
 
     // send state data to backend
-    // this.props.dispatch(loginUser(this.state.formData));
+    this.props.dispatch(loginUser(this.state.formData));
 
     var newState = this.state;
     newState.formData = {
@@ -106,16 +98,15 @@ class Login extends Component {
 }
 
 const mapStateToProps = state => {
-  // const currentState = state.userReducer[state.customerReducer.length - 1];
+  // const currentState = state.loginReducer[state.loginReducer.length - 1];
 
   // return {
   //   login: currentState.login,
-  //   customer: currentState.customer,
+  //   errorMsg: ""
   // }
 
   return {
     login: false,
-    customer: {'username': "testname"},
     errorMsg: ""
   }
 }
