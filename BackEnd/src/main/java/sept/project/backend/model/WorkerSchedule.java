@@ -31,4 +31,7 @@ public class WorkerSchedule {
     private Date endDateTime;
     @NotBlank
     private Long workerId;
+    @NotBlank
+    private Boolean booked;
+    private Long custId;
 }

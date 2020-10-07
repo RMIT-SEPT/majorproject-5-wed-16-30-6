@@ -16,10 +16,10 @@ public class Personservice {
     public Person saveOrUpdatePerson(Person person)  {
 
         try{
-            person.setPersonIdentifier(person.getPersonIdentifier().toUpperCase());
+            person.setUsername(person.getUsername().toUpperCase());
             return personRepository.save(person);
         }catch (Exception e){
-            throw new PersonException("Person ID '"+person.getPersonIdentifier().toUpperCase()+"' already exists");
+            throw new PersonException("Username '"+person.getUsername().toUpperCase()+"' already exists");
         }
 
     }
@@ -30,7 +30,7 @@ public class Personservice {
         Person person = personRepository.findByPersonIdentifier(personId.toUpperCase());
 
         if(person == null){
-            throw new PersonException("Person ID '"+personId+"' does not exist");
+            throw new PersonException("Username '"+personId+"' does not exist");
 
         }
 
@@ -47,7 +47,7 @@ public class Personservice {
         Person person = personRepository.findByPersonIdentifier(personId.toUpperCase());
 
         if(person == null){
-            throw  new  PersonException("Cannot Person with ID '"+personId+"'. This person does not exist");
+            throw  new  PersonException("Cannot Delete Person with Username '"+personId+"'. This person does not exist");
         }
 
         personRepository.delete(person);

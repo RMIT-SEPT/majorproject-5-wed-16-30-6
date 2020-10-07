@@ -20,28 +20,19 @@ class Day extends Component {
       const startTimeHour = parseInt(startDateTimeStr.slice(0, 2));
       const endTimeHour = parseInt(endDateTimeStr.slice(0, 2));
 
-      // e.g., if the timeslot is from 9:00 - 11:00, 
-      //two time slots are created (9 - 10, 10 - 11)
+      // date of the slot
+      const dateStr = new Date(timeslot.startDateTime).toLocaleDateString();
 
-      for (let slotTime = startTimeHour; slotTime < endTimeHour; slotTime++) {
-        // array of ScheduleCells for the slot time
-        var cells = [];
-        if (cellsDict[slotTime]) {
-          cells = cellsDict[slotTime];
-        }
-
-        // add ScheduleCell to the slot time
-        cells.push(
-          <ScheduleCell
-            key={slotTime}
-            startTime={slotTime}
-            endTime={slotTime + 1}
-            isAvailable={true}
-          />
-        )
-
-        cellsDict[slotTime] = cells;
-      }
+      cellsDict[startTimeHour] = 
+        <ScheduleCell
+          key={timeslot.id}
+          scheduleId={timeslot.id}
+          startTime={startTimeHour}
+          endTime={endTimeHour}
+          date={dateStr}
+          businessId={timeslot.businessId}
+          isAvailable={true}
+        />;
     })
   }
 
@@ -59,7 +50,12 @@ class Day extends Component {
     // assign unavailable cells
     for (var slotTime = firstSlotTime; slotTime <= lastSlotTime; slotTime++) {
       if (!cellsDict[slotTime]) {
-        cellsDict[slotTime] = <ScheduleCell key={slotTime} startTime={slotTime} isAvailable={false} />
+        cellsDict[slotTime] = 
+        <ScheduleCell 
+          key={"n" + slotTime} 
+          startTime={slotTime} 
+          isAvailable={false} 
+        />
       }
     }
   }
@@ -68,20 +64,18 @@ class Day extends Component {
    * get all ScheduleCells for the day 
    */
   getScheduleCells() {
+    // dictionary to store key: start time and value: schedule cell
     var cellsDict = {}
     this.assignAvailableScheduleCells(cellsDict);
     this.assignUnavailableScheduleCells(cellsDict);
 
     // get a schedule cell for each slot time
     var cells = []; 
-    for (let key in cellsDict){
-      if (cellsDict[key] instanceof Array) {
-        cells.push(cellsDict[key][0])
-      }
-      else {
-        cells.push(cellsDict[key])
-      }
+
+    for (let key in cellsDict) {
+      cells.push(cellsDict[key])
     }
+
     return cells;
   }
 

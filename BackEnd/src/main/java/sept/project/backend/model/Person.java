@@ -27,16 +27,21 @@ public class Person {
     private Long id;
     @NotBlank(message = "Person name is required")
     private String name;
-    @NotBlank(message ="Person Identifier is required")
+    @NotBlank(message ="Username is required")
     @Size(min=4,max =5, message = "please enter 4 to 5 characters")
     @Column(updatable = false, unique = true)
-    private String personIdentifier;
-    @NotBlank(message = "desc is required")
+    private String username;
+    @NotBlank(message ="Password is required")
+    @Column(updatable = false)
+    private String password;
     private String desc;
     @Size(min=10,max =10, message = "please enter 10 characters")
     @Pattern(regexp = "[0-9]+")
     @NotBlank(message = "Phone number is required")
     private String mobileNum;
+    @NotBlank(message ="Address is required")
+    @Column(updatable = false)
+    private String address;
     @JsonFormat(pattern = "yyyy-mm-dd")
     private Date start_date;
     @JsonFormat(pattern = "yyyy-mm-dd")
@@ -50,6 +55,30 @@ public class Person {
     @Pattern(regexp = "[a-z&&[awc]]")
     @NotBlank(message = "Role is required")
     private String role;
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
 
     public Long getId() {
         return id;
@@ -73,14 +102,6 @@ public class Person {
 
     public void setMobileNum(String mobileNum) {
         this.mobileNum = mobileNum;
-    }
-
-    public String getPersonIdentifier() {
-        return personIdentifier;
-    }
-
-    public void setPersonIdentifier(String personIdentifier) {
-        this.personIdentifier = personIdentifier;
     }
 
     public String getDesc() {
