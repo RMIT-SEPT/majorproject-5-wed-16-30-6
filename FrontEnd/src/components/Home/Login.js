@@ -1,20 +1,131 @@
 import React, { Component } from 'react'
-import LinkButton from './LinkButton';
 import Layout from './Layout';
+import { connect } from "react-redux";
+import './LoginForm.css';
 
 class Login extends Component {
+  constructor() {
+    super();
+    this.state = {
+      formData: {
+        username: "",
+        password: "",
+      }
+    }
+
+    this.valid = {
+      username: false,
+      password: false,
+    }
+
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleChange(event) {
+    var newState = this.state;
+    newState.formData[event.target.className] = event.target.value;
+    this.setState(newState);
+  }
+
+  // set invalid if the input is empty
+  setEmptyFieldInvalid() {
+    Object.keys(this.state.formData).forEach(key => {
+      // remove space before & after the input string
+      if (this.state.formData[key].trim()) {
+        this.valid[key] = true;
+      }
+      else {
+        this.valid[key] = false;
+      }
+    });
+  }
+
+  /**
+   * called after submit button is clicked
+   * @param {*} event 
+   */
+  handleSubmit(event) {
+    event.preventDefault();
+    
+    // break if any input is invalid
+    if (!this.validateForm()) { return }
+
+    // send state data to backend
+    // this.props.dispatch(loginUser(this.state.formData));
+
+    var newState = this.state;
+    newState.formData = {
+      username: "",
+      password: ""
+    };
+    this.setState(newState);
+  }
+
   render() {
+    const {username, password} = this.state.formData;
+
+    var errorBackend = "";
+    if (this.props.errorMsg) {
+      // if (this.props.errorMsg.personIdentifier) {
+      //   errorBackend = this.props.errorMsg.username;
+      // }
+    }
+    else {
+      errorBackend = "Error occurred. Please try again."
+    }
+
     return (
       <Layout>
-        <div className="login">
-        
-          {/* TODO : This is only for test */}
-          <h1><LinkButton link="/admin/1" label="Click to Login" className="login-test" /></h1>
-          
+        <div id="login-container">
+          <h2>Login</h2>
+          <form onSubmit={this.handleSubmit} id="login-form">
+
+            <div id="error-msg">
+              <div>{(this.submit && this.state.responseError) ? errorBackend : ""}</div>
+            </div>
+
+            <div className="inputWrapper">
+              <label htmlFor="username">Username: </label>
+              <input
+                type="text"
+                value={username}
+                className="username"
+                onChange={this.handleChange}
+              />
+            </div>
+
+            <div className="inputWrapper">
+              <label htmlFor="password">Password: </label>
+              <input
+                type="password"
+                value={password}
+                className="password"
+                onChange={this.handleChange}
+              />
+            </div>
+            <button type="submit" value="Sign Up">Sign Up</button>
+          </form>
         </div>
       </Layout>
     )
   }
 }
 
-export default Login;
+const mapStateToProps = state => {
+  // const currentState = state.userReducer[state.customerReducer.length - 1];
+
+  // return {
+  //   login: currentState.login,
+  //   customer: currentState.customer,
+  // }
+
+  return {
+    login: false,
+    customer: {'username': "testname"},
+    errorMsg: ""
+  }
+}
+
+export default connect(mapStateToProps, null)(Login)
+
