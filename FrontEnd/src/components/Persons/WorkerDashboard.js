@@ -5,39 +5,28 @@ import './Dashboard.css';
 import WorkerProfile from './WorkerProfile';
 
 class WorkerDashboard extends Component {
-  constructor() {
-    super();
-    
-    this.state = {
-      selected: "profile"
-    }
-  }
-
-  // changeState(selected) {
-  //   var newState = this.state;
-  //   newState.selected = selected;
-  //   this.setState(newState);
-  // }
 
   render() {
-    var selected = ""
+    var selected = "profile";
 
     // if redirected from dashboard option
     if (this.props.location.state) {
       selected = this.props.location.state.selected;
     }
 
+    const { params } = this.props.match;
+    const id = parseInt(params.id);
+
     return (
       <Layout>
         <div className="dashboard">
-          <WorkerDashboardColumn />
+          <WorkerDashboardColumn id={id} />
 
           {selected === "profile" &&
-            <WorkerProfile />
+            <WorkerProfile id={id} />
           }
         
         </div>
-        
       </Layout>
     )
   }

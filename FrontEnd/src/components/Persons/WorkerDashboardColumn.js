@@ -4,13 +4,16 @@ import { withRouter } from 'react-router';
 class WorkerDashboardColumn extends Component {
 
   render() {
+    const id = this.props.id;
+    const path = "/worker/" + id + "/profile"
+
     return (
       <div className="dashboard-column">
         <div 
           className="opt" 
           onClick={
             () => this.props.history.push({
-                pathname: "/worker/1/profile",
+                pathname: path,
                 state: { 
                   selected: "profile"
                 }

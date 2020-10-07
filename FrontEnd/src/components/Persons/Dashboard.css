@@ -1,4 +1,4 @@
-/* AdminDashboard */
+/* Dashboard */
 .dashboard {
     display: -webkit-flex;
     display: -moz-flex;
@@ -29,4 +29,16 @@
 .opt span {
     line-height: 40px;
 }
+
+/* WorkerProfile, WorkerScheduleCell */
+.worker-schedule-cell {
+    margin: 12px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid grey;
+}
+
+.profile-container {
+    margin-top: 20px;
+}
+
 
