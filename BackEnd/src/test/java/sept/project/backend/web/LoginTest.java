@@ -9,6 +9,7 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
 import org.springframework.http.ResponseEntity;
 import org.springframework.test.annotation.Rollback;
+import sept.project.backend.model.LoginForm;
 import sept.project.backend.model.Person;
 import sept.project.backend.repositories.PersonRepository;
 import sept.project.backend.services.Personservice;
@@ -46,9 +47,13 @@ public class LoginTest {
         person1.setId(id1);
         person1.setAddress("ababa");
 
+        LoginForm loginForm = new LoginForm();
+        loginForm.setUsername("AAAA");
+        loginForm.setPassword("basda");
+
         Person personIn = personRepository.save(person1);
 
-        ResponseEntity<?> testOut = loginController.login("AAAA", "baba");
+        ResponseEntity<?> testOut = loginController.login(loginForm);
 
         assertEquals("Wrong credentials mate", testOut,
                 "Test passed cause password is wrong");

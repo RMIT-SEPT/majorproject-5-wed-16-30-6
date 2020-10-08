@@ -5,6 +5,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.*;
+import sept.project.backend.model.LoginForm;
 import sept.project.backend.model.Person;
 import sept.project.backend.services.MapValidationErrorService;
 import sept.project.backend.services.Personservice;
@@ -24,8 +25,11 @@ public class LoginController {
     @Autowired
     private MapValidationErrorService mapValidationErrorService;
 
-    @PostMapping ("/{personId}/{password}")
-    public ResponseEntity<?> login(@PathVariable String personId, @PathVariable String password)  {
+    @PostMapping("")
+    @ResponseBody
+    public ResponseEntity<?> login(@RequestBody LoginForm loginForm)  {
+        String personId = loginForm.getUsername();
+        String password = loginForm.getPassword();
 
         Person person = personService.findByPersonIdentifier(personId);
         String passwordTru = person.getPassword();
