@@ -11,7 +11,7 @@ export const POST_LOGIN_SUCCESS = 'POST_LOGIN_SUCCESS'
 export const postLoginSuccess = (json) => {
   return {
     type: POST_LOGIN_SUCCESS,
-    LOGIN: json,
+    person: json,
     receivedAt: Date.now()
   }
 }
@@ -36,17 +36,12 @@ export const loginUser = (formData) => {
       "password": formData.password
     }
 
-    console.log(data);
-
-    // TODO: change API 
-    const url = 'http://localhost:8080/api/person';
+    const url = 'http://localhost:8080/api/login';
     return axios.post(url, data)
       .then(res => {
-        console.log(res);
         dispatch(postLoginSuccess(res.data));
       })
       .catch(err => {
-        console.log(err);
         dispatch(postLoginFailure(err))
       })
   }

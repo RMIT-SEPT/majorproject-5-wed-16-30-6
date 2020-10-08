@@ -21,7 +21,7 @@ const loginReducer = (state = [initalState], action) => {
         ...state,
         {
           isFetching: false,
-          login: action.login,
+          person: action.person,
           lastUpdated: action.receivedAt,
           login: true
         }
