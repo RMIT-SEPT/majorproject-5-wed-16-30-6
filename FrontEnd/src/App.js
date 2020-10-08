@@ -13,6 +13,7 @@ import AddWorker from './components/Admin/AddWorker';
 import EditWorker from './components/Admin/EditWorker';
 import Profile from './components/Persons/Profile';
 import WorkerDashboard from './components/Persons/WorkerDashboard';
+import CustomerDashboard from './components/Persons/CustomerDashboard';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
         <Route path="/signup" component={SignUp} />
         <Route path="/admin/:id" component={AdminDashboard} />
         <Route path="/worker/:id" component={WorkerDashboard} />
+        <Route path="/user/:id" component={CustomerDashboard} />
         <Route path="/business/schedule/:id" component={BusinessSchedule} />
         <Route path="/admin/:id/addworker" component={AddWorker} />
         <Route path="/admin/:id/editworker" component={EditWorker} />
