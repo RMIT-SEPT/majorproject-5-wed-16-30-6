@@ -24,7 +24,7 @@ public class LoginController {
     @Autowired
     private MapValidationErrorService mapValidationErrorService;
 
-    @GetMapping("/{personId}/{password}")
+    @PostMapping ("/{personId}/{password}")
     public ResponseEntity<?> login(@PathVariable String personId, @PathVariable String password)  {
 
         Person person = personService.findByPersonIdentifier(personId);
