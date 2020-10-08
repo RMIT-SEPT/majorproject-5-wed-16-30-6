@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Redirect } from 'react-router-dom';
 import Layout from './Layout';
 import { connect } from "react-redux";
 import './LoginForm.css';
@@ -48,17 +49,26 @@ class Login extends Component {
   }
 
   render() {
-    const {username, password} = this.state.formData;
 
-    var errorBackend = "";
-    if (this.props.errorMsg) {
-      // if (this.props.errorMsg.personIdentifier) {
-      //   errorBackend = this.props.errorMsg.username;
-      // }
+    // redirect to dashboard if successfully submitted
+    if (this.props.login && this.props.person) {
+      const role = this.props.person.role;
+      const id = this.props.person.id;
+
+      // redirect to different dashboard depending on the role
+      switch(role) {
+        case 'c':
+          return <Redirect to={"/user/" + id} />;
+        case 'w':
+          return <Redirect to={"/worker/" + id} />;
+        case 'a':
+          return <Redirect to={"/admin/" + id} />;
+        default:
+          return <Redirect to="/home" />;
+      }
     }
-    else {
-      errorBackend = "Error occurred. Please try again."
-    }
+
+    const {username, password} = this.state.formData;
 
     return (
       <Layout>
@@ -67,7 +77,7 @@ class Login extends Component {
           <form onSubmit={this.handleSubmit} id="login-form">
 
             <div id="error-msg">
-              <div>{(this.submit && this.state.responseError) ? errorBackend : ""}</div>
+              {(this.props.error) && <div>Username or password is incorrect.</div>}
             </div>
 
             <div className="inputWrapper">
@@ -98,18 +108,13 @@ class Login extends Component {
 }
 
 const mapStateToProps = state => {
-  // const currentState = state.loginReducer[state.loginReducer.length - 1];
-
-  // return {
-  //   login: currentState.login,
-  //   errorMsg: ""
-  // }
+  const currentState = state.loginReducer[state.loginReducer.length - 1];
 
   return {
-    login: false,
-    errorMsg: ""
+    login: currentState.login,
+    person: currentState.person,
+    error: currentState.error
   }
 }
 
-export default connect(mapStateToProps, null)(Login)
-
+export default connect(mapStateToProps, null)(Login);

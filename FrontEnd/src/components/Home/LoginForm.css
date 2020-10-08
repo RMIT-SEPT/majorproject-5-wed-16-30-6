@@ -34,8 +34,9 @@
 
 #error-msg {
     color: red;
-    text-align: left;
-    margin-bottom: 20px;
+    margin: 0 auto;
+    padding-bottom: 20px;
+    width: 300px;
 }
 
 #login-form input {
