@@ -39,7 +39,7 @@ public class PersonRepositoryTest {
         person1.setRole("w");
         person1.setMobileNum("0402821822");
         person1.setDesc("New Worker");
-        person1.setPersonIdentifier("AAAA");
+        person1.setUsername("AAAA");
         person1.setName("John");
         person1.setId(id1);
 
@@ -59,7 +59,7 @@ public class PersonRepositoryTest {
         person2.setRole("c");
         person2.setMobileNum("0402815583");
         person2.setDesc("New Customer");
-        person2.setPersonIdentifier("BBBB");
+        person2.setUsername("BBBB");
         person2.setName("Jay");
 
         personRepository.save(person2);
@@ -78,7 +78,7 @@ public class PersonRepositoryTest {
         person4.setRole("w");
         person4.setMobileNum("0402844773");
         person4.setDesc("New Worker");
-        person4.setPersonIdentifier("DDDD");
+        person4.setUsername("DDDD");
         person4.setName("Jim");
 
         personRepository.save(person4);

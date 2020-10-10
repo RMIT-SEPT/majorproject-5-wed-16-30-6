@@ -7,13 +7,20 @@ import PropTypes from 'prop-types';
  */
 export class BusinessOption extends Component {
   render() {
-    let id = this.props.businessId;
-    let link = "/business/schedule/" + id;
+    let link = "/business/schedule/" + this.props.businessId;
 
     return (
       <div 
-      className="business-option"
-      onClick={() => this.props.history.push(link)}
+        className="business-option"
+        onClick={
+          () => this.props.history.push({
+            pathname: link,
+            state: {
+              userId: this.props.userId,
+              username: this.props.username,
+            }
+          })
+        }
       >
         <div className="business-name">Business Name</div>
         <div className="business-desc">Business Description</div>
