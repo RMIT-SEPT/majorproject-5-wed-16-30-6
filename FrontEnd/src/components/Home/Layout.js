@@ -46,6 +46,7 @@ export class Layout extends Component {
               <LinkButton link={link} label="Dashboard" className="myprofile-link" />
               <LinkButton link="/about" label="About" className="about-link" />
               <LinkButton link="/contactus" label="Contact Us" className="contact-link" />
+              <LinkButton link="/logout" label="Logout" className="logout-link" />
             </div>
           }
 
