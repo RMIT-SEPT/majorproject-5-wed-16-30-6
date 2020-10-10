@@ -1,4 +1,5 @@
 import axios from 'axios'
+import { postLoginSuccess } from './loginActions'
 
 export const POST_CUSTOMER_REQUEST = 'POST_CUSTOMER_REQUEST'
 export const postCustomerRequest = () => {
@@ -19,7 +20,7 @@ export const postCustomerSuccess = (json) => {
 export const POST_CUSTOMER_FAILURE = 'POST_CUSTOMER_FAILURE'
 export const postCustomerFailure = (error) => ({
   type: POST_CUSTOMER_FAILURE,
-  errorMsg: error.response.data,
+  errorMsg: error.response?.data ?? error,
   error
 })
 
@@ -57,6 +58,7 @@ export const addCustomer = (formData) => {
       .then(res => {
         console.log(res);
         dispatch(postCustomerSuccess(res.data));
+        dispatch(postLoginSuccess(res.data));
       })
       .catch(err => {
         console.log(err);
