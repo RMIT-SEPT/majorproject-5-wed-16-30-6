@@ -25,7 +25,7 @@ class AdminDashboard extends Component {
           <AdminDashboardColumn id={id} />
 
           { selected === "add_worker" && <AddWorker id={id} /> }
-          { selected === "edit_worker" && <EditWorkerSchedule id={id} /> }
+          { selected === "edit_worker_schedule" && <EditWorkerSchedule id={id} /> }
 
       </div>
       </Layout>

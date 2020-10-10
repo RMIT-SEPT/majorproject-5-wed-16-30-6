@@ -33,25 +33,12 @@ class AdminDashboardColumn extends Component {
             () => this.props.history.push({
               pathname: editWorkerPath,
               state: {
-                selected: "edit_worker"
+                selected: "edit_worker_schedule"
               }
             })
           }
         >
-          Edit Worker
-        </div>
-        <div
-          className="opt"
-          onClick={
-            () => this.props.history.push({
-              pathname: shiftPath,
-              state: {
-                selected: "add_edit_shift"
-              }
-            })
-          }
-        >
-          Add/Edit Shift
+          Edit Worker Schedule
         </div>
         <div
           className="opt"
