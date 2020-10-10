@@ -14,6 +14,19 @@ class bookingForm extends Component {
     this.props.dispatch(bookService(this.props.customer.id, this.props.location.state.scheduleId));
   }
 
+  getWorkerNames() {
+    const workerIds = this.props.location.state.workerIds;
+    let workerNameCells = [];
+
+    workerIds.forEach(workerId => {
+      workerNameCells.push(
+        <div><input type="radio" name="worker" value={workerId}/> Worker {workerId}</div>
+      )
+    })
+
+    return workerNameCells;
+  }
+
   render() {
     const login = this.props.login;
     // console.log(this.props.login);
@@ -41,8 +54,12 @@ class bookingForm extends Component {
               <div>Service: {this.props.location.state.businessId}</div>
               <div>Date: {this.props.location.state.date}</div>
               <div>Time: {this.props.location.state.startTime} - {this.props.location.state.endTime}</div>
+              <div>Worker:</div>
+              {this.getWorkerNames()}
+                
               <div>Would you like to confirm the booking?</div>
             </div>
+
             <form onSubmit={this.handleSubmit.bind(this)}>
               <input type="submit" value="Confirm" />
               <button
@@ -61,8 +78,6 @@ class bookingForm extends Component {
 const mapStateToProps = state => {
   const currentCustState = state.customerReducer[state.customerReducer.length - 1];
   const currentBookingState = state.bookingReducer[state.bookingReducer.length - 1];
-
-  console.log(currentBookingState);
   
   return {
     login: currentCustState.login,
