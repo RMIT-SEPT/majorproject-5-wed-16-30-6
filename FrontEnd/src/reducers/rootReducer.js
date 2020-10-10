@@ -9,7 +9,7 @@ const allReducers = {
     schedules: schedules,
     workerReducer: workerReducer,
     customerReducer: customerReducer,
-    loginReducer: loginReducer
+    loginReducer: loginReducer,
     bookingReducer: bookingReducer
 }
 
