@@ -1,10 +1,16 @@
 import React, { Component } from 'react'
+import { connect } from "react-redux";
 import CustomerDashboardColumn from './CustomerDashboardColumn';
 import './Dashboard.css';
+import { Redirect } from 'react-router-dom';
 
 class CustomerDashboard extends Component {
 
   render() {
+    if (!this.props.login) {
+      return <Redirect to="/home" />
+    }
+
     var selected = "profile";
 
     // if redirected from dashboard option
@@ -44,4 +50,13 @@ class CustomerDashboard extends Component {
   }
 }
 
-export default CustomerDashboard;
+const mapStateToProps = state => {
+  const currentState = state.loginReducer[state.loginReducer.length - 1];
+  
+  return {
+    login: currentState.login,
+    person: currentState.person,
+  }
+}
+
+export default connect(mapStateToProps, null)(CustomerDashboard);
