@@ -5,7 +5,7 @@ import './Dashboard.css';
 class CustomerDashboard extends Component {
 
   render() {
-    var selected = "";
+    var selected = "profile";
 
     // if redirected from dashboard option
     if (this.props.location.state) {
