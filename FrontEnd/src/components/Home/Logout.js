@@ -10,9 +10,6 @@ class Logout extends Component {
   }
 
   render() {
-
-    console.log("dd");
-
     return (
       <div>
       </div>

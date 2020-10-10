@@ -47,8 +47,6 @@ class Home extends Component {
 
 const mapStateToProps = state => {
   const currentState = state.loginReducer[state.loginReducer.length - 1];
-
-  console.log(currentState.login);
   
   return {
     login: currentState.login,

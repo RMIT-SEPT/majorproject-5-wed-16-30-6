@@ -33,15 +33,6 @@ export const addCustomer = (formData) => {
   return (dispatch) => {
     dispatch(postCustomerRequest());
 
-    // const data = {
-    //     "name": this.state.formData.name,
-    //     "username": this.state.formData.username,
-    //     "password": this.state.formData.password,
-    //     "address": this.state.formData.address,
-    //     "mobileNum": this.state.formData.mobile,
-    //     "role": "c"
-    // }
-
     const data = {
       "name": formData.name,
       "username": formData.username,
@@ -50,8 +41,6 @@ export const addCustomer = (formData) => {
       "mobileNum": formData.mobile,
       "role": "c"
     }
-
-    console.log(data);
     
     const url = 'http://localhost:8080/api/person';
     return axios.post(url, data)
