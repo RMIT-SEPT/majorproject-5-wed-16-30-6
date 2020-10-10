@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import { withRouter } from 'react-router';
 
 class ScheduleCell extends Component {
+
   /**
    * get hour label for cells
    */
@@ -12,11 +14,24 @@ class ScheduleCell extends Component {
     return hours + ampm;
   }
 
+  handleClick = () => {
+    this.props.history.push({
+      pathname: "/bookingForm",
+      state: {
+        scheduleId: this.props.scheduleId,
+        startTime: this.getHourLabel(this.props.startTime),
+        endTime: this.getHourLabel(this.props.endTime),
+        date: this.props.date,
+        businessId: this.props.businessId
+      }
+    });
+  }
+
   render() {
     // return available cell
     if (this.props.isAvailable) {
       return (
-        <div className='schedule-cell'>
+        <div className='schedule-cell' onClick={this.handleClick}>
           <div>
             {this.getHourLabel(this.props.startTime)}
             <span> - </span>
@@ -28,9 +43,9 @@ class ScheduleCell extends Component {
     else {
       // return unavailable cell
       return (
-        <div className='schedule-cell-unavailable'>
+          <div className='schedule-cell-unavailable'>
           <div>{this.getHourLabel(this.props.startTime)}</div>
-        </div>
+          </div>
       )
     }
   }
@@ -42,4 +57,4 @@ ScheduleCell.propTypes = {
   isAvailable: PropTypes.bool.isRequired
 }
 
-export default ScheduleCell;
+export default withRouter(ScheduleCell);

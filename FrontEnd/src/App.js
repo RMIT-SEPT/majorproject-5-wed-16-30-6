@@ -2,7 +2,8 @@ import React from 'react'
 import './App.css';
 import "bootstrap/dist/css/bootstrap.min.css"
 import {BrowserRouter, Route} from 'react-router-dom';
-import BusinessSchedule from './components/BusinessSchedule/BusinessSchedule';
+import BusinessSchedule from './components/Booking/BusinessSchedule';
+import bookingForm from './components/Booking/bookingForm.js';
 import Home from './components/Home/Home';
 import Login from './components/Home/Login';
 import SignUp from './components/Home/SignUp';
@@ -29,6 +30,7 @@ function App() {
         <Route path="/worker/:id" component={WorkerDashboard} />
         <Route path="/user/:id" component={CustomerDashboard} />
         <Route path="/business/schedule/:id" component={BusinessSchedule} />
+        <Route path="/bookingForm" component={bookingForm} />
         <Route path="/admin/:id/addworker" component={AddWorker} />
         <Route path="/admin/:id/editworker" component={EditWorker} />
         <Route path="/user/:id/profile" component={Profile} />

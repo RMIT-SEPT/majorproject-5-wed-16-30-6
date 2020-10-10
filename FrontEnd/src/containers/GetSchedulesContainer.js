@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import Schedule from '../components/BusinessSchedule/Schedule'
+import Schedule from '../components/Booking/Schedule'
 import { getSchedules } from '../actions'
 
 /**
