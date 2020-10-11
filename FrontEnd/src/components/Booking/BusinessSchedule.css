@@ -132,3 +132,7 @@
 #unavailable-msg {
     color: red;
 }
+
+#booking-business-title {
+    height: 80px;
+}
