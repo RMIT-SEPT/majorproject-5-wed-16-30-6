@@ -11,7 +11,9 @@ import sept.project.backend.model.WorkerSchedule;
 import sept.project.backend.services.BookingService;
 import sept.project.backend.services.EditScheduleService;
 import sept.project.backend.services.MapValidationErrorService;
+import sept.project.backend.services.Personservice;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -23,6 +25,9 @@ public class BookingController {
     private BookingService bookingService;
 
     @Autowired
+    private Personservice personservice;
+
+    @Autowired
     private EditScheduleService editScheduleService;
 
     @Autowired
@@ -31,7 +36,21 @@ public class BookingController {
     @GetMapping(path = "/schedule/{businessId}")
     public ResponseEntity<?> getBusinessScheduleByBusinessId(@PathVariable("businessId") Long businessId) {
         Iterable<WorkerSchedule> workerSchedules = bookingService.getAllWorkerSchedulesByBusinessId(businessId);
-        return ResponseEntity.ok(workerSchedules);
+
+        WorkerScheduleResult result = new WorkerScheduleResult();
+
+        result.schedules = workerSchedules;
+
+        ArrayList<Person> workers = new ArrayList<Person>();
+        for (WorkerSchedule s : result.schedules) {
+            Person worker = personservice.findById(s.getWorkerId());
+            if (worker != null && !workers.contains(worker)) {
+                workers.add(worker);
+            }
+        }
+
+        result.workers = workers;
+        return ResponseEntity.ok(result);
     }
 
     @PostMapping("")
@@ -43,5 +62,5 @@ public class BookingController {
 
         editScheduleService.editSchedule(scheduleId, custId);
     }
-
 }
+

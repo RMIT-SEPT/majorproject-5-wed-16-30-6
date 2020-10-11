@@ -6,6 +6,8 @@ import sept.project.backend.exceptions.PersonException;
 import sept.project.backend.model.Person;
 import sept.project.backend.repositories.PersonRepository;
 
+import java.util.List;
+
 
 @Service
 public class Personservice {
@@ -34,6 +36,16 @@ public class Personservice {
 
         }
 
+
+        return person;
+    }
+
+    public Person findById(Long id)  {
+        Person person = personRepository.findById(id).orElse(null);
+
+        if(person == null){
+            throw new PersonException(id + " does not exist");
+        }
 
         return person;
     }
