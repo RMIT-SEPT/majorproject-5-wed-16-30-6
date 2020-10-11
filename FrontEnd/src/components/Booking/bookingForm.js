@@ -4,6 +4,8 @@ import "./bookingForm.css"
 import LoginSignupPrompt from './LoginSignupPrompt';
 import { bookService } from '../../actions/bookingActions';
 import { Redirect } from 'react-router-dom';
+import Layout from '../Home/Layout';
+
 
 class bookingForm extends Component {
   constructor() {
@@ -72,8 +74,9 @@ class bookingForm extends Component {
     }
 
     return (
+      <Layout>
       <div className="container">
-        <h1>Booking Form</h1>
+        <h1 id="booking-form-title">Booking Form</h1>
 
         {!login && <LoginSignupPrompt />}
 
@@ -94,7 +97,7 @@ class bookingForm extends Component {
             <form onSubmit={this.handleSubmit.bind(this)}>
               <input type="submit" value="Confirm" />
               <button
-                onClick={() => this.props.history.push("business/schedule/" + this.props.location.state.businessId)}
+                onClick={() => this.props.history.push("business/" + this.props.location.state.businessId + "/schedule")}
                 className="cancel"
               >Cancel
             </button>
@@ -102,6 +105,7 @@ class bookingForm extends Component {
           </div>
         }
       </div>
+      </Layout>
     )
   }
 }

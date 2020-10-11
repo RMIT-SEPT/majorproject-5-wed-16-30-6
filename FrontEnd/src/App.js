@@ -31,7 +31,7 @@ function App() {
         <Route path="/admin/:id" component={AdminDashboard} />
         <Route path="/worker/:id" component={WorkerDashboard} />
         <Route path="/user/:id" component={CustomerDashboard} />
-        <Route path="/business/schedule/:id" component={BusinessSchedule} />
+        <Route path="/business/:id/schedule" component={BusinessSchedule} />
         <Route path="/bookingForm" component={bookingForm} />
         <Route path="/admin/:id/addworker" component={AddWorker} />
         <Route path="/admin/:id/editworker" component={EditWorker} />
