@@ -12,6 +12,7 @@ class bookingForm extends Component {
       selectedWorkerId: ""
     }
 
+    this.submit = false;
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -23,8 +24,10 @@ class bookingForm extends Component {
       return;
     }
 
+    this.submit = true;
+
     // send booking data to backend
-    this.props.dispatch(bookService(this.props.location.state.scheduleId, this.props.customer.id, this.state.selectedWorkerId));
+    this.props.dispatch(bookService(this.props.location.state.scheduleId, this.props.person.id, this.state.selectedWorkerId));
   }
 
   handleChange(event) {
@@ -36,11 +39,14 @@ class bookingForm extends Component {
   getWorkerNames() {
     const workerIds = this.props.location.state.workerIds;
     const workers = this.props.workers;
-
     let workerNameCells = [];
 
     workerIds.forEach(workerId => {
-      const worker = workers.find((x) => { return x.id === workerId});
+      const worker = workers.find(
+        (x) => { 
+          return x.id === workerId;
+        }
+      );
 
       workerNameCells.push(
         <div key={workerId}>
@@ -59,8 +65,9 @@ class bookingForm extends Component {
     const login = this.props.login;
 
     // if booking succeeded
-    if (this.props.booked) {
-      const path = "/user/" + this.props.customer.id + "/booking_history";
+    if (this.props.booked && this.submit) {
+      const path = "/user/" + this.props.person.id + "/booking_history";
+      this.submit = false;
       return <Redirect to={path} />;
     }
 
@@ -70,11 +77,11 @@ class bookingForm extends Component {
 
         {!login && <LoginSignupPrompt />}
 
-        {login && this.props.customer &&
+        {login && this.props.person &&
           <div>
             <div className="booking-info">
-              <div>Customer Name: {this.props.customer.name}</div>
-              <div>Phone: {this.props.customer.mobileNum}</div>
+              <div>Customer Name: {this.props.person.name}</div>
+              <div>Phone: {this.props.person.mobileNum}</div>
               <div>Service: {this.props.location.state.businessId}</div>
               <div>Date: {this.props.location.state.date}</div>
               <div>Time: {this.props.location.state.startTime} - {this.props.location.state.endTime}</div>
@@ -100,13 +107,13 @@ class bookingForm extends Component {
 }
 
 const mapStateToProps = state => {
-  const currentCustState = state.customerReducer[state.customerReducer.length - 1];
+  const currentLoginState = state.loginReducer[state.loginReducer.length - 1];
   const currentBookingState = state.bookingReducer[state.bookingReducer.length - 1];
   const currentScheduleState = state.schedules[state.schedules.length - 1];
   
   return {
-    login: currentCustState.login,
-    customer: currentCustState.customer,
+    login: currentLoginState.login,
+    person: currentLoginState.person,
     booked: currentBookingState.booked,
     booking: currentBookingState.booking,
     errorMsg: currentBookingState.errorMsg,
