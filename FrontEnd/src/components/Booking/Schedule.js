@@ -6,7 +6,6 @@ import DaysHeader from './DaysHeader';
 import Layout from '../Home/Layout';
 import PropTypes from 'prop-types'
 
-
 class Schedule extends Component {
 
   /* call the API immediately after the components are rendered */
@@ -17,7 +16,9 @@ class Schedule extends Component {
 
   constructor() {
     super();
-    this.availability = false;
+    this.state = {
+      availability: false,
+    }
   }
 
   /**
@@ -27,14 +28,17 @@ class Schedule extends Component {
   getDaysAndAvailability() {
     let days = []
     let i = 1;
+
     this.props.schedule.forEach(day => {
       let id = "day" + i;
       let timeslots = day.timeslots;
       days.push(<Day key={id} timeslots={timeslots} id={id} />);
 
       // change the availability if any of the seven days have timeslots
-      if (!this.availability && timeslots.length > 0) {
-        this.availability = true;
+      if (!this.state.availability && timeslots.length > 0) {
+        this.setState({
+          availability: true
+        });
       }
       
       i++;
@@ -51,12 +55,13 @@ class Schedule extends Component {
     return (
       <Layout>
         <div id="schedule">
+          <h1 id="booking-business-title">Business Name {this.props.businessId} Booking</h1>
           <h3 id="month-year">
             <span>{months[parseInt(firstDateSchedule.month)]}</span>
             <span>{firstDateSchedule.year}</span>
           </h3>
 
-          {!this.availability &&
+          {!this.state.availability &&
             <h5 id="unavailable-msg">No times available.</h5>
           }
 
