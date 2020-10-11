@@ -11,7 +11,8 @@ export const GET_SCHEDULES_SUCCESS = 'GET_SCHEDULES_SUCCESS'
 const getSchedulesSuccess = (json) => {  
     return {
         type: GET_SCHEDULES_SUCCESS,
-        schedules: json,
+        schedules: json.schedules,
+        workers: json.workers,
         receivedAt: Date.now()
     }
 }

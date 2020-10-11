@@ -35,15 +35,19 @@ class bookingForm extends Component {
 
   getWorkerNames() {
     const workerIds = this.props.location.state.workerIds;
+    const workers = this.props.workers;
+
     let workerNameCells = [];
 
     workerIds.forEach(workerId => {
+      const worker = workers.find((x) => { return x.id === workerId});
+
       workerNameCells.push(
         <div key={workerId}>
           <input 
             type="radio" name="worker" value={workerId}
             onChange={this.handleChange}
-          /> Worker {workerId}
+          /> {worker.name}
         </div>
       )
     })
@@ -98,13 +102,15 @@ class bookingForm extends Component {
 const mapStateToProps = state => {
   const currentCustState = state.customerReducer[state.customerReducer.length - 1];
   const currentBookingState = state.bookingReducer[state.bookingReducer.length - 1];
+  const currentScheduleState = state.schedules[state.schedules.length - 1];
   
   return {
     login: currentCustState.login,
     customer: currentCustState.customer,
     booked: currentBookingState.booked,
     booking: currentBookingState.booking,
-    errorMsg: currentBookingState.errorMsg
+    errorMsg: currentBookingState.errorMsg,
+    workers: currentScheduleState.workers
   }
 }
 

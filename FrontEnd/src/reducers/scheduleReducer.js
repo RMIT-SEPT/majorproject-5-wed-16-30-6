@@ -26,6 +26,7 @@ import {
           {
             isFetching: false,
             timeslots: action.schedules,
+            workers: action.workers,
             lastUpdated: action.receivedAt
           }
         ]
