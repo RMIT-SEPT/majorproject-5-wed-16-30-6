@@ -1,7 +1,7 @@
 version: "3"
 services:
   frontend:
-    image: frontend_frontend-prod
+    image: frontend:prod
     ports:
       - "1337:80"
     networks:
@@ -10,7 +10,7 @@ services:
       - backend
 
   backend:
-    image: backend
+    image: backend:latest
     ports:
       - "8080:8080"
     networks:

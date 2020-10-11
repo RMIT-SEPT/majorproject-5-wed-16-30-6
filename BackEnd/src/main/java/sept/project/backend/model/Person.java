@@ -34,6 +34,7 @@ public class Person {
     @NotBlank(message ="Password is required")
     @Column(updatable = false)
     private String password;
+    @Column(name = "description")
     private String desc;
     @Size(min=10,max =10, message = "please enter 10 characters")
     @Pattern(regexp = "[0-9]+")

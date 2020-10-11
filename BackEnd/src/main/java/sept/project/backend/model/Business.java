@@ -26,6 +26,7 @@ public class Business {
     private Long id;
     @NotBlank(message = "Person name is required")
     private String name;
+    @Column(name = "description")
     private String desc;
 
     public Long getId() {
