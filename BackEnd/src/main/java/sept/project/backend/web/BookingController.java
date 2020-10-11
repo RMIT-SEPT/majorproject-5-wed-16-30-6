@@ -57,10 +57,18 @@ public class BookingController {
     @ResponseBody
     public void editSchedule(@RequestBody BookingForm bookingForm)  {
         Long scheduleId = bookingForm.getId();
+
+        WorkerSchedule schedule = bookingService.getScheduleById(scheduleId);
+
         Long workerId = bookingForm.getWorker_id();
+
+        if (schedule.getWorkerId() != workerId) {
+            schedule = bookingService.getScheduleForWorkerAtTime(workerId, schedule.getStartDateTime(), schedule.getEndDateTime());
+        }
+
         Long custId = bookingForm.getCust_id();
 
-        editScheduleService.editSchedule(scheduleId, custId);
+        editScheduleService.editSchedule(schedule.getId(), custId);
     }
 }
 
