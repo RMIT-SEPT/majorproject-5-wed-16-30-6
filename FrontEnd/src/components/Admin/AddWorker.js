@@ -125,11 +125,6 @@ class AddWorker extends Component {
   }
 
   render() {
-   
-    // if a worker is successfully added
-    // if (this.props.addWorkerSuccess && this.submit) {
-    //   return <EditWorker createdUser={this.props.worker.name}/>
-    // }
 
     const {name, personId, desc, mobile, startDate, endDate} = this.state;
     var errorBackend = "";
@@ -201,9 +196,7 @@ class AddWorker extends Component {
               </div>
 
             </div>
-
             <div className="form-right">
-
               <div className="inputWrapper" id="desc-input">
                 <label htmlFor="desc">Description: </label>
                 <div className="input-msg">*Required</div>
@@ -215,7 +208,6 @@ class AddWorker extends Component {
                 >
                 </textarea>
               </div>
-
               <div className="inputWrapper">
                 <label htmlFor="startDate">Start Date: </label>
                 <input
@@ -238,7 +230,6 @@ class AddWorker extends Component {
               </div>
             </div>
           </div>
-
           <button type="submit" value="Save">Save</button>
         </form>
       </div>
