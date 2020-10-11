@@ -21,6 +21,8 @@ INSERT INTO Worker_Schedule VALUES (15, false, 2, null, '2020-08-19 11:00:00', '
 INSERT INTO Worker_Schedule VALUES (16, false, 2, null, '2020-08-18 12:00:00', '2020-08-18 11:00:00', 4);
 INSERT INTO Worker_Schedule VALUES (17, false, 2, null, '2020-08-18 13:00:00', '2020-08-18 12:00:00', 4);
 
-
-
+INSERT INTO Person VALUES (1, 'address1', '2020-10-11 14:24:14.053', null, null, '5555555555', 'person1', 'v', 'c', null, null, 'PID1');
+INSERT INTO Person VALUES (2, 'address1', '2020-10-11 14:24:14.053', null, null, '5555555555', 'person2', 'v', 'c', null, null, 'PID2');
+INSERT INTO Person VALUES (3, 'address1', '2020-10-11 14:24:14.053', null, null, '5555555555', 'person3', 'v', 'c', null, null, 'PID3');
+INSERT INTO Person VALUES (4, 'address1', '2020-10-11 14:24:14.053', null, null, '5555555555', 'person4', 'v', 'c', null, null, 'PID4');
 
