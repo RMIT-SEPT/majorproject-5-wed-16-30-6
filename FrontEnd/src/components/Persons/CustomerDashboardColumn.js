@@ -15,6 +15,14 @@ class CustomerDashboardColumn extends Component {
         <div
           className="opt"
           onClick={
+            () => this.props.history.push("/home")
+          }
+        >
+          Home
+        </div>
+        <div
+          className="opt"
+          onClick={
             () => this.props.history.push({
               pathname: historyPath,
               state: {

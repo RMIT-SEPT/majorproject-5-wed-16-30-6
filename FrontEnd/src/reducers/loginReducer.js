@@ -1,5 +1,5 @@
 import {
-  POST_LOGIN_REQUEST, POST_LOGIN_SUCCESS, POST_LOGIN_FAILURE
+  POST_LOGIN_REQUEST, POST_LOGIN_SUCCESS, POST_LOGIN_FAILURE, LOGOUT_SUCCESS
 } from '../actions/loginActions'
 
 const initalState = {
@@ -33,6 +33,14 @@ const loginReducer = (state = [initalState], action) => {
           isFetching: false,
           errorMsg: action.errorMsg,
           error: action.error,
+          login: false
+        }
+      ]
+    case LOGOUT_SUCCESS:
+      return [
+        ...state,
+        {
+          person: null,
           login: false
         }
       ]

@@ -4,6 +4,7 @@ import BusinessOption from './BusinessOption'
 import "./Home.css";
 import Layout from './Layout';
 import Greeting from '../Persons/Greeting';
+import { withRouter } from 'react-router-dom';
 
 /**
  * Displayed as the main part of Home page with links to each business
@@ -28,8 +29,10 @@ class Home extends Component {
   render() {
     var name = "";
     if (this.props.login) {
-      name = this.props.customer.name;
+      name = this.props.person.name;
     }
+
+    console.log(this.props.login);
     
     return (
       <Layout>
@@ -43,13 +46,13 @@ class Home extends Component {
 }
 
 const mapStateToProps = state => {
-  const currentState = state.customerReducer[state.customerReducer.length - 1];
+  const currentState = state.loginReducer[state.loginReducer.length - 1];
   
   return {
     login: currentState.login,
-    customer: currentState.customer,
+    person: currentState.person,
   }
 }
 
-export default connect(mapStateToProps, null)(Home);
+export default withRouter(connect(mapStateToProps, null)(Home));
 

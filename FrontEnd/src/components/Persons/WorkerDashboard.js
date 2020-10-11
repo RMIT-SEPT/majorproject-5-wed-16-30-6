@@ -1,11 +1,18 @@
 import React, { Component } from 'react'
+import { connect } from "react-redux";
 import WorkerDashboardColumn from './WorkerDashboardColumn';
 import './Dashboard.css';
 import WorkerProfile from './WorkerProfile';
+import { Redirect } from 'react-router-dom';
+
 
 class WorkerDashboard extends Component {
 
   render() {
+    if (!this.props.login) {
+      return <Redirect to="/home" />
+    }
+
     var selected = "profile";
 
     // if redirected from dashboard option
@@ -31,4 +38,13 @@ class WorkerDashboard extends Component {
   }
 }
 
-export default WorkerDashboard;
+const mapStateToProps = state => {
+  const currentState = state.loginReducer[state.loginReducer.length - 1];
+  
+  return {
+    login: currentState.login,
+    person: currentState.person,
+  }
+}
+
+export default connect(mapStateToProps, null)(WorkerDashboard);

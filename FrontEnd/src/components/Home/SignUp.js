@@ -135,12 +135,6 @@ class SignUp extends Component {
 
     // redirect to home if successfully submitted
     if (this.submit && this.props.login) {
-      // const username = this.state.responseSuccess.username;
-      // const userId = this.state.responseSuccess.userId;
-
-      // update user login info
-      // this.props.dispatch(logIn(username, userId));
-
       return <Redirect to="/home" />;
     }
     
@@ -155,8 +149,6 @@ class SignUp extends Component {
     else {
       errorBackend = "Error occurred. Please try again."
     }
-
-    // console.log(this.state.responseError);
 
     return (
       <Layout>

@@ -3,11 +3,16 @@ import { connect } from "react-redux"
 import CustomerDashboardColumn from './CustomerDashboardColumn';
 import './Dashboard.css';
 import BookingHistory from './BookingHistory';
+import { Redirect } from 'react-router-dom';
 
 class CustomerDashboard extends Component {
 
   render() {
-    var selected = "";
+    if (!this.props.login) {
+      return <Redirect to="/home" />
+    }
+
+    var selected = "profile";
 
     // redirected from booking page
     if (this.props.booked) {
@@ -52,9 +57,13 @@ class CustomerDashboard extends Component {
 }
 
 const mapStateToProps = state => {
+  const currentState = state.loginReducer[state.loginReducer.length - 1];
   const currentBookingState = state.bookingReducer[state.bookingReducer.length - 1];
+
   
   return {
+    login: currentState.login,
+    person: currentState.person,
     booked: currentBookingState.booked
   }
 }

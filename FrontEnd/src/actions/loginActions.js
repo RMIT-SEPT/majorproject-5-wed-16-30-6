@@ -19,9 +19,17 @@ export const postLoginSuccess = (json) => {
 export const POST_LOGIN_FAILURE = 'POST_LOGIN_FAILURE'
 export const postLoginFailure = (error) => ({
   type: POST_LOGIN_FAILURE,
-  errorMsg: error.response.data,
+  errorMsg: error.response?.data ?? error,
   error
 })
+
+export const LOGOUT_SUCCESS = 'LOGOUT_SUCCESS'
+export const logoutSuccess = () => {
+  return {
+    type: LOGOUT_SUCCESS,
+    login: false
+  }
+}
 
 /**
  * call the api to login 
