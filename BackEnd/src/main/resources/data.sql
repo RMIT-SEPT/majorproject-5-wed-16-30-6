@@ -78,7 +78,7 @@ INSERT INTO Worker_Schedule VALUES (65, false, 2, null, '2020-10-19 15:00:00', '
 
 
 /* id, address, created_at, desc, end_date, mobile_num, name, password, role, start_date, updated_at, username */
-INSERT INTO Person VALUES (1, '449 Punt Road, Cremorne', '2020-01-01 00:00:00', 'admin desc',
+INSERT INTO Person VALUES (1, '449 Punt Road, Cremorne', '2020-01-01 00:00:00', 'worker desc',
  '2021-12-31 00:00:00', '9873727793', 'Bob', '123', 'w', '2020-07-30 00:00:00', null, 'BOB77');
 INSERT INTO Person VALUES (2, '124 La Trobe St, Melbourne VIC 3000', '2020-01-01 00:00:00', 'worker desc',
  '2021-12-31 00:00:00', '1112223334', 'James', '123', 'w', '2020-07-30 00:00:00', null, 'JAMES');
