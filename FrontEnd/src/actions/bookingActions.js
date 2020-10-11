@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 export const POST_BOOKING_SUCCESS = 'POST_BOOKING_SUCCESS'
-const postBookingSuccess = (data) => {
+export const postBookingSuccess = (data) => {
   return {
     type: POST_BOOKING_SUCCESS,
     booking: data,
@@ -10,7 +10,7 @@ const postBookingSuccess = (data) => {
 }
 
 export const POST_BOOKING_FAILURE = 'POST_BOOKING_FAILURE'
-const postBookingFailure = (error) => ({
+export const postBookingFailure = (error) => ({
   type: POST_BOOKING_FAILURE,
   errorMsg: error.response?.data ?? error,
   error
