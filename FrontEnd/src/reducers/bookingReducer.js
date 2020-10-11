@@ -12,8 +12,8 @@ import {
         return [
           ...state,
           {
-            booking: action.booking,
             lastUpdated: action.receivedAt,
+            booking: action.booking,
             booked: true
           }
         ]
@@ -21,7 +21,7 @@ import {
         return [
           ...state,
           {
-            // errorMsg: action.errorMsg,
+            errorMsg: action.errorMsg,
             error: action.error,
             booked: false
           }
