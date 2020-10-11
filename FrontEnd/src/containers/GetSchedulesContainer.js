@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import Schedule from '../components/BusinessSchedule/Schedule'
+import Schedule from '../components/Booking/Schedule'
 import { getSchedules } from '../actions'
 
 /**
@@ -10,7 +10,7 @@ const mapStateToProps = (state) => {
   const length = state.schedules.length
   const currentState = state.schedules[length - 1]  // the newest state
 
-  var current = new Date("2020-08-16");
+  var current = new Date("2020-10-18");
   /* get dates of the next 7 days */
   var dates = [];
   for (var i = 0; i < 7; i++) {

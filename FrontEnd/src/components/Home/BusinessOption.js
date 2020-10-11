@@ -7,7 +7,7 @@ import PropTypes from 'prop-types';
  */
 export class BusinessOption extends Component {
   render() {
-    let link = "/business/schedule/" + this.props.businessId;
+    let link = "/business/" + this.props.businessId + "/schedule";
 
     return (
       <div 
@@ -16,8 +16,7 @@ export class BusinessOption extends Component {
           () => this.props.history.push({
             pathname: link,
             state: {
-              userId: this.props.userId,
-              username: this.props.username,
+              businessId: this.props.businessId
             }
           })
         }

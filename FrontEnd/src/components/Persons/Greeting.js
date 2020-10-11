@@ -7,7 +7,7 @@ class Greeting extends Component {
     if (name) {
       return (
         <div className="greet-user-box">
-          <div>{name ? "Hello " + name + " !" : ""}</div>
+          <div>{name ? "Hello " + name + "!" : ""}</div>
         </div>   
       )
     }

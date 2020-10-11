@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
-import { connect } from "react-redux";
+import { connect } from "react-redux"
 import CustomerDashboardColumn from './CustomerDashboardColumn';
 import './Dashboard.css';
+import BookingHistory from './BookingHistory';
 import { Redirect } from 'react-router-dom';
 
 class CustomerDashboard extends Component {
@@ -13,11 +14,16 @@ class CustomerDashboard extends Component {
 
     var selected = "profile";
 
+    // redirected from booking page
+    if (this.props.booked) {
+      selected = "booking_history";
+    }
+
     // if redirected from dashboard option
     if (this.props.location.state) {
       selected = this.props.location.state.selected;
     }
-
+    
     const { params } = this.props.match;
     const id = parseInt(params.id);
 
@@ -30,7 +36,7 @@ class CustomerDashboard extends Component {
           Customer ID: {id}
         
           {selected === "booking_history" &&
-            <div>Booking History</div>
+            <BookingHistory />
           }
 
           {selected === "cancel_booking" &&
@@ -52,10 +58,13 @@ class CustomerDashboard extends Component {
 
 const mapStateToProps = state => {
   const currentState = state.loginReducer[state.loginReducer.length - 1];
+  const currentBookingState = state.bookingReducer[state.bookingReducer.length - 1];
+
   
   return {
     login: currentState.login,
     person: currentState.person,
+    booked: currentBookingState.booked
   }
 }
 

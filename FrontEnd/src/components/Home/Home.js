@@ -31,8 +31,6 @@ class Home extends Component {
     if (this.props.login) {
       name = this.props.person.name;
     }
-
-    console.log(this.props.login);
     
     return (
       <Layout>

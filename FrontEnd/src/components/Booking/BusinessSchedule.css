@@ -1,11 +1,12 @@
 #schedule {
     margin: 20px;
+    width: 100%;
 }
 
 #schedule-grid {
     display: grid;
     /* height of each row */
-    grid-template-rows: 80px 1200px;
+    grid-template-rows: 80px 1100px;
     /* width of each column */
     grid-template-columns: 120px 150px 150px 150px 150px 150px 150px 150px;
 }
@@ -131,4 +132,8 @@
 
 #unavailable-msg {
     color: red;
+}
+
+#booking-business-title {
+    height: 80px;
 }
