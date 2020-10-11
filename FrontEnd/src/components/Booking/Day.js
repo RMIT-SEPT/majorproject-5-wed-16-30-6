@@ -92,11 +92,11 @@ class Day extends Component {
         let workers = slotsInfoOfSameTime.map(slotInfo => {
           return slotInfo.workerId
         });
-  
+
         var cell =
           <ScheduleCell
-            key={firstSlotInfo.id}
-            scheduleId={firstSlotInfo.id}
+            key={firstSlotInfo.key}
+            scheduleId={firstSlotInfo.scheduleId}
             startTime={firstSlotInfo.startTime}
             endTime={firstSlotInfo.endTime}
             date={firstSlotInfo.date}
