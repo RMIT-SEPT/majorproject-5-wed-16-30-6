@@ -34,17 +34,6 @@ form {
     margin: 30px 0px 0px 0px;
 }
 
-input[type=text] {
-    width:100%;
-    padding:12px;
-    border:1px solid #ccc;
-    border-radius:4px;
-    box-sizing:border-box;
-    margin-top:6px;
-    margin-bottom:16px;
-    resize:vertical;
-}
-
 input[type=submit], .cancel {
     padding:12px 20px;
     border-radius:4px;
