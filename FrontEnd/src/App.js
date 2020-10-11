@@ -14,6 +14,7 @@ import EditWorker from './components/Admin/EditWorker';
 import Profile from './components/Persons/Profile';
 import WorkerDashboard from './components/Persons/WorkerDashboard';
 import CustomerDashboard from './components/Persons/CustomerDashboard';
+import Logout from './components/Home/Logout';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Route path="/about" component={About} />
         <Route path="/contactus" component={ContactUs} />
         <Route path="/login" component={Login} />
+        <Route path="/logout" component={Logout} />
         <Route path="/signup" component={SignUp} />
         <Route path="/admin/:id" component={AdminDashboard} />
         <Route path="/worker/:id" component={WorkerDashboard} />

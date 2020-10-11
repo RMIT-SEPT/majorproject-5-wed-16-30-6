@@ -10,11 +10,28 @@ import { withRouter } from 'react-router-dom';
  */
 export class Layout extends Component {
   render() {
-    var {userId, login, link} = "";
+    var {userId, login, role, link} = "";
     if (this.props.login) {
-      userId = this.props.customer.id;
+      userId = this.props.person.id;
       login = this.props.login;
-      link = "/user/" + userId + "/profile";
+      role = this.props.person.role;
+      link = "/home";
+
+      // redirect to different dashboard depending on the role
+      switch(role) {
+        case 'c':
+          link = "/user/" + userId;
+          break;
+        case 'w':
+          link = "/worker/" + userId;
+          break;
+        case 'a':
+          link = "/admin/" + userId;
+          break;
+        default:
+          link = "/user/" + userId;
+          break;
+      }
     }
 
     return (
@@ -26,9 +43,10 @@ export class Layout extends Component {
 
           {login &&
             <div className="right-nav">
-              <LinkButton link={link} label="My Profile" className="myprofile-link" />
+              <LinkButton link={link} label="Dashboard" className="myprofile-link" />
               <LinkButton link="/about" label="About" className="about-link" />
               <LinkButton link="/contactus" label="Contact Us" className="contact-link" />
+              <LinkButton link="/logout" label="Logout" className="logout-link" />
             </div>
           }
 
@@ -49,11 +67,11 @@ export class Layout extends Component {
 }
 
 const mapStateToProps = state => {
-  const currentState = state.customerReducer[state.customerReducer.length - 1];
+  const currentState = state.loginReducer[state.loginReducer.length - 1];
   
   return {
     login: currentState.login,
-    customer: currentState.customer,
+    person: currentState.person,
   }
 }
 
