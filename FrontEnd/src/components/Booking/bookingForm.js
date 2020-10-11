@@ -6,12 +6,31 @@ import { bookService } from '../../actions/bookingActions';
 import { Redirect } from 'react-router-dom';
 
 class bookingForm extends Component {
+  constructor() {
+    super();
+    this.state = {
+      selectedWorkerId: ""
+    }
+
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
 
   handleSubmit(e) {
     e.preventDefault();
 
-    // send data to backend
-    this.props.dispatch(bookService(this.props.customer.id, this.props.location.state.scheduleId));
+    if (!this.state.selectedWorkerId) {
+      return;
+    }
+
+    // send booking data to backend
+    this.props.dispatch(bookService(this.props.location.state.scheduleId, this.props.customer.id, this.state.selectedWorkerId));
+  }
+
+  handleChange(event) {
+    var newState = this.state;
+    newState.selectedWorkerId = event.target.value;
+    this.setState(newState);
   }
 
   getWorkerNames() {
@@ -20,7 +39,12 @@ class bookingForm extends Component {
 
     workerIds.forEach(workerId => {
       workerNameCells.push(
-        <div><input type="radio" name="worker" value={workerId}/> Worker {workerId}</div>
+        <div key={workerId}>
+          <input 
+            type="radio" name="worker" value={workerId}
+            onChange={this.handleChange}
+          /> Worker {workerId}
+        </div>
       )
     })
 
@@ -29,15 +53,10 @@ class bookingForm extends Component {
 
   render() {
     const login = this.props.login;
-    // console.log(this.props.login);
-    // var login = true;
 
-    if (this.props.booking) {
-      // if the selected schedule (timeslot) is successfully booked
-      if (this.props.booking.id === this.props.location.state.scheduleId) {
-        // TODO: create this page
-        return <Redirect to="/booking/success" />;
-      }
+    // if booking succeeded
+    if (this.props.booked) {
+      return <Redirect to="/booking/success" />;
     }
 
     return (
@@ -82,7 +101,9 @@ const mapStateToProps = state => {
   return {
     login: currentCustState.login,
     customer: currentCustState.customer,
-    booking: currentBookingState.booking
+    booked: currentBookingState.booked,
+    booking: currentBookingState.booking,
+    errorMsg: currentBookingState.errorMsg
   }
 }
 
