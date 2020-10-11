@@ -3,7 +3,6 @@ import { connect } from "react-redux";
 import "./bookingForm.css"
 import LoginSignupPrompt from './LoginSignupPrompt';
 import { bookService } from '../../actions/bookingActions';
-import { Redirect } from 'react-router-dom';
 
 class bookingForm extends Component {
   constructor() {
@@ -56,7 +55,16 @@ class bookingForm extends Component {
 
     // if booking succeeded
     if (this.props.booked) {
-      return <Redirect to="/booking/success" />;
+      const path = "/user/" + this.props.customer.id + "/booking_history";
+
+      this.props.history.push({
+        pathname: path,
+        state: {
+          selected: "booking_history"
+        }
+      })
+
+      // return <Redirect to={path} />;
     }
 
     return (

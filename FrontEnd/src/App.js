@@ -15,7 +15,6 @@ import EditWorker from './components/Admin/EditWorker';
 import Profile from './components/Persons/Profile';
 import WorkerDashboard from './components/Persons/WorkerDashboard';
 import CustomerDashboard from './components/Persons/CustomerDashboard';
-import BookingConfirmation from './components/Booking/BookingConfirmation';
 
 function App() {
   return (
@@ -32,7 +31,6 @@ function App() {
         <Route path="/user/:id" component={CustomerDashboard} />
         <Route path="/business/schedule/:id" component={BusinessSchedule} />
         <Route path="/bookingForm" component={bookingForm} />
-        <Route path="/booking/success" component={BookingConfirmation} />
         <Route path="/admin/:id/addworker" component={AddWorker} />
         <Route path="/admin/:id/editworker" component={EditWorker} />
         <Route path="/user/:id/profile" component={Profile} />

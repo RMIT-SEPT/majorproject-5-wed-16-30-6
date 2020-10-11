@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import CustomerDashboardColumn from './CustomerDashboardColumn';
 import './Dashboard.css';
+import BookingHistory from './BookingHistory';
 
 class CustomerDashboard extends Component {
 
@@ -24,7 +25,7 @@ class CustomerDashboard extends Component {
           Customer ID: {id}
         
           {selected === "booking_history" &&
-            <div>Booking History</div>
+            <BookingHistory />
           }
 
           {selected === "cancel_booking" &&
