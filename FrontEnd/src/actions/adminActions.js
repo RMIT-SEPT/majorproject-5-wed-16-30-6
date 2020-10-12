@@ -31,11 +31,14 @@ const postWorkerFailure = (error) => ({
 export const addWorker = (formState) => {
   return (dispatch) => {
     dispatch(postWorkerRequest());
+
     const data = {
       "name": formState.name,
-      "personIdentifier": formState.personId,
+      "username": formState.personId,
+      "password": formState.personId,
       "desc": formState.desc,
       "mobileNum": formState.mobile,
+      "address": "null",
       "start_date": formState.startDate,
       "end_date": formState.endDate,
       "role": "w"
