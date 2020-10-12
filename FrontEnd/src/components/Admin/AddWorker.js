@@ -4,7 +4,6 @@ import { addWorker } from '../../actions/adminActions';
 import '../Persons/Dashboard.css';
 import '../Persons/AddPersonForm.css';
 import "bootstrap/dist/css/bootstrap.min.css"
-import EditWorker from './EditWorker';
 
 class AddWorker extends Component {
   constructor() {
@@ -126,16 +125,12 @@ class AddWorker extends Component {
   }
 
   render() {
-    // const { params } = this.props.match;
-    // const id = parseInt(params.id);
-
-    if (this.props.addWorkerSuccess && this.submit) {
-      return <EditWorker createdUser={this.props.worker.name}/>
-    }
 
     const {name, personId, desc, mobile, startDate, endDate} = this.state;
     var errorBackend = "";
-    if (this.props.errorMsg) {
+
+    // if error is returned from the api
+    if (this.props.error) {
       if (this.props.errorMsg.personIdentifier) {
         errorBackend = this.props.errorMsg.personIdentifier;
       }
@@ -147,6 +142,11 @@ class AddWorker extends Component {
     return (
       <div id="add-person">
         <h2>Register Worker</h2>
+
+        {this.props.addWorkerSuccess && this.submit && 
+          <div id="added-msg">{this.props.worker.name} has been successfully added.</div>
+        }
+
         <form onSubmit={this.handleSubmit} id="add-person-form">
 
           <div id="error-msg">
@@ -196,9 +196,7 @@ class AddWorker extends Component {
               </div>
 
             </div>
-
             <div className="form-right">
-
               <div className="inputWrapper" id="desc-input">
                 <label htmlFor="desc">Description: </label>
                 <div className="input-msg">*Required</div>
@@ -210,7 +208,6 @@ class AddWorker extends Component {
                 >
                 </textarea>
               </div>
-
               <div className="inputWrapper">
                 <label htmlFor="startDate">Start Date: </label>
                 <input
@@ -233,7 +230,6 @@ class AddWorker extends Component {
               </div>
             </div>
           </div>
-
           <button type="submit" value="Save">Save</button>
         </form>
       </div>
@@ -248,10 +244,12 @@ class AddWorker extends Component {
  */
 const mapStateToProps = state => {
   const currentState = state.workerReducer[state.workerReducer.length - 1]
+
   return {
     addWorkerSuccess: currentState.addWorkerSuccess,
     worker: currentState.worker,
-    errorMsg: currentState.errorMsg
+    errorMsg: currentState.errorMsg,
+    error: currentState.error
   }
 }
 
