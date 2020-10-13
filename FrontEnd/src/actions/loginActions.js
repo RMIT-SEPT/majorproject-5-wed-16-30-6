@@ -44,7 +44,7 @@ export const loginUser = (formData) => {
       "password": formData.password
     }
 
-    const url = 'http://localhost:8080/api/login';
+    const url = 'http://ec2-3-94-82-80.compute-1.amazonaws.com:8080/api/login';
     return axios.post(url, data)
       .then(res => {
         dispatch(postLoginSuccess(res.data));

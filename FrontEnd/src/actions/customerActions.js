@@ -42,7 +42,7 @@ export const addCustomer = (formData) => {
       "role": "c"
     }
     
-    const url = 'http://localhost:8080/api/person';
+    const url = 'http://ec2-3-94-82-80.compute-1.amazonaws.com:8080/api/person';
     return axios.post(url, data)
       .then(res => {
         console.log(res);
