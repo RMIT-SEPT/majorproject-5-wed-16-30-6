@@ -66,38 +66,38 @@ INSERT INTO worker_schedule VALUES (63, false, 2, null, '2020-10-19T13:00:00+11:
 INSERT INTO worker_schedule VALUES (64, false, 2, null, '2020-10-19T14:00:00+11:00', '2020-10-19T13:00:00+11:00', 5);
 INSERT INTO worker_schedule VALUES (65, false, 2, null, '2020-10-19T15:00:00+11:00', '2020-10-19T14:00:00+11:00', 5);
 
-INSERT INTO Worker_Schedule VALUES (66, false, 1, null, '2020-10-21 10:00:00', '2020-10-21 09:00:00', 1);
-INSERT INTO Worker_Schedule VALUES (67, false, 1, null, '2020-10-21 10:00:00', '2020-10-21 09:00:00', 2);
-INSERT INTO Worker_Schedule VALUES (68, false, 1, null, '2020-10-21 10:00:00', '2020-10-21 09:00:00', 12);
-INSERT INTO Worker_Schedule VALUES (69, false, 1, null, '2020-10-21 10:00:00', '2020-10-21 09:00:00', 13);
-INSERT INTO Worker_Schedule VALUES (70, false, 1, null, '2020-10-21 10:00:00', '2020-10-21 09:00:00', 14);
-INSERT INTO Worker_Schedule VALUES (71, false, 1, null, '2020-10-21 10:00:00', '2020-10-21 09:00:00', 15);
-INSERT INTO Worker_Schedule VALUES (72, false, 1, null, '2020-10-21 10:00:00', '2020-10-21 09:00:00', 16);
-INSERT INTO Worker_Schedule VALUES (73, false, 1, null, '2020-10-21 10:00:00', '2020-10-21 09:00:00', 17);
+INSERT INTO Worker_Schedule VALUES (66, false, 1, null, '2020-10-21T10:00:00+11:00', '2020-10-21T09:00:00+11:00', 1);
+INSERT INTO Worker_Schedule VALUES (67, false, 1, null, '2020-10-21T10:00:00+11:00', '2020-10-21T09:00:00+11:00', 2);
+INSERT INTO Worker_Schedule VALUES (68, false, 1, null, '2020-10-21T10:00:00+11:00', '2020-10-21T09:00:00+11:00', 12);
+INSERT INTO Worker_Schedule VALUES (69, false, 1, null, '2020-10-21T10:00:00+11:00', '2020-10-21T09:00:00+11:00', 13);
+INSERT INTO Worker_Schedule VALUES (70, false, 1, null, '2020-10-21T10:00:00+11:00', '2020-10-21T09:00:00+11:00', 14);
+INSERT INTO Worker_Schedule VALUES (71, false, 1, null, '2020-10-21T10:00:00+11:00', '2020-10-21T09:00:00+11:00', 15);
+INSERT INTO Worker_Schedule VALUES (72, false, 1, null, '2020-10-21T10:00:00+11:00', '2020-10-21T09:00:00+11:00', 16);
+INSERT INTO Worker_Schedule VALUES (73, false, 1, null, '2020-10-21T10:00:00+11:00', '2020-10-21T09:00:00+11:00', 17);
 
 
 /* id, address, created_at, desc, end_date, mobile_num, name, password, role, start_date, updated_at, username */
-INSERT INTO Person VALUES (1, '449 Punt Road, Cremorne', '2020-01-01 00:00:00', 'worker desc',
- '2021-12-31 00:00:00', '9873727793', 'Bob', '123', 'w', '2020-07-30 00:00:00', null, 'BOB77');
-INSERT INTO Person VALUES (2, '124 La Trobe St, Melbourne VIC 3000', '2020-01-01 00:00:00', 'worker desc',
- '2021-12-31 00:00:00', '1112223334', 'James', '123', 'w', '2020-07-30 00:00:00', null, 'JAMES');
-INSERT INTO Person VALUES (3, 'address1', '2020-10-11 14:24:14.053', null, null, '5555555555', 'Chris', 'v', 'w', null, null, 'CHRIS');
-INSERT INTO Person VALUES (4, 'address1', '2020-10-11 14:24:14.053', null, null, '5555555555', 'Jane', 'v', 'w', null, null, 'JANE');
-INSERT INTO Person VALUES (5, 'address1', '2020-10-11 14:24:14.053', null, null, '5555555555', 'Erin', 'v', 'w', null, null, 'ERIN');
-INSERT INTO Person VALUES (6, 'address1', '2020-10-11 14:24:14.053', null, null, '5555555555', 'Alex', 'v', 'w', null, null, 'ALEX');
-INSERT INTO Person VALUES (7, 'address1', '2020-10-11 14:24:14.053', null, null, '5555555555', 'Elizabeth', 'v', 'w', null, null, 'ELIZ');
-INSERT INTO Person VALUES (8, 'address1', '2020-10-11 14:24:14.053', null, null, '5555555555', 'Walter', 'v', 'w', null, null, 'WALT');
-INSERT INTO Person VALUES (9, 'address1', '2020-10-11 14:24:14.053', null, null, '5555555555', 'Rebecca', 'v', 'w', null, null, 'REBEC');
+INSERT INTO Person VALUES (1, '449 Punt Road, Cremorne', '2020-01-01T00:00:00+11:00', 'worker desc',
+ '2021-12-31T00:00:00+11:00', '9873727793', 'Bob', '123', 'w', '2020-07-30T00:00:00+11:00', null, 'BOB77');
+INSERT INTO Person VALUES (2, '124 La Trobe St, Melbourne VIC 3000', '2020-01-01T00:00:00+11:00', 'worker desc',
+ '2021-12-31T00:00:00+11:00', '1112223334', 'James', '123', 'w', '2020-07-30T00:00:00+11:00', null, 'JAMES');
+INSERT INTO Person VALUES (3, 'address1', '2020-10-11T14:24:14.053+11:00', null, null, '5555555555', 'Chris', 'v', 'w', null, null, 'CHRIS');
+INSERT INTO Person VALUES (4, 'address1', '2020-10-11T14:24:14.053+11:00', null, null, '5555555555', 'Jane', 'v', 'w', null, null, 'JANE');
+INSERT INTO Person VALUES (5, 'address1', '2020-10-11T14:24:14.053+11:00', null, null, '5555555555', 'Erin', 'v', 'w', null, null, 'ERIN');
+INSERT INTO Person VALUES (6, 'address1', '2020-10-11T14:24:14.053+11:00', null, null, '5555555555', 'Alex', 'v', 'w', null, null, 'ALEX');
+INSERT INTO Person VALUES (7, 'address1', '2020-10-11T14:24:14.053+11:00', null, null, '5555555555', 'Elizabeth', 'v', 'w', null, null, 'ELIZ');
+INSERT INTO Person VALUES (8, 'address1', '2020-10-11T14:24:14.053+11:00', null, null, '5555555555', 'Walter', 'v', 'w', null, null, 'WALT');
+INSERT INTO Person VALUES (9, 'address1', '2020-10-11T14:24:14.053+11:00', null, null, '5555555555', 'Rebecca', 'v', 'w', null, null, 'REBEC');
 
 INSERT INTO Person VALUES (10, 'address1', '2020-10-11 14:24:14.053', null, null, '5555555555', 'Thomas', 'v', 'a', null, null, 'THOM');
 INSERT INTO Person VALUES (11, '225–245 Plenty Rd, Bundoora', '2020-01-01 00:00:00', 'customer desc',
  '2021-12-31 00:00:00', '1112223334', 'Emily', '123', 'c', '2020-07-30 00:00:00', null, 'EMILY');
-INSERT INTO Person VALUES (12, 'address1', '2020-10-11 14:24:14.053', null, null, '5555555555', 'Worker1', 'v', 'w', null, null, 'work1');
-INSERT INTO Person VALUES (13, 'address1', '2020-10-11 14:24:14.053', null, null, '5555555555', 'Worker2', 'v', 'w', null, null, 'work2');
-INSERT INTO Person VALUES (14, 'address1', '2020-10-11 14:24:14.053', null, null, '5555555555', 'Worker3', 'v', 'w', null, null, 'work3');
-INSERT INTO Person VALUES (15, 'address1', '2020-10-11 14:24:14.053', null, null, '5555555555', 'Worker4', 'v', 'w', null, null, 'work4');
-INSERT INTO Person VALUES (16, 'address1', '2020-10-11 14:24:14.053', null, null, '5555555555', 'Worker5', 'v', 'w', null, null, 'work5');
-INSERT INTO Person VALUES (17, 'address1', '2020-10-11 14:24:14.053', null, null, '5555555555', 'Worker6', 'v', 'w', null, null, 'work6');
+INSERT INTO Person VALUES (12, 'address1', '2020-10-11T14:24:14.053+11:00', null, null, '5555555555', 'Worker1', 'v', 'w', null, null, 'work1');
+INSERT INTO Person VALUES (13, 'address1', '2020-10-11T14:24:14.053+11:00', null, null, '5555555555', 'Worker2', 'v', 'w', null, null, 'work2');
+INSERT INTO Person VALUES (14, 'address1', '2020-10-11T14:24:14.053+11:00', null, null, '5555555555', 'Worker3', 'v', 'w', null, null, 'work3');
+INSERT INTO Person VALUES (15, 'address1', '2020-10-11T14:24:14.053+11:00', null, null, '5555555555', 'Worker4', 'v', 'w', null, null, 'work4');
+INSERT INTO Person VALUES (16, 'address1', '2020-10-11T14:24:14.053+11:00', null, null, '5555555555', 'Worker5', 'v', 'w', null, null, 'work5');
+INSERT INTO Person VALUES (17, 'address1', '2020-10-11T14:24:14.053+11:00', null, null, '5555555555', 'Worker6', 'v', 'w', null, null, 'work6');
 
 
 
