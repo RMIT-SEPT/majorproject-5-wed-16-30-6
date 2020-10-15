@@ -143,7 +143,7 @@ class SignUp extends Component {
     var errorBackend = "";
     if (this.props.errorMsg) {
       if (this.props.errorMsg.personIdentifier) {
-        errorBackend = this.props.errorMsg.username;
+        errorBackend = this.props.errorMsg.personIdentifier;
       }
     }
     else {
@@ -157,7 +157,7 @@ class SignUp extends Component {
           <form onSubmit={this.handleSubmit} id="add-person-form">
 
             <div id="error-msg">
-              <div>{(this.submit && this.state.responseError) ? errorBackend : ""}</div>
+              <div>{(this.submit && this.props.errorMsg) ? errorBackend : ""}</div>
               <div id="name-error"></div>
               <div id="username-error"></div>
               <div id="password-error"></div>
