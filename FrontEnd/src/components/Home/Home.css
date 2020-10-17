@@ -1,0 +1,27 @@
+.home {
+    margin: 0 auto;
+    padding-top: 40px;
+    width: 800px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.greet-user-box {
+    margin: 0 auto;
+    text-align: center;
+    height: 60px;
+    background: #ffe6cc;
+}
+
+.greet-user-box div {
+    line-height: 60px;
+}
+
+.business-option {
+    background: #e0e0eb;
+    margin: 20px;
+    margin-left: 60px;
+    padding: 20px;
+    height: 150px;
+    width: 300px;
+}
