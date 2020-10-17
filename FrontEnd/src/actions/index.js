@@ -30,7 +30,7 @@ const getSchedulesFailure = (error) => ({
 export const getSchedules = (param) => {
     return (dispatch) => {
         dispatch(getSchedulesRequest())
-        const url = 'http://localhost:8080/api/booking/schedule/' + param.businessId;
+        const url = 'http://ec2-107-23-134-217.compute-1.amazonaws.com:8080/api/booking/schedule/' + param.businessId;
       
         return axios.get(url)
         .then(res => {

@@ -30,7 +30,7 @@ export const bookService = (scheduleId, custId, workerId) => {
       "worker_id": workerId
     }
     
-    const url = 'http://localhost:8080/api/booking';
+    const url = 'http://ec2-107-23-134-217.compute-1.amazonaws.com:8080/api/booking';
     return axios.post(url, data)
       .then(res => {
         dispatch(postBookingSuccess(data));

@@ -44,7 +44,7 @@ export const addWorker = (formState) => {
       "role": "w"
     }
     
-    const url = 'http://localhost:8080/api/person';
+    const url = 'http://ec2-107-23-134-217.compute-1.amazonaws.com:8080/api/person';
     return axios.post(url, data)
       .then(res => {
         dispatch(postWorkerSuccess(res.data));
