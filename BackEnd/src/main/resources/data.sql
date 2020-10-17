@@ -90,8 +90,8 @@ INSERT INTO person VALUES (8, 'address1', '2020-10-11T14:24:14.053+11:00', null,
 INSERT INTO person VALUES (9, 'address1', '2020-10-11T14:24:14.053+11:00', null, null, '5555555555', 'Rebecca', 'v', 'w', null, null, 'REBEC');
 
 INSERT INTO person VALUES (10, 'address1', '2020-10-11 14:24:14.053', null, null, '5555555555', 'Thomas', 'v', 'a', null, null, 'THOM');
-INSERT INTO person VALUES (11, '225–245 Plenty Rd, Bundoora', '2020-01-01 00:00:00', 'customer desc',
- '2021-12-31T00:00:00+11:00', '1112223334', 'Emily', '123', 'c', '2020-07-30 00:00:00', null, 'EMILY');
+INSERT INTO person VALUES (11, '225–245 Plenty Rd, Bundoora', '2020-01-01T00:00:00+11:00', 'customer desc',
+ '2021-12-31T00:00:00+11:00', '1112223334', 'Emily', '123', 'c', '2020-07-30T00:00:00+11:00', null, 'EMILY');
 INSERT INTO person VALUES (12, 'address1', '2020-10-11T14:24:14.053+11:00', null, null, '5555555555', 'Worker1', 'v', 'w', null, null, 'work1');
 INSERT INTO person VALUES (13, 'address1', '2020-10-11T14:24:14.053+11:00', null, null, '5555555555', 'Worker2', 'v', 'w', null, null, 'work2');
 INSERT INTO person VALUES (14, 'address1', '2020-10-11T14:24:14.053+11:00', null, null, '5555555555', 'Worker3', 'v', 'w', null, null, 'work3');
