@@ -21,12 +21,9 @@ class Day extends Component {
 
     // create ScheduleCells that correspond to each timeslot of the day
     this.props.timeslots.forEach(timeslot => {
-      const startDateTimeStr = new Date(timeslot.startDateTime).toLocaleTimeString();
-      const endDateTimeStr = new Date(timeslot.endDateTime).toLocaleTimeString();
-
       // start and end time (e.g., 9, 10, 13, etc)
-      const startTimeHour = parseInt(startDateTimeStr.slice(0, 2));
-      const endTimeHour = parseInt(endDateTimeStr.slice(0, 2));
+      const startTimeHour = new Date(timeslot.startDateTime).getHours();
+      const endTimeHour = new Date(timeslot.endDateTime).getHours();
 
       // date of the slot
       const dateStr = new Date(timeslot.startDateTime).toLocaleDateString();
