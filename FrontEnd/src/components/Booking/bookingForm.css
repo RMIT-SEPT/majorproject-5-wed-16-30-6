@@ -1,0 +1,89 @@
+
+* {
+    box-sizing:border-box;
+}
+
+body {
+    font-family:Arial,Helvetica,sans-serif;
+}
+
+.container {
+    border-radius:5px;
+    background-color:#f2f2f2;
+    padding:20px;
+    margin:50px;
+}
+
+form {
+    text-align: center;
+    padding: 50px 0px;
+}
+
+#booking-form-title {
+    text-align: center;
+}
+
+.booking-info, .confirm-msg {
+    width: 340px;
+    margin: 0 auto;
+    font-size: 18px;
+}
+
+.booking-info div:last-child {
+    margin: 30px 0px 0px 0px;
+}
+
+input[type=submit], .cancel {
+    padding:12px 20px;
+    border-radius:4px;
+    cursor:pointer;
+    margin: 0px 20px;
+    width: 200px;
+}
+
+input[type=submit] {
+    background-color:#4CAF50;
+    color:white;
+    padding:12px 20px;
+    border:none;
+    border-radius:4px;
+    cursor:pointer;
+}
+
+.cancel {
+    background: #ffffff;
+    color: #555555;
+    border: 2px solid #cccccc;
+}
+
+input[type=submit]:hover {
+    background-color:#45a049;
+}
+
+span {
+    padding:10px
+}
+
+.prompt-wrapper {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.login-prompt button, .signup-prompt button {
+    color:white;
+    padding:12px 20px;
+    border:none;
+    border-radius:4px;
+    cursor:pointer;
+    width: 200px;
+    height: 60px;
+    margin: 30px 20px 5px 20px;
+}
+
+.login-prompt button {
+    background-color:#3366FF;
+}
+
+.signup-prompt button {
+    background-color:#4CAF50;
+}

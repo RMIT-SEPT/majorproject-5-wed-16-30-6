@@ -1,0 +1,46 @@
+/* Dashboard */
+.dashboard {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    width: 100%;
+}
+
+.dashboard-column {
+    width: 20%;
+    height: 1000px;
+    background: #000066;
+    color: white;
+    padding-top: 30px;
+}
+
+.dashboard-contents {
+    width: 80%;
+    padding-top: 30px;
+    padding-left: 20px;
+    background:#f0f0f5;
+}
+
+.opt {
+    padding: 10px 20px;
+    height: 60px;
+}
+
+.opt span {
+    line-height: 40px;
+}
+
+/* WorkerProfile, WorkerScheduleCell */
+.worker-schedule-cell {
+    margin: 12px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid grey;
+}
+
+.profile-container {
+    margin-top: 20px;
+}
+
+
