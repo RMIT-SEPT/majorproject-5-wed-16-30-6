@@ -38,9 +38,9 @@
 
 
 # How to Build without Docker (localhost)
-1. Ensure you are on either `release/milestone3`, master or development branch
+1. Ensure you are on either `release/milestone3`, `master` or `development` branch
 2. Run back end program by running `/BackEnd/src/main/java/sept/project/backend/BackendApplication.java`
-3. Run front end program by `npm start` command on /FrontEnd directory. You may need to run 'npm install' command prior
+3. Run front end program by `npm start` command on /FrontEnd directory. You may need to run `npm install` command prior
 4. Access `http://localhost:3000/home`, which should display the Home page of the app
 5. Access `http://localhost:8080/h2-console` for H2 database
 
