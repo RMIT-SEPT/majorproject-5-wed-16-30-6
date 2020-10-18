@@ -12,7 +12,7 @@
 * Workspace: https://trello.com/b/vUQwlaU7/sept-project 
 * CircleCI pipeline: https://app.circleci.com/pipelines/github/RMIT-SEPT/majorproject-5-wed-16-30-6 
 * MS Teams: https://teams.microsoft.com/_?tenantId=d1323671-cdbe-4417-b4d4-bdb24b51316b#/school/conversations/General?threadId=19:2f2d4d49f9eb41cbb2c509f309746769@thread.tacv2&ctx=channel 
-* App URL (AWS): http://18.212.25.80:1337/ 
+* App URL (AWS): http://ec2-107-23-134-217.compute-1.amazonaws.com:1337/home
 
 # Project Structure documentation 
 ## ChatLogs
